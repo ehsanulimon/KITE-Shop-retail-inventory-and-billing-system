@@ -1,0 +1,117 @@
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\bin\Debug\ModernDashboard.exe.config
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\bin\Debug\ModernDashboard.exe
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\bin\Debug\ModernDashboard.pdb
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\ModernDashboard.csproj.AssemblyReference.cache
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\Styles.baml
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\MainWindow.g.cs
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\App.g.cs
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\ModernDashboard_MarkupCompile.cache
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\ModernDashboard_MarkupCompile.lref
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\App.baml
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\MainWindow.baml
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\ModernDashboard.g.resources
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\ModernDashboard.Properties.Resources.resources
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\ModernDashboard.csproj.GenerateResource.cache
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\ModernDashboard.csproj.CoreCompileInputs.cache
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\ModernDashboard.exe
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\ModernDashboard.pdb
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\View\DesktopView.g.cs
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\View\DocumentView.g.cs
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\View\DownloadView.g.cs
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\View\HomeView.g.cs
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\View\MovieView.g.cs
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\View\MusicView.g.cs
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\View\PCView.g.cs
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\View\PictureView.g.cs
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\View\StartupView.g.cs
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\View\TrashView.g.cs
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\DataTemplates.baml
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\View\DesktopView.baml
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\View\DocumentView.baml
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\View\DownloadView.baml
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\View\HomeView.baml
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\View\MovieView.baml
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\View\MusicView.baml
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\View\PCView.baml
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\View\PictureView.baml
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\View\StartupView.baml
+C:\Users\Arun Enterprises\source\repos\ModernDashboard\ModernDashboard\obj\Debug\View\TrashView.baml
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\bin\Debug\ModernDashboard.exe.config
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\bin\Debug\ModernDashboard.exe
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\bin\Debug\ModernDashboard.pdb
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\ModernDashboard.csproj.AssemblyReference.cache
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\Styles.baml
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\MainWindow.g.cs
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\View\DesktopView.g.cs
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\View\DocumentView.g.cs
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\View\DownloadView.g.cs
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\View\HomeView.g.cs
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\View\MovieView.g.cs
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\View\MusicView.g.cs
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\View\PCView.g.cs
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\View\PictureView.g.cs
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\View\StartupView.g.cs
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\View\TrashView.g.cs
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\App.g.cs
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\ModernDashboard_MarkupCompile.cache
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\ModernDashboard_MarkupCompile.lref
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\App.baml
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\DataTemplates.baml
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\MainWindow.baml
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\View\DesktopView.baml
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\View\DocumentView.baml
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\View\DownloadView.baml
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\View\HomeView.baml
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\View\MovieView.baml
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\View\MusicView.baml
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\View\PCView.baml
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\View\PictureView.baml
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\View\StartupView.baml
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\View\TrashView.baml
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\ModernDashboard.g.resources
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\ModernDashboard.Properties.Resources.resources
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\ModernDashboard.csproj.GenerateResource.cache
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\ModernDashboard.csproj.CoreCompileInputs.cache
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\ModernDashboard.exe
+C:\Users\Arun Enterprises\Desktop\Siource Code\ModernDashboard\ModernDashboard\obj\Debug\ModernDashboard.pdb
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\bin\Debug\ModernDashboard.exe.config
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\bin\Debug\ModernDashboard.exe
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\bin\Debug\ModernDashboard.pdb
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\ModernDashboard.csproj.AssemblyReference.cache
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\Styles.baml
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\MainWindow.g.cs
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\View\DesktopView.g.cs
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\View\DocumentView.g.cs
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\View\DownloadView.g.cs
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\View\HomeView.g.cs
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\View\MovieView.g.cs
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\View\MusicView.g.cs
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\View\PCView.g.cs
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\View\PictureView.g.cs
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\View\StartupView.g.cs
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\View\TrashView.g.cs
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\App.g.cs
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\ModernDashboard_MarkupCompile.cache
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\ModernDashboard_MarkupCompile.lref
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\App.baml
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\DataTemplates.baml
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\MainWindow.baml
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\View\DesktopView.baml
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\View\DocumentView.baml
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\View\DownloadView.baml
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\View\HomeView.baml
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\View\MovieView.baml
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\View\MusicView.baml
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\View\PCView.baml
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\View\PictureView.baml
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\View\StartupView.baml
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\View\TrashView.baml
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\ModernDashboard.g.resources
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\ModernDashboard.Properties.Resources.resources
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\ModernDashboard.csproj.GenerateResource.cache
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\ModernDashboard.csproj.CoreCompileInputs.cache
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\ModernDashboard.exe
+E:\github localpath\CSE3204PF\temp repo\WPF---MVVM-Based-Modern-Dashboard-main\Source Code\Source Code\ModernDashboard\ModernDashboard\obj\Debug\ModernDashboard.pdb

@@ -1,0 +1,33 @@
+﻿<Window x:Class="CustomerEmployeeAp.mainpage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CustomerEmployeeAp"
+        mc:Ignorable="d"
+        Title="CustomerEmployeeApp" Height="450" Width="800">
+    <Grid>
+        <Menu>
+            <Menu Height="30" Width="783" FontSize="18" Background="#FF7998CF" Foreground="White">
+                <MenuItem x:Name="Customer" Header="Customer" Background="#FF7998CF" BorderBrush="Transparent">
+                    <MenuItem Header="New Customer" Click="NewCustomer" Background="#FF128DB6"/>
+                    <Separator/>
+                    <MenuItem Header="Check Balance" Click="CheckBalance" Background="#FF128DB6"/>
+                    <Separator/>
+                    <MenuItem Header="Update Info" Click="UpdateInfo" Background="#FF128DB6"/>
+                    <Separator/>
+                    <MenuItem Header="Delete Account" Click="DeleteAccount" Background="#FF128DB6"/>
+                </MenuItem>
+                <Separator/>
+                <MenuItem x:Name="Employee" Header="Employee" Background="#FF7998CF" BorderBrush="Transparent">
+                    <MenuItem Header="New Employee" Click="NewEmployee" Background="#FF128DB6"/>
+                    <Separator/>
+                    <MenuItem Header="Show Employee Info" Click="ShowEmployeeInfo" Background="#FF128DB6"/>
+                    <Separator/>
+                    <MenuItem Header="Update Employee Info" Click="UpdateEmployeeInfo" Background="#FF128DB6"/>
+                </MenuItem>
+            </Menu>
+        </Menu>
+
+    </Grid>
+</Window>
