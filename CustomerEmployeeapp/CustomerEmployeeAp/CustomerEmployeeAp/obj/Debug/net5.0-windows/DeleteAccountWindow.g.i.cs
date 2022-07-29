@@ -69,7 +69,7 @@ namespace CustomerEmployeeAp {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/CustomerEmployeeAp;component/deleteaccountwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/CustomerEmployeeAp;V1.0.0.0;component/deleteaccountwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\DeleteAccountWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

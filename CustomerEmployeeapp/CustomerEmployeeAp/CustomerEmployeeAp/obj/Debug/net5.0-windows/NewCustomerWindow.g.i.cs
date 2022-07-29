@@ -133,7 +133,7 @@ namespace CustomerEmployeeAp {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/CustomerEmployeeAp;component/newcustomerwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/CustomerEmployeeAp;V1.0.0.0;component/newcustomerwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\NewCustomerWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
