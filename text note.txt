@@ -1,3 +1,5 @@
+mainwindow
+
 822.3027 W   616.727025
                     #01002b
 
@@ -10,3 +12,52 @@
 72 pt
 24 pt
 36 pt
+
+
+#############################3login page
+
+749.2879 W
+
+800  H
+
+Century Gothic  Bold  24  
+#bfbfbf
+#03b1ff
+#ff9425
+#01002b
+#f10000
+#000000
+
+logo size 74.5532 px W 97.8589 px H 211.5836 X 181.7073 px Y
+
+Registration  219.5122 W  48.7805 px H 459.8078 px X 157.3171 px Y
+
+Login 151.2195 W 48.7805 H 667.4424 X 157.3171 Y
+
+Exit 75.6098 W 48.7805 H 813.8929 X 157.3171 Y
+
+textbox 275.6098 W 36.5854 H
+
+submit/clear 151.2195 W 48.7805 H
+
+
+Name
+Email
+Password
+Repeat Password
+30 day free trial
+
+Activated Key
+
+
+ Height="48.7805 "
+                Width="75.6098 "
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Margin="0,15,15,0"
+                Content="Exit" 
+                Background="#f10000" 
+                    Foreground="White" 
+                    FontFamily="Century Gothic" 
+                    FontSize="28" 
+                    FontWeight="Bold"
