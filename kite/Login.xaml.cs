@@ -26,7 +26,11 @@ namespace kite
 
         private void exitbtnClick(object sender, RoutedEventArgs e)
         {
-            Close();
+           
+            CentralWindow open = new CentralWindow();
+            open.Show();
+            this.Close();
+           
         }
 
         private void RegistrationbtnClick(object sender, RoutedEventArgs e)
@@ -34,7 +38,7 @@ namespace kite
               login_gridX.Visibility = Visibility.Collapsed;
             Registration_gridX.Visibility = Visibility.Visible;
         }
-        private void LoginbtnClick(object sender, RoutedEventArgs e)
+        private void SigninbtnClick(object sender, RoutedEventArgs e)
         {
            
             Registration_gridX.Visibility = Visibility.Collapsed;
@@ -50,5 +54,16 @@ namespace kite
         {
 
         }
+
+        private void loginbtn_loginClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Clearbtn_loginClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }

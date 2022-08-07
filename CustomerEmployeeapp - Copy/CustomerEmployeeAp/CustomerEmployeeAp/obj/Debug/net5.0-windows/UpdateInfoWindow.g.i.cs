@@ -85,7 +85,7 @@ namespace CustomerEmployeeAp {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/CustomerEmployeeAp;V1.0.0.0;component/updateinfowindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/CustomerEmployeeAp;component/updateinfowindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\UpdateInfoWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

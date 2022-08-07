@@ -1,0 +1,761 @@
+﻿<!--/// <Summary> ///
+    /// Author : Ehsanul imon ///
+    /// Created : 29-07-2022 ///
+        Group  : B9 ///
+    /// </Summary>-->
+
+<Window x:Class="kite.CentralWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:kite"
+        mc:Ignorable="d"
+        Title="Central Window"
+       Height="550 "
+       Width="900"
+        Background="Transparent"
+        WindowStyle="None"
+        AllowsTransparency="True"
+      
+        Icon="img/icon.png" ResizeMode="CanResize" MaxWidth="1250" MaxHeight="720" 
+       >
+
+
+    <!--Add/create your commands-->
+    <Window.CommandBindings>
+        <CommandBinding x:Name="New" Command="New" Executed="NewCommandBinding_Executed"/>
+        <CommandBinding x:Name="Open" Command="Open" Executed="OpenCommandBinding_Executed"/>
+        <CommandBinding x:Name="Save" Command="Save" Executed="SaveCommandBinding_Executed"/>
+    </Window.CommandBindings>
+
+    <!-- Associate the commands with the wanted keys-->
+    <Window.InputBindings>
+        <KeyBinding Key="N" Modifiers="Control" Command="New"/>
+        <KeyBinding Key="O" Modifiers="Control" Command="Open"/>
+        <KeyBinding Key="S" Modifiers="Control" Command="Save"/>
+    </Window.InputBindings>
+
+
+    <Window.Resources>
+  
+        <!-- button style none-->
+        <Style x:Key="SomeButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+
+                </Trigger>
+                <Trigger Property="IsMouseOver"  Value="True">
+
+                    <Setter Property="Opacity" Value="0.9" />
+              
+                    
+                </Trigger>
+
+            </Style.Triggers>
+        </Style>
+
+
+        <!-- ToggleButton style none-->
+
+
+
+
+        <!-- menu style     -->
+        <Style TargetType="{x:Type MenuItem}" x:Key="MenuItemStyle"
+                 >
+
+            <Setter Property="BorderBrush" Value="#FF32393A"></Setter>
+            <Setter Property="BorderThickness" Value="0,0,0,5"></Setter>
+            <Setter Property="Background" Value="#FF32393A"></Setter>
+            <Setter Property="Foreground" Value="#15d6ff"></Setter>
+            <Setter Property="Margin" Value="0,0,0,0"></Setter>
+            <Setter Property="Padding" Value="0,5,0,5"></Setter>
+            <Setter Property="FontFamily" Value="Century Gothic"></Setter>
+            <Setter Property="FontWeight" Value="SemiBold"></Setter>
+            <Setter Property="FontSize" Value="12"></Setter>
+
+
+
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Foreground" Value="#ff9425"></Setter>
+                    <Setter Property="Background" Value="#FF32393A"></Setter>
+
+
+                </Trigger>
+                <Trigger Property="IsMouseOver"  Value="True">
+                    <Setter Property="Foreground" Value="#ff9425"></Setter>
+                    <Setter Property="Background" Value="#FF32393A"></Setter>
+
+
+
+                </Trigger>
+
+            </Style.Triggers>
+
+        </Style>
+
+
+
+
+    </Window.Resources>
+
+
+    <Grid Height="550 "
+          Width="900">
+        <!--// Border //-->
+
+        <Border x:Name="gridm" Height="550 "
+                Width="900"
+                Background="#01002b"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                CornerRadius="20" ScrollViewer.HorizontalScrollBarVisibility="Auto" MaxWidth="1250" MaxHeight="720"
+                 />
+
+        <!--all-->
+
+        <Grid>
+            <!--logo grid-->
+            <Grid Name="logo" 
+              VerticalAlignment="Bottom"
+              HorizontalAlignment="Left"
+              Margin="75,0,0,40"
+               Height="75"
+               Width="50">
+                <Image Source="img/logo.png" />
+            </Grid>
+
+            <!--menu_grid-->
+
+            <Grid  Name="Menu">
+                <Border x:Name="Menu_gridX" Height="30 "
+                Width="500"
+                Background="#FF32393A"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                     
+                      
+                    Margin="15,5,0,0"
+                CornerRadius="10"
+                 >
+
+                    <Menu  Width="500"
+                Background="#FF32393A"
+                       
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                    Margin="15,5,0,0"
+                          
+                           FontSize="16"   FontFamily="Century Gothic"  FontWeight="Normal" 
+                DockPanel.Dock="Top">
+                        <MenuItem   Width="60" Background="#FF32393A" Foreground="#ffff"  Header="_File" Cursor="Hand">
+
+                            <MenuItem  Style="{StaticResource  MenuItemStyle}"  Name="menuNew" Header="_New" Command="New" InputGestureText="Ctrl+N">
+                                <MenuItem.Icon>
+                                    <Image Source="img/new file icon w.png" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Style="{StaticResource MenuItemStyle}"  Name="menuOpen" Header="_Open" Command="Open" InputGestureText="Ctrl+O">
+                                <MenuItem.Icon>
+                                    <Image Source="img/icons8-opened-folder-50.png" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Style="{StaticResource MenuItemStyle}"  Name="menuSave" Header="_Save" Command="Save" InputGestureText="Ctrl+S">
+                                <MenuItem.Icon>
+                                    <Image Source="img/icons8-save-file-66.png" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+
+
+                        </MenuItem>
+
+                        <MenuItem  Width="90"  Background="#FF32393A" Foreground="#ffff" Header="_Window">
+                     
+                            <MenuItem  Style="{StaticResource  MenuItemStyle}"  Name="menufNew" Header="_New" Command="New" InputGestureText="Ctrl+N">
+
+                                <MenuItem.Icon>
+                                    <Image Source="img/new file icon w.png" />
+                                </MenuItem.Icon>
+
+                            </MenuItem>
+
+                            <MenuItem  Style="{StaticResource  MenuItemStyle}"  Name="menudfNew" Header="_New" Command="New" InputGestureText="Ctrl+N">
+                                <MenuItem.Icon>
+                                    <Image Source="img/new file icon w.png" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Style="{StaticResource MenuItemStyle}"  Name="menuOdfpen" Header="_Open" Command="Open" InputGestureText="Ctrl+O">
+                                <MenuItem.Icon>
+                                    <Image Source="img/icons8-opened-folder-50.png" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Style="{StaticResource MenuItemStyle}"  Name="menufdSave" Header="_Save" Command="Save" InputGestureText="Ctrl+S">
+                                <MenuItem.Icon>
+                                    <Image Source="img/icons8-save-file-66.png" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+
+
+>
+
+
+
+                        </MenuItem>
+
+                        <MenuItem Width="80"  Background="#FF32393A" Foreground="#ffff" Header="_Setting">
+
+                        </MenuItem>
+
+                        <MenuItem Width="80"  Background="#FF32393A" Foreground="#ffff" Header="_Help">
+
+                        </MenuItem>
+                    </Menu>
+
+
+                </Border>
+
+
+            </Grid>
+
+            <!--X Button-->
+
+            <Button x:Name="Xbtn"
+                 Height="30"
+                Width="40" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                 Margin="0,5,5,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="XbtbClick"
+                >
+                <Button.Content>
+                    <Border CornerRadius="5"  
+                 Height="30"
+                Width="40" 
+                Margin="0"
+                Background="#f10000" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                        <TextBlock   Text="x" 
+                                VerticalAlignment="Bottom"
+                    FontFamily="Century Gothic" 
+                    FontSize="23" 
+                    FontWeight="Bold"
+                   TextAlignment="Center"/>
+                    </Border>
+                </Button.Content>
+            </Button>
+
+            <!--Max Button-->
+
+            <Button x:Name="maxbtn"
+                 Height="30"
+                Width="40" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                 Margin="0,5,45,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="maxbtnClick" 
+                >
+                <Button.Content>
+                    <Border CornerRadius="5"  
+                 Height="30"
+                Width="40" 
+                Margin="0"
+                Background="#ff9425" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                        <TextBlock   Text="[  ]" 
+                          
+                    FontFamily="Century Gothic" 
+                    FontSize="18" 
+                    FontWeight="Bold"
+                   TextAlignment="Center"/>
+                    </Border>
+                </Button.Content>
+            </Button>
+            <!--min Button-->
+
+            <Button x:Name="minbtn"
+                 Height="30"
+                Width="40" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                 Margin="0,5,85,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="minbtnClick" 
+                >
+                <Button.Content>
+                    <Border CornerRadius="5"  
+                 Height="30"
+                Width="40" 
+                Margin="0"
+                Background="#15d6ff" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                        <TextBlock   Text="-" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="33" 
+                    FontWeight="Bold"
+                   TextAlignment="Center"/>
+                    </Border>
+                </Button.Content>
+            </Button>
+
+        </Grid>
+
+
+
+        <!--sidemenu_grid-->
+
+        <Grid  Name="sidemenu" >
+            <Border x:Name="sidemenugridX" Height="300 "
+                Width="150"
+                Background="#FF000111"
+                   
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                    Margin="25,80,0,0"
+                CornerRadius="30" Opacity="0.7"
+                 >
+
+            </Border>
+            <!-- MouseLeftButtonDown="StockInput_MLBD" -->
+            <Label x:Name="StockInput" Content="Stock Input"   HorizontalAlignment="Left" Margin="20,100,0,0" VerticalAlignment="Top" Height="30" Width="140" FontSize="16"   FontFamily="Century Gothic"  FontWeight="Normal" HorizontalContentAlignment="Center"  >
+                <Label.Style>
+                    <Style TargetType="Label">
+                        <Setter Property="Foreground" Value="#15d6ff"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="Foreground" Value="#ff9425"/>
+
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Label.Style>
+            </Label>
+            <!-- MouseLeftButtonDown="OfferFair_MLBD" -->
+            <Label x:Name="OfferFair" Content="Offer Fair" HorizontalAlignment="Left" Margin="20,130,0,0" VerticalAlignment="Top" Height="30" Width="140" FontSize="16"   FontFamily="Century Gothic"  FontWeight="Normal" HorizontalContentAlignment="Center">
+                <Label.Style>
+                    <Style TargetType="Label">
+                        <Setter Property="Foreground" Value="#15d6ff"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="Foreground" Value="#ff9425"/>
+
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Label.Style>
+            </Label>
+            <!--  MouseLeftButtonDown="Category_MLBD"  -->
+            <Label x:Name="Category"    Content="Category" HorizontalAlignment="Left" Margin="20,160,0,0" VerticalAlignment="Top" Height="30" Width="140" FontSize="16"   FontFamily="Century Gothic"  FontWeight="Normal" HorizontalContentAlignment="Center">
+                <Label.Style>
+                    <Style TargetType="Label">
+                        <Setter Property="Foreground" Value="#15d6ff"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="Foreground" Value="#ff9425"/>
+
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Label.Style>
+            </Label>
+            <!-- MouseLeftButtonDown="Billing_MLBD" -->
+            <Label x:Name="Billing"  MouseLeftButtonDown="Billing_MLBD" Content="Billing"    HorizontalAlignment="Left" Margin="20,190,0,0" VerticalAlignment="Top" Height="30" Width="140" FontSize="16"   FontFamily="Century Gothic"  FontWeight="Normal" HorizontalContentAlignment="Center">
+                <Label.Style>
+                    <Style TargetType="Label">
+                        <Setter Property="Foreground" Value="#15d6ff"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="Foreground" Value="#ff9425"/>
+
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Label.Style>
+            </Label>
+            <!-- MouseLeftButtonDown="Account_MLBD"-->
+            <Label x:Name="Account" Content="Account"   HorizontalAlignment="Left" Margin="20,220,0,0" VerticalAlignment="Top" Height="30" Width="140" FontSize="16"   FontFamily="Century Gothic"  FontWeight="Normal" HorizontalContentAlignment="Center">
+                <Label.Style>
+                    <Style TargetType="Label">
+                        <Setter Property="Foreground" Value="#15d6ff"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="Foreground" Value="#ff9425"/>
+
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Label.Style>
+            </Label>
+        </Grid>
+
+        <!--main grid all content                                       -->
+        <!--  Stock input grid   -->
+
+
+         
+      
+        <!--  Offer Fair  grid  -->
+        
+
+
+        <!--  ###Category  grid    -->
+
+
+        <!--  Billing  grid
+        -->
+
+
+
+
+        <Grid  Name="Billinggrid" >
+            <Border x:Name="BillinggridX" Height="500"
+                Width="700"
+                Background="Transparent"
+                   
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                    Margin="180,40,0,0"
+              
+                 >
+                <Grid>
+                    <!-- Label=> products Name: & Textbox-->
+                    <Label Content="Products Name"  Height="27" Width="120" Margin="0,10,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <TextBox x:Name="txtb_ProductsName_billing" Height="25" Width="200"  Margin="120,10,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="14" FontFamily="Century Gothic" BorderBrush="{x:Null}" />
+
+                    <!-- Label=>Model No:: & ComboBox-->
+                    <Label Content="Model No"  Height="27" Width="120" Margin="0,40,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <ComboBox x:Name="cmb_box_ModelNo_billing" Height="25" Width="200"  Margin="120,40,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="14" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
+                        <ComboBoxItem Content="1"/>
+                        <ComboBoxItem Content="2"/>
+                        <ComboBoxItem Content="3"/>
+                        <ComboBoxItem Content="4"/>
+                    </ComboBox>
+
+                    <!-- Label=>Category::: & ComboBox-->
+                    <Label Content="Category"  Height="27" Width="120" Margin="0,70,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <ComboBox x:Name="cmb_box_ProductsCategory_billing" Height="25" Width="200"  Margin="120,70,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="14" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
+                        <ComboBoxItem Content="1"/>
+                        <ComboBoxItem Content="2"/>
+                        <ComboBoxItem Content="3"/>
+                        <ComboBoxItem Content="4"/>
+                    </ComboBox>
+                    <!-- Label=>price::: & Textbox-->
+                    <Label Content="Price"  Height="25" Width="120" Margin="0,100,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <TextBox x:Name="txtb_Price_billing" Height="25" Width="200"  Margin="120,100,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="14" FontFamily="Century Gothic" BorderBrush="{x:Null}" />
+                    <!-- Label=>Quantity ::: & ComboBox-->
+                    <Label Content="Quantity"  Height="25" Width="120" Margin="0,130,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <ComboBox x:Name="cmb_box_Quantity_billing" Height="25" Width="200"  Margin="120,130,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="14" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
+                        <ComboBoxItem Content="1"/>
+                        <ComboBoxItem Content="2"/>
+                        <ComboBoxItem Content="3"/>
+                        <ComboBoxItem Content="4"/>
+                    </ComboBox>
+                    <!---Customer info -->
+                    <!-- Label=>Customer Name:::: & Textbox-->
+                    <Label Content="Customer Name"  Height="27" Width="120" Margin="0,180,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <TextBox x:Name="txtb_CustomerName_billing" Height="25" Width="200"  Margin="120,180,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="16" FontFamily="Century Gothic" BorderBrush="{x:Null}" />
+                    <!-- Label=>Address:::: & Textbox-->
+                    <Label Content="Address "  Height="27" Width="120" Margin="0,210,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <TextBox x:Name="txtb_CustomerAddress_billing" Height="25" Width="200"  Margin="120,210,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="16" FontFamily="Century Gothic" BorderBrush="{x:Null}" />
+
+                    <!-- Label=>Mobile No:::: & Textbox-->
+                    <Label Content="Mobile No"  Height="27" Width="120" Margin="0,240,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <TextBox x:Name="txtb_CustomerMobileNo_billing" Height="25" Width="200"  Margin="120,240,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="16" FontFamily="Century Gothic" BorderBrush="{x:Null}" />
+
+                    <!-- Label=>Email:::: & Textbox-->
+                    <Label Content="Email"  Height="27" Width="90" Margin="0,270,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <TextBox x:Name="txtb_CustomerEmail_billing" Height="25" Width="230"  Margin="90,270,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="16" FontFamily="Century Gothic" BorderBrush="{x:Null}" />
+
+                    <!---service section -->
+
+                    <!-- Label=>Discount package: & ComboBox-->
+                    <Label Content="Discount"  Height="27" Width="120" Margin="0,320,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <ComboBox x:Name="cmb_box_Discountpackage_billing" Height="25" Width="200"  Margin="120,320,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="12" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
+
+                        <ComboBoxItem Content="a"></ComboBoxItem>
+                        <ComboBoxItem Content="a"></ComboBoxItem>
+                        <ComboBoxItem Content="a"></ComboBoxItem>
+                        <ComboBoxItem Content="a"></ComboBoxItem>
+
+                    </ComboBox>
+
+                    <!-- Label=>Warranty: & ComboBox-->
+                    <Label Content="Warranty"  Height="27" Width="120" Margin="0,350,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <ComboBox x:Name="cmb_box_Warranty_billing" Height="25" Width="200"  Margin="120,350,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="12" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
+                
+
+                        <ComboBoxItem Content="1 months"/>
+                        <ComboBoxItem Content="3 months"/>
+                        <ComboBoxItem Content="4 months"/>
+                        <ComboBoxItem Content="6 months"/>
+                        <ComboBoxItem Content="12 months"/>
+                        <ComboBoxItem Content="1 years"/>
+                        <ComboBoxItem Content="2 years"/>
+                        <ComboBoxItem Content="3 years"/>
+                        <ComboBoxItem Content="4 years"/>
+                        <ComboBoxItem Content="5 years"/>
+                        <ComboBoxItem Content="6 years"/>
+                        <ComboBoxItem Content="7 years"/>
+                        <ComboBoxItem Content="8 years"/>
+                        <ComboBoxItem Content="9 years"/>
+                        <ComboBoxItem Content="10 years"/>
+                        <ComboBoxItem Content="15 years"/>
+                    </ComboBox>
+
+                    <!-- Label=>VAT:::: & ComboBox-->
+                    <Label Content="VAT"  Height="27" Width="120" Margin="0,380,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <ComboBox x:Name="cmb_box_VAT_billing" Height="27" Width="200"  Margin="120,380,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="12" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
+                        <ComboBoxItem Content="0.1%"/>
+                        <ComboBoxItem Content="0.2%"/>
+                        <ComboBoxItem Content="0.3%"/>
+                        <ComboBoxItem Content="0.4%"/>
+                        <ComboBoxItem Content="0.5%"/>
+                        <ComboBoxItem Content="0.6%"/>
+                        <ComboBoxItem Content="0.7%"/>
+                        <ComboBoxItem Content="0.8%"/>
+                        <ComboBoxItem Content="0.9%"/>
+
+                        <ComboBoxItem Content="1%"/>
+                        <ComboBoxItem Content="2%"/>
+                        <ComboBoxItem Content="3%"/>
+                        <ComboBoxItem Content="4%"/>
+                        <ComboBoxItem Content="5%"/>
+                        <ComboBoxItem Content="6%"/>
+                        <ComboBoxItem Content="7%"/>
+                        <ComboBoxItem Content="8%"/>
+                        <ComboBoxItem Content="9%"/>
+                        
+                        <ComboBoxItem Content="10%"/>
+                        <ComboBoxItem Content="11%"/>
+                        <ComboBoxItem Content="12%"/>
+                        <ComboBoxItem Content="13%"/>
+                        <ComboBoxItem Content="14%"/>
+                        <ComboBoxItem Content="15%"/>
+                        <ComboBoxItem Content="16%"/>
+                        <ComboBoxItem Content="17%"/>
+                        <ComboBoxItem Content="18%"/>
+                        <ComboBoxItem Content="19%"/>
+                        <ComboBoxItem Content="20%"/>
+                        <ComboBoxItem Content="21%"/>
+                        <ComboBoxItem Content="22%"/>
+                        <ComboBoxItem Content="23%"/>
+                        <ComboBoxItem Content="24%"/>
+                        <ComboBoxItem Content="25%"/>
+                        
+                        <ComboBoxItem Content="30%"/>
+                        <ComboBoxItem Content="35%"/>
+                        <ComboBoxItem Content="40%"/>
+                        <ComboBoxItem Content="45%"/>
+                        <ComboBoxItem Content="50%"/>
+                        <ComboBoxItem Content="55%"/>
+                    </ComboBox>
+                    <!-- Billing ADD Button-->
+
+                    <Button x:Name="BillingADD"
+                 Height="30"
+                            
+                Width="90" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="0,460,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="BillingADDClick" 
+                >
+                        <Button.Content>
+                            <Border CornerRadius="10"  
+                 Height="30"
+                Width="90" 
+                Margin="0"
+                Background="#ff9425" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                <TextBlock   Text="Add" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="14" 
+                    FontWeight="Medium"
+                   TextAlignment="Center"/>
+
+                            </Border>
+                        </Button.Content>
+                    </Button>
+                    <!--BillingClean   Button-->
+
+                    <Button x:Name="BillingClean"
+                 Height="30"
+                            
+                Width="90" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="100,460,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="BillingCleanClick" 
+                >
+                        <Button.Content>
+                            <Border CornerRadius="10"  
+                 Height="30"
+                Width="90" 
+                Margin="0"
+                Background="#ff9425" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                <TextBlock   Text="Clean" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="14" 
+                    FontWeight="Medium"
+                   TextAlignment="Center"/>
+
+                            </Border>
+                        </Button.Content>
+                    </Button>
+                    <!--BillingPrint Button-->
+
+                    <Button x:Name="BillingPrint"
+                 Height="30"
+                            
+                Width="90" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="200,460,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="BillingPrintClick" 
+                >
+                        <Button.Content>
+                            <Border CornerRadius="10"  
+                 Height="30"
+                Width="90" 
+                Margin="0"
+                Background="#15d6ff" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                <TextBlock   Text="Print" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="14" 
+                    FontWeight="Medium"
+                   TextAlignment="Center"/>
+
+                            </Border>
+                        </Button.Content>
+                    </Button>
+
+
+                    <!--- Receipt -->
+                    <DataGrid x:Name="Receipt_datagridX" Width="350" Height="500" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="350,0,0,0" Background="White" BorderBrush="#ff9425" BorderThickness="1">
+
+
+
+                    </DataGrid>
+
+                </Grid>
+             
+             
+
+            
+
+            </Border>
+     
+
+        </Grid>
+
+
+        <!--  SOffer Fair  grid
+        
+                <Grid  Name="Accountgrid" >
+            <Border x:Name="AccountgridX" Height="500"
+                Width="700"
+                Background="#FF45A315"
+                   
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                    Margin="180,40,0,0"
+                
+                 >
+
+            </Border>
+
+        </Grid>
+        
+        
+        
+        -->
+
+
+
+
+    </Grid>
+</Window>

@@ -34,7 +34,7 @@ namespace kite
        
         private void nextbtnClick(object sender, RoutedEventArgs e)
         {
-            Login op = new Login();
+            CentralWindow op = new CentralWindow();
             op.Show();
             Close();
         }
@@ -51,13 +51,17 @@ namespace kite
             counter++;
             TimerLabel.Text = counter.ToString();
 
-            if (counter == 100)
+            if (counter == 101)
             {
                
                 _timer.Stop();
                 TimerLabel.Text = "0".ToString();
+                
             
-                Login op = new Login();
+            }
+            if (counter == 100)
+            {
+                CentralWindow op = new CentralWindow();
                 op.Show();
                 Close();
             }

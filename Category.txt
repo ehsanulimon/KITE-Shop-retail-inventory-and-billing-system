@@ -1,0 +1,492 @@
+
+        <Grid  Name="Categorygrid" >
+            <Border x:Name="CategorygridX" Height="500"
+                Width="700"
+                Background="Transparent"
+                   
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                    Margin="180,40,0,0"
+               
+                 >
+
+                <Grid>
+                    <!-- Search lable" -->
+                    <TextBox x:Name="txtb_Search_Category" 
+                             Height="25" Width="180" 
+                             Margin="0,5,0,0" 
+                             HorizontalAlignment="Left" 
+                             TextWrapping="Wrap" 
+                             VerticalAlignment="Top"  
+                             FontSize="16" 
+                             FontFamily="Calibri" 
+                           BorderBrush="#15d6ff"
+                             Background="White" 
+                             Foreground="#FF32393A" >
+                        
+                    </TextBox>
+                    <Label x:Name="Searchlable"
+                           MouseLeftButtonDown="Search_MLBD"
+                           Content="Search"  
+                           HorizontalAlignment="Left" 
+                           Margin="175,2,0,0"
+                           VerticalAlignment="Top" 
+                           Height="30"
+                           Width="80" 
+                           FontSize="16"   
+                           FontFamily="Century Gothic" 
+                           FontWeight="Normal"
+                           Cursor="Hand"
+                           
+                           HorizontalContentAlignment="Center"  >
+                        <Label.Style>
+                            <Style TargetType="Label">
+                                <Setter Property="FontWeight" Value="Medium"/>
+
+                                <Setter Property="Foreground" Value="#ff9425"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#ff9425"/>
+                                        <Setter Property="Foreground" Value="#15d6ff"/>
+                                        <Setter Property="BorderBrush" Value="#15d6ff"/>
+                                        <Setter Property="BorderThickness" Value="0"/>
+                                        <Setter Property="FontWeight" Value="Bold"/>
+
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Label.Style>
+                    </Label>
+                    <!--Next Button-->
+
+                    <Button x:Name="Nextbt_category"
+                 Height="40"
+                            
+                Width="130" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="550,10,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="NextbtcategoryClick" 
+                >
+                        <Button.Content>
+                            <Border CornerRadius="0,100,100,0"  
+                 Height="30"
+                Width="130" 
+                Margin="0"
+                Background="#ff9425" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                <TextBlock   Text="Next" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="14" 
+                    FontWeight="Medium"
+                    Padding="20,0,0,0"
+                   TextAlignment="Left"/>
+
+                            </Border>
+                        </Button.Content>
+                    </Button>
+                    <!--Previous  Button-->
+
+                    <Button x:Name="Previousbt_category"
+                 Height="40"
+                            
+                Width="130" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="420,10,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="PreviousbtcategoryClick" 
+                >
+                        <Button.Content>
+                            <Border CornerRadius="100,0,0,100"  
+                 Height="30"
+                Width="130" 
+                Margin="0"
+                Background="#ff9425" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                <TextBlock   Text="Previous" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="14" 
+                    FontWeight="Medium"
+                   Padding="0,0,20,0"
+                   TextAlignment="Right"/>
+
+                            </Border>
+                        </Button.Content>
+                    </Button>
+                    <!--- Category_Viewgrid1 -->
+                    <Grid   x:Name="Category_Viewgrid1" Height="110"
+                Width="700"
+                Background="Transparent"
+                   
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                    Margin="0,45,0,0">
+
+
+                        <!--Category_View1_BT1 Button-->
+
+                        <Button x:Name="Category_View1_BT1"
+                 Height="100"
+                            
+                Width="170" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="0,0,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="CategoryViewgrid1_BT1Click" 
+                >
+                            <Button.Content>
+                                <Border CornerRadius="20"  
+                 Height="100"
+                Width="170" 
+                Margin="0"
+                Background="#15d6ff" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                    <TextBlock   Text="Category V5" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="23" 
+                    FontWeight="Medium"
+                   TextAlignment="Center"/>
+
+                                </Border>
+                            </Button.Content>
+                        </Button>
+
+                        <!--Category_View1_BT2 Button-->
+
+                        <Button x:Name="Category_View1_BT2"
+                 Height="100"
+                            
+                Width="170" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="180,0,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="CategoryViewgrid1_BT2Click" 
+                >
+                            <Button.Content>
+                                <Border CornerRadius="20"  
+                 Height="100"
+                Width="170" 
+                Margin="0"
+                Background="#15d6ff" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                    <TextBlock   Text="Category V6" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="23" 
+                    FontWeight="Medium"
+                   TextAlignment="Center"/>
+
+                                </Border>
+                            </Button.Content>
+                        </Button>
+                        <!--Category_View1_BT3 Button-->
+
+                        <Button x:Name="Category_View1_BT3"
+                 Height="100"
+                            
+                Width="170" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="360,0,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="CategoryViewgrid1_BT3Click" 
+                >
+                            <Button.Content>
+                                <Border CornerRadius="20"  
+                 Height="100"
+                Width="170" 
+                Margin="0"
+                Background="#15d6ff" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                    <TextBlock   Text="Category V7" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="23" 
+                    FontWeight="Medium"
+                   TextAlignment="Center"/>
+
+                                </Border>
+                            </Button.Content>
+                        </Button>
+
+                        <!--Category_View1_BT4 Button-->
+
+                        <Button x:Name="Category_View1_BT4"
+                            
+                Width="165" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="540,0,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="CategoryViewgrid1_BT4Click" 
+                >
+                            <Button.Content>
+                                <Border CornerRadius="20"  
+                 Height="100"
+                Width="165" 
+                Margin="0"
+                Background="#15d6ff" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                    <TextBlock   Text="Category V8" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="23" 
+                    FontWeight="Medium"
+                   TextAlignment="Center"/>
+
+                                </Border>
+                            </Button.Content>
+                        </Button>
+
+                    </Grid>
+                    <!---Category_Viewgrid2 -->
+                    <Grid   x:Name="Category_Viewgrid2" Height="110"
+                Width="700"
+                Background="Transparent"
+                   
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                    Margin="0,45,0,0">
+
+
+                        <!--Category_View2_BT1 Button-->
+
+                        <Button x:Name="Category_View2_BT1"
+                 Height="100"
+                            
+                Width="170" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="0,0,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="CategoryViewgrid2_BT1Click" 
+                >
+                            <Button.Content>
+                                <Border CornerRadius="20"  
+                 Height="100"
+                Width="170" 
+                Margin="0"
+                Background="#15d6ff" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                    <TextBlock   Text="Category V1" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="23" 
+                    FontWeight="Medium"
+                   TextAlignment="Center"/>
+
+                                </Border>
+                            </Button.Content>
+                        </Button>
+
+                        <!--Category_View2_BT2 Button-->
+
+                        <Button x:Name="Category_View2_BT2"
+                 Height="100"
+                            
+                Width="170" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="180,0,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="CategoryViewgrid2_BT2Click" 
+                >
+                            <Button.Content>
+                                <Border CornerRadius="20"  
+                 Height="100"
+                Width="170" 
+                Margin="0"
+                Background="#15d6ff" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                    <TextBlock   Text="Category V2" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="23" 
+                    FontWeight="Medium"
+                   TextAlignment="Center"/>
+
+                                </Border>
+                            </Button.Content>
+                        </Button>
+                        <!--Category_View2_BT3 Button-->
+
+                        <Button x:Name="Category_View2_BT3"
+                 Height="100"
+                            
+                Width="170" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="360,0,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="CategoryViewgrid2_BT3Click" 
+                >
+                            <Button.Content>
+                                <Border CornerRadius="20"  
+                 Height="100"
+                Width="170" 
+                Margin="0"
+                Background="#15d6ff" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                    <TextBlock   Text="Category V3" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="23" 
+                    FontWeight="Medium"
+                   TextAlignment="Center"/>
+
+                                </Border>
+                            </Button.Content>
+                        </Button>
+
+                        <!--Category_View2_BT4 Button-->
+
+                        <Button x:Name="Category_View2_BT4"
+                            
+                Width="165" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="540,0,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="CategoryViewgrid2_BT4Click" 
+                >
+                            <Button.Content>
+                                <Border CornerRadius="20"  
+                 Height="100"
+                Width="165" 
+                Margin="0"
+                Background="#15d6ff" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                    <TextBlock   Text="Category V4" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="23" 
+                    FontWeight="Medium"
+                   TextAlignment="Center"/>
+
+                                </Border>
+                            </Button.Content>
+                        </Button>
+
+                    </Grid>
+      
+                    <!-- Label=> Category: & ComboBox-->
+                    <Label Content="Category"  Height="30" Width="100" Margin="10,160,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="16"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <ComboBox x:Name="cmb_box_ProductsCategory_Category" Height="25" Width="220"  Margin="100,165,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" >
+                        <ComboBoxItem Content="1"/>
+                        <ComboBoxItem Content="2"/>
+                        <ComboBoxItem Content="3"/>
+                        <ComboBoxItem Content="4"/>
+                    </ComboBox>
+
+                    <DataGrid x:Name="Offerfair_datagridX"  Margin="0,206,10,10" >
+                        <DataGrid.Resources>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="BorderBrush" Value="Transparent"></Setter>
+                                <Setter Property="BorderThickness" Value="0,0,0,5"></Setter>
+                                <Setter Property="Background" Value="#FF32393A"></Setter>
+                                <Setter Property="Foreground" Value="#15d6ff"></Setter>
+                                <Setter Property="Margin" Value="0,0,0,0"></Setter>
+                                <Setter Property="Padding" Value="0,5,0,5"></Setter>
+                                <Setter Property="FontFamily" Value="Century Gothic"></Setter>
+                                <Setter Property="FontWeight" Value="SemiBold"></Setter>
+                                <Setter Property="FontSize" Value="12"></Setter>
+
+                                <Style.Triggers>
+                                    <Trigger Property="IsEnabled" Value="False">
+                                        <Setter Property="Foreground" Value="#ff9425"></Setter>
+                                        <Setter Property="Background" Value="#FF32393A"></Setter>
+
+
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver"  Value="True">
+                                        <Setter Property="Foreground" Value="#ff9425"></Setter>
+                                        <Setter Property="Background" Value="#FF32393A"></Setter>
+
+
+
+                                    </Trigger>
+
+                                </Style.Triggers>
+
+                            </Style>
+
+                        </DataGrid.Resources>
+                        <!--   Style="{StaticResource  dataGrid_style}" -->
+                        <DataGrid.Columns  >
+                            <DataGridTextColumn Header="Offer package" Width="120"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Discount" Width="80"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Product's Name" Width="150"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Model No" Width="100"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Series Number" Width="150"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Category" Width="100"></DataGridTextColumn>
+
+
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+
+                </Grid>
+               
+
+            </Border>
+
+        </Grid>

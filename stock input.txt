@@ -1,0 +1,205 @@
+     <Grid  Name="Stockinputgrid" >
+            <Border x:Name="StockinputgridX" Height="510"
+                Width="720"
+                Background="Transparent"
+                   
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                    Margin="180,40,0,0"
+                 
+                 >
+                <Grid>  
+               <!-- Label=> products Name: & Textbox-->
+                    <Label Content="Products Name:"  Height="30" Width="135" Margin="10,60,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="16"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <TextBox x:Name="txtb_ProductsName_Stock" Height="25" Width="220"  Margin="145,60,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" />
+
+                    <!-- Label=>Model No:: & Textbox-->
+                    <Label Content="Model No:"  Height="30" Width="135" Margin="10,90,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="16"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <TextBox x:Name="txtb_ModelNo_Stock" Height="25" Width="220"  Margin="145,90,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" />
+
+                    <!-- Label=>SeriesNumber::: & Textbox-->
+                    <Label Content="Series Number:"  Height="30" Width="135" Margin="10,120,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="16"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <TextBox x:Name="txtb_SeriesNumber_Stock" Height="25" Width="220"  Margin="145,120,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" />
+
+                    <!-- Label=>Category::: & Textbox-->
+                    <Label Content="Category:"  Height="30" Width="135" Margin="10,150,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="16"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <TextBox x:Name="txtb_Category_Stock" Height="25" Width="220"  Margin="145,150,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" />
+
+                    <!-- Label=>price::: & Textbox-->
+                    <Label Content="Price:"  Height="30" Width="135" Margin="10,180,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="16"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <TextBox x:Name="txtb_Price_Stock" Height="25" Width="220"  Margin="145,180,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" />
+                    <!-- Label=>Quantity ::: & Textbox-->
+                    <Label Content="Quantity:"  Height="30" Width="135" Margin="10,210,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="16"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <TextBox x:Name="txtb_Quantity_Stock" Height="25" Width="220"  Margin="145,210,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="16" FontFamily="Century Gothic" BorderBrush="{x:Null}" />
+
+                    <DataGrid x:Name="Stockinput_datagridX"  Margin="0,250,10,10"
+                             
+                       
+                         >
+                        <DataGrid.Resources>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="BorderBrush" Value="Transparent"></Setter>
+                                <Setter Property="BorderThickness" Value="0,0,0,5"></Setter>
+                                <Setter Property="Background" Value="#FF32393A"></Setter>
+                                <Setter Property="Foreground" Value="#15d6ff"></Setter>
+                                <Setter Property="Margin" Value="0,0,0,0"></Setter>
+                                <Setter Property="Padding" Value="0,5,0,5"></Setter>
+                                <Setter Property="FontFamily" Value="Century Gothic"></Setter>
+                                <Setter Property="FontWeight" Value="SemiBold"></Setter>
+                                <Setter Property="FontSize" Value="12"></Setter>
+
+                                <Style.Triggers>
+                                    <Trigger Property="IsEnabled" Value="False">
+                                        <Setter Property="Foreground" Value="#ff9425"></Setter>
+                                        <Setter Property="Background" Value="#FF32393A"></Setter>
+
+
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver"  Value="True">
+                                        <Setter Property="Foreground" Value="#ff9425"></Setter>
+                                        <Setter Property="Background" Value="#FF32393A"></Setter>
+
+
+
+                                    </Trigger>
+
+                                </Style.Triggers>
+
+                            </Style>
+
+                        </DataGrid.Resources>
+                        <!--   Style="{StaticResource  dataGrid_style}" -->
+                        <DataGrid.Columns  >
+                            <DataGridTextColumn Header="Series Number" Width="150"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Product's Name" Width="*"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Model No" Width="100"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Category" Width="100"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Quantity" Width="100"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Price" Width="100"></DataGridTextColumn>
+                           
+                        </DataGrid.Columns>
+                       
+                    </DataGrid>
+
+                    <!--ADD Button-->
+
+                    <Button x:Name="StockinputADD"
+                 Height="50"
+                            
+                Width="130" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="400,60,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="StockinputADDClick" 
+                >
+                        <Button.Content>
+                            <Border CornerRadius="20,5,20,5"  
+                 Height="50"
+                Width="130" 
+                Margin="0"
+                Background="#15d6ff" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                <TextBlock   Text="Add" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="23" 
+                    FontWeight="Bold"
+                   TextAlignment="Center"/>
+                                
+                            </Border>
+                        </Button.Content>
+                    </Button>
+                    <!--Update Button-->
+
+                    <Button x:Name="StockinputUpdate"
+                 Height="50"
+                            
+                Width="130" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="400,120,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="StockinputUpdateClick" 
+                >
+                        <Button.Content>
+                            <Border CornerRadius="20,5,20,5"  
+                 Height="50"
+                Width="130" 
+                Margin="0"
+                Background="#15d6ff" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                <TextBlock   Text="Update" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="23" 
+                    FontWeight="Bold"
+                   TextAlignment="Center"/>
+
+                            </Border>
+                        </Button.Content>
+                    </Button>
+                    <!--Delete Button-->
+
+                    <Button x:Name="StockinputDelete"
+                 Height="50"
+                            
+                Width="130" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="400,180,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="StockinputDeleteClick" 
+                >
+                        <Button.Content>
+                            <Border CornerRadius="20,5,20,5"  
+                 Height="50"
+                Width="130" 
+                Margin="0"
+                Background="#15d6ff" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                <TextBlock   Text="Delete" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="23" 
+                    FontWeight="Bold"
+                   TextAlignment="Center"/>
+
+                            </Border>
+                        </Button.Content>
+                    </Button>
+
+
+
+
+                </Grid>
+            </Border>
+
+        </Grid>

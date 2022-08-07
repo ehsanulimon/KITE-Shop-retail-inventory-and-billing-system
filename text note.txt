@@ -38,7 +38,7 @@ Exit 75.6098 W 48.7805 H 813.8929 X 157.3171 Y
 
 textbox 275.6098 W 36.5854 H
 
-submit/clear 151.2195 W 48.7805 H
+Submit/ Clear 151.2195 W 48.7805 H
 
 
 Name
@@ -50,14 +50,27 @@ Repeat Password
 Activated Key
 
 
- Height="48.7805 "
-                Width="75.6098 "
-                HorizontalAlignment="Right"
-                VerticalAlignment="Top"
-                Margin="0,15,15,0"
-                Content="Exit" 
-                Background="#f10000" 
-                    Foreground="White" 
-                    FontFamily="Century Gothic" 
-                    FontSize="28" 
-                    FontWeight="Bold"
+############ CentralWindow  
+ File     Window     Setting       Help
+### Stock Input 
+
+products Name:
+
+Model No:
+
+Series Number:
+
+Category
+
+price
+
+quantity 
+
+
+###Offer Fair 
+
+###Category
+
+###Billing
+
+###Account

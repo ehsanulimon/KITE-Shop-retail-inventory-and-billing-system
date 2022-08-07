@@ -1,0 +1,452 @@
+<Grid  Name="OfferFairgrid" >
+            <Border x:Name="OfferFairgridX" Height="500"
+                Width="700"
+                Background="Transparent"
+                   
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                    Margin="180,40,0,0"
+               
+                 >
+                <Grid>
+                    <!-- Label=> Category: & ComboBox-->
+                    <Label Content="Category:"  Height="30" Width="135" Margin="10,60,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="16"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <ComboBox x:Name="cmb_box_ProductsCategory_offer" Height="25" Width="220"  Margin="145,60,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" >
+                        <ComboBoxItem Content="1"/>
+                        <ComboBoxItem Content="2"/>
+                        <ComboBoxItem Content="3"/>
+                        <ComboBoxItem Content="4"/>
+                    </ComboBox>
+
+                    <!-- Label=>products Name:: & ComboBox-->
+                    <Label Content="Products Name:"  Height="30" Width="135" Margin="10,90,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="16"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <ComboBox x:Name="cmb_box_ProductsName_offer" Height="25" Width="220"  Margin="145,90,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" >
+                        <ComboBoxItem Content="adc"/>
+                        <ComboBoxItem Content="adc"/>
+                        <ComboBoxItem Content="adc"/>
+                        <ComboBoxItem Content="adc"/>
+                    </ComboBox>
+
+                    <!-- Label=>Model No::: & ListBox-->
+                    <Label Content="Model No:"  Height="30" Width="135" Margin="10,120,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="16"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <ListBox x:Name="lstd_ModelNo_offer" Height="25" Width="220"  Margin="145,120,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" >
+                        <ListBoxItem Content="1"/>
+                        <ListBoxItem Content="2"/>
+                        <ListBoxItem Content="3"/>
+                        <ListBoxItem Content="4"/>
+                        <ListBoxItem Content="5 "/>
+                        <ListBoxItem Content="6 "/>
+                        <ListBoxItem Content="7 "/>
+                        <ListBoxItem Content="8 "/>
+                    </ListBox>
+
+                    <!-- Label=>SeriesNumber::: & ListBox-->
+                    <Label Content="SeriesNumber:"  Height="30" Width="135" Margin="10,150,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="16"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <ListBox x:Name="lstd_SeriesNumber_offer" Height="25" Width="220"  Margin="145,150,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" >
+                        <ListBoxItem Content="1"/>
+                        <ListBoxItem Content="2"/>
+                        <ListBoxItem Content="3"/>
+                        <ListBoxItem Content="4"/>
+                        <ListBoxItem Content="5 "/>
+                        <ListBoxItem Content="6 "/>
+                        <ListBoxItem Content="7 "/>
+                        <ListBoxItem Content="8 "/>
+
+                    </ListBox>
+
+                    <!-- Label=>Offer package::: & Textbox-->
+                    <Label Content="Offer package:"  Height="30" Width="135" Margin="10,180,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="16"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <TextBox x:Name="txtb_Offerpackage_offer" Height="25" Width="220"  Margin="145,180,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" />
+                    <!-- Label=>Discount ::: & Textbox-->
+                    <Label Content="Discount:"  Height="30" Width="135" Margin="10,210,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="16"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <TextBox x:Name="txtb_Discount_offer" Height="25" Width="220"  Margin="145,210,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="16" FontFamily="Century Gothic" BorderBrush="{x:Null}" />
+
+                    <DataGrid x:Name="Offerfair_datagridX"  Margin="0,245,10,10"
+                             
+                       
+                         >
+                        <DataGrid.Resources>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="BorderBrush" Value="Transparent"></Setter>
+                                <Setter Property="BorderThickness" Value="0,0,0,5"></Setter>
+                                <Setter Property="Background" Value="#FF32393A"></Setter>
+                                <Setter Property="Foreground" Value="#15d6ff"></Setter>
+                                <Setter Property="Margin" Value="0,0,0,0"></Setter>
+                                <Setter Property="Padding" Value="0,5,0,5"></Setter>
+                                <Setter Property="FontFamily" Value="Century Gothic"></Setter>
+                                <Setter Property="FontWeight" Value="SemiBold"></Setter>
+                                <Setter Property="FontSize" Value="12"></Setter>
+
+                                <Style.Triggers>
+                                    <Trigger Property="IsEnabled" Value="False">
+                                        <Setter Property="Foreground" Value="#ff9425"></Setter>
+                                        <Setter Property="Background" Value="#FF32393A"></Setter>
+
+
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver"  Value="True">
+                                        <Setter Property="Foreground" Value="#ff9425"></Setter>
+                                        <Setter Property="Background" Value="#FF32393A"></Setter>
+
+
+
+                                    </Trigger>
+
+                                </Style.Triggers>
+
+                            </Style>
+
+                        </DataGrid.Resources>
+                        <!--   Style="{StaticResource  dataGrid_style}" -->
+                        <DataGrid.Columns  >
+                            <DataGridTextColumn Header="Offer package" Width="120"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Discount" Width="80"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Product's Name" Width="150"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Model No" Width="100"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Series Number" Width="150"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Category" Width="100"></DataGridTextColumn>
+
+
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+
+                    <!--Next Button-->
+
+                    <Button x:Name="offerfairnextbt"
+                 Height="40"
+                            
+                Width="130" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="550,60,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="offerfairnextbtClick" 
+                >
+                        <Button.Content>
+                            <Border CornerRadius="20,5,20,5"  
+                 Height="40"
+                Width="130" 
+                Margin="0"
+                Background="#15d6ff" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                <TextBlock   Text="Next" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="18" 
+                    FontWeight="Bold"
+                   TextAlignment="Center"/>
+
+                            </Border>
+                        </Button.Content>
+                    </Button>
+                    <!--Update Button-->
+
+                    <Button x:Name="offerUpdateUpdatebt"
+                 Height="40"
+                            
+                Width="130" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="550,120,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="offerUpdateClick" 
+                >
+                        <Button.Content>
+                            <Border CornerRadius="20,5,20,5"  
+                 Height="40"
+                Width="130" 
+                Margin="0"
+                Background="#15d6ff" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                <TextBlock   Text="Update" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="18" 
+                    FontWeight="Bold"
+                   TextAlignment="Center"/>
+
+                            </Border>
+                        </Button.Content>
+                    </Button>
+                    <!--Delete Button-->
+
+                    <Button x:Name="offerDelete"
+                 Height="40"
+                            
+                Width="130" 
+                Background="Transparent" 
+                            
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="550,180,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="offerDeleteClick" 
+                >
+                        <Button.Content>
+                            <Border CornerRadius="20,5,20,5"  
+                 Height="40"
+                Width="130" 
+                Margin="0"
+                Background="#15d6ff" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                <TextBlock   Text="Delete" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="18" 
+                    FontWeight="Bold"
+                   TextAlignment="Center"/>
+
+                            </Border>
+                        </Button.Content>
+                    </Button>
+
+                    <!--- Button offers-->
+
+                    <!--mega offers-->
+
+                    <Button x:Name="megaOfferbt"
+                 Height="35"
+                            
+                Width="130" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="5,0,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="megaOfferChecked" 
+                >
+                        <Button.Content>
+                            <Border CornerRadius="20"  
+                 Height="35"
+                Width="130" 
+                Margin="0"
+                Background="#15d6ff" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                <TextBlock   Text="Mega Offers" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="16" 
+                    FontWeight="Regular"
+                   TextAlignment="Center"/>
+
+                            </Border>
+                        </Button.Content>
+                    </Button>
+                    <!--Combo Offer Button-->
+
+                    <Button x:Name="ComboOfferbt"
+                 Height="35"
+                            
+                Width="150" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="140,0,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="ComboOffeChecked" 
+                >
+                        <Button.Content>
+                            <Border CornerRadius="20"  
+                 Height="35"
+                Width="150" 
+                Margin="0"
+                Background="#15d6ff" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                <TextBlock   Text="Combo Offer" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="16" 
+                    FontWeight="Regular"
+                   TextAlignment="Center"/>
+
+                            </Border>
+                        </Button.Content>
+                    </Button>
+                    <!--PriceRanges  Button-->
+
+                    <Button x:Name="PriceRangesbt"
+                 Height="35"
+                            
+                Width="140" 
+                Background="Transparent" 
+                            
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="295,0,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="PriceRangesChecked" 
+                >
+                        <Button.Content>
+                            <Border CornerRadius="20"  
+                 Height="35"
+                Width="140" 
+                Margin="0"
+                Background="#15d6ff" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                <TextBlock   Text="Price Ranges" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="16" 
+                    FontWeight="Regular"
+                   TextAlignment="Center"/>
+
+                            </Border>
+                        </Button.Content>
+                    </Button>
+
+                    <!--Combo Offer grid   -->
+
+                    <Grid x:Name="combooffergrid"
+                                 Width="150"
+                            Height="190"
+                         Margin="380,40,0,0"
+                             HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Background="Transparent">
+                        <Border x:Name="comboofferX"
+                            Width="150"
+                            Height="190"
+                            Background="Transparent"
+                      
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Margin="380,40,0,0">
+
+                        </Border>
+                        <!--add  Button-->
+                        <ListBox  x:Name="comboofferlistbox" Height="25" Width="145"  Margin="0,2,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" Background="#15d6ff" Foreground="White">
+                            <ListBoxItem Content="Total Item" RenderTransformOrigin="0.539,1.419"/>
+                            <ListBoxItem Content="2"/>
+                            <ListBoxItem Content="3"/>
+                            <ListBoxItem Content="4"/>
+                            <ListBoxItem Content="5 "/>
+                            <ListBoxItem Content="6 "/>
+                            <ListBoxItem Content="7 "/>
+                            <ListBoxItem Content="8 "/>
+                        </ListBox>
+                        <Button x:Name="ComboOfferbtadd"
+                 Height="40"
+                            
+                Width="100" 
+                Background="Transparent" 
+                Foreground="White"  
+          HorizontalAlignment="Center"
+                                VerticalAlignment="Top"
+                 Margin="0,30,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="ComboOffeChecked" 
+                >
+                            <Button.Content>
+                                <Border CornerRadius="10"  
+                 Height="40"
+                Width="100" 
+                Margin="0"
+                Background="#15d6ff" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                    <TextBlock   Text="Add Item" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="12" 
+                    FontWeight="Regular"
+                   TextAlignment="Center"/>
+
+                                </Border>
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+
+                    <!-- price ranges grid-->
+                    <Grid x:Name="pricerangesgrid"
+                                 Width="150"
+                            Height="190"
+                         Margin="380,40,0,0"
+                             HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Background="Transparent">
+                        <Border x:Name="pricerangesX"
+                            Width="150"
+                            Height="190"
+                            Background="Transparent"
+                      
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Margin="380,40,0,0">
+
+                        </Border>
+                        <!-- Label=> Lowest Price: & ComboBox-->
+                        <Label Content="Lowest Price"  Height="25" Width="145" Margin="0,2,0,0" Foreground="White" HorizontalAlignment="Left"  VerticalAlignment="Top"  Background="#15d6ff"  FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                        </Label>
+                        <TextBox x:Name="txtb_LowestPrice" Height="25" Width="145"  Margin="0,30,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Background="#15d6ff" Foreground="White" FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" />
+                        <!-- Label=> Lowest Price: & ComboBox-->
+                        <Label Content="Highest price"  Height="25" Width="145" Margin="0,60,0,0" Foreground="White" HorizontalAlignment="Left"  VerticalAlignment="Top"  Background="#15d6ff"  FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                        </Label>
+                        <TextBox x:Name="txtb_HighestPrice" Height="25" Width="145"  Margin="0,90,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  Background="#15d6ff" Foreground="White" FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" />
+                    </Grid>
+                    <!-- megaoffer grid-->
+                    <Grid x:Name="megaoffergrid"
+                                 Width="150"
+                            Height="190"
+                         Margin="380,40,0,0"
+                             HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Background="#FF01002B">
+                        <Border x:Name="megaofferX"
+                            Width="150"
+                            Height="190"
+                            Background="#FF01002B"
+                      
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Margin="380,40,0,0">
+
+                        </Border>
+                        
+                    </Grid>
+                </Grid>
+            </Border>
+
+        </Grid>

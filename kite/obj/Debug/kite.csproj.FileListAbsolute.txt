@@ -26,5 +26,5 @@ E:\github localpath\CSE3204PF\kite\bin\Debug\MaterialDesignThemes.Wpf.xml
 E:\github localpath\CSE3204PF\kite\obj\Debug\Login.g.cs
 E:\github localpath\CSE3204PF\kite\obj\Debug\Login.baml
 E:\github localpath\CSE3204PF\kite\obj\Debug\kite.csproj.CopyComplete
-E:\github localpath\CSE3204PF\kite\obj\Debug\UserControllogin.g.cs
-E:\github localpath\CSE3204PF\kite\obj\Debug\UserControllogin.baml
+E:\github localpath\CSE3204PF\kite\obj\Debug\CentralWindow.g.cs
+E:\github localpath\CSE3204PF\kite\obj\Debug\CentralWindow.baml

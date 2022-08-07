@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CustomerEmployeeAp"
         mc:Ignorable="d"
-        Title="CustomerEmployeeApp" Height="450" Width="800" Icon="/Untitled-1.jpg">
+        Title="CustomerEmployeeApp" Height="450" Width="800" Icon="/Untitled-1.jpg" MaxHeight="700" MaxWidth="1200">
     <Grid>
-        <Menu>
+        <Menu MaxWidth="1200" MaxHeight="700">
             <Menu Height="30" Width="783" FontSize="18" Background="#FF7998CF" Foreground="White">
                 <MenuItem x:Name="Customer" Header="Customer" Background="#FF7998CF" BorderBrush="Transparent">
                     <MenuItem Header="New Customer" Click="NewCustomer" Background="#FF128DB6"/>
@@ -28,6 +28,15 @@
                 </MenuItem>
             </Menu>
         </Menu>
+        <Grid Margin="-6,-6,6,6">
+            <ListBox Margin="20,83,586,83">
+                <ListBoxItem x:Name="Stock1" Content="Stock Input" />
+                <ListBoxItem Content="Offer Fair"/>
+                <ListBoxItem Content="Category"/>
+                <ListBoxItem Content="Billing"/>
+            </ListBox>
 
+
+        </Grid>
     </Grid>
 </Window>

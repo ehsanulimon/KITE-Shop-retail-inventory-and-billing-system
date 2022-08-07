@@ -7,8 +7,8 @@
         xmlns:local="clr-namespace:kite"
         mc:Ignorable="d"
            Title="loginWindow"
-        Height="800"
-        Width="749.2879"
+        Height="600"
+        Width="500"
         Background="Transparent"
         WindowStyle="None"
         AllowsTransparency="True"
@@ -36,12 +36,12 @@
     <Grid>
         <!--// Border //-->
 
-        <Border Height="800 "
-                Width="749.2879"
+        <Border Height="550"
+                Width="430"
                 Background="#01002b"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Center"
-                CornerRadius="25,25,200,25"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                CornerRadius="15,15,100,15"
                  
                  />
 
@@ -49,23 +49,178 @@
         <Grid Name="logo" 
               VerticalAlignment="Top"
               HorizontalAlignment="Left"
-              Margin="40,28,0,0"
-               Height="97.8589 "
-               Width="74.5532 ">
+              Margin="30,20,0,0"
+               Height="75"
+               Width="50">
             <Image Source="img/logo.png" />
         </Grid>
 
 
+
+        <!--login_grid-->
+
+        <Grid Name="login_grid" >
+            <Border x:Name="login_gridX"
+                    Height="400 "
+                Width="370"
+                Background="#ff9425"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                    Margin="30,100,0,0"
+                CornerRadius="0,200,0,0"
+                 >
+
+
+                <!-- login content-->
+                <Grid>
+                    
+                    <Label Content="Email"  Foreground="White" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Height="30" Width="60" FontSize="16" FontFamily="Calibri"/>
+                    <TextBox x:Name="txtb_Email_login" HorizontalAlignment="Left" Height="25" Margin="70,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" />
+                    <!-- Label & Textbox-->
+                    <Label Content="Password"  Foreground="White" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top" Height="30" Width="80" FontSize="16" FontFamily="Calibri"/>
+                    <PasswordBox x:Name="txtb_Password_login" HorizontalAlignment="Left" Height="25" Margin="130,140,0,0"  VerticalAlignment="Top" Width="160" FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" />
+
+                    <!--loginbtn_login Button-->
+                    <Button x:Name="loginbtn_login"
+                Height="40"
+                Width="100" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="80,340,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="loginbtn_loginClick"
+                >
+                        <Button.Content>
+                            <Border CornerRadius="10"  
+                 Height="40"
+                Width="100" 
+                Margin="0"
+                Background="#15d6ff" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                <TextBlock  Text="Submit" 
+                    FontFamily="Century Gothic" 
+                    FontSize="18" 
+                    FontWeight="Bold"
+                    VerticalAlignment="Center"
+                   TextAlignment="Center"/>
+                            </Border>
+                        </Button.Content>
+                    </Button>
+                    <!--Clear  Button-->
+                    <Button x:Name="Clearbtn_login"
+                Height="40"
+                Width="100" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="190,340,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+               
+                 Style="{StaticResource SomeButtonStyle}" Click="Clearbtn_loginClick"
+                >
+                        <Button.Content>
+                            <Border CornerRadius="10"  
+                   Height="40"
+                Width="100"  
+                Margin="0"
+                Background="#15d6ff" 
+                BorderBrush="Transparent" 
+                                      
+                        BorderThickness="4,4,4,4" >
+                                <TextBlock  Text="Clear" 
+                        VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="18" 
+                    FontWeight="Bold"
+                   TextAlignment="Center"/>
+                            </Border>
+                        </Button.Content>
+                    </Button>
+
+                </Grid>
+
+            </Border>
+
+        </Grid>
+        <!--Registration   Button-->
+        <Button x:Name="Registrationbtn"
+                     Height="40"
+                Width="140"
+                Background="#01002b" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="100,10,0,0"
+                BorderThickness="0" 
+                BorderBrush="#01002b"
+                 Style="{StaticResource SomeButtonStyle}" Click="RegistrationbtnClick"
+                >
+            <Button.Content>
+                <Border CornerRadius="10"  
+                    Height="40"
+                Width="140"
+                Margin="0"
+                Background="#15d6ff" 
+                BorderBrush="#01002b" 
+                 BorderThickness="4,4,4,4" >
+                    <TextBlock  Text="Registration" 
+                                 VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="18" 
+                    FontWeight="Bold"
+                   TextAlignment="Center"/>
+                </Border>
+            </Button.Content>
+        </Button>
+        <!--Sign in Button-->
+        <Button x:Name="Signinbtn"
+                    Height="40"
+                Width="100" 
+                Background="#01002b" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="240,10,0,0"
+                BorderThickness="0" 
+                BorderBrush="#01002b" 
+                Click="SigninbtnClick"
+                 Style="{StaticResource SomeButtonStyle}"
+                >
+            <Button.Content>
+                <Border CornerRadius="10"  
+                     Height="40"
+                Width="100"
+                Margin="0"
+                Background="#ff9425" 
+                BorderBrush="#01002b" 
+                 BorderThickness="4,4,4,4" >
+                    <TextBlock  Text="Sign in" 
+                                 VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="18" 
+                    FontWeight="Bold"
+                   TextAlignment="Center"/>
+                </Border>
+            </Button.Content>
+        </Button>
+
         <!--Exit Button-->
 
         <Button x:Name="exitbtn"
-                Height="48.7805 "
-                Width="75.6098 " 
+                 Height="40"
+                Width="60" 
                 Background="#01002b" 
                 Foreground="White"  
-                 HorizontalAlignment="Right"
+                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                 Margin="0,15,15,0"
+                 Margin="370,10,0,0"
                 BorderThickness="0" 
                 BorderBrush="#01002b" 
                 Click="exitbtnClick"
@@ -73,133 +228,16 @@
                 >
             <Button.Content>
                 <Border CornerRadius="10"  
-                 Height="48.7805 "
-                Width="75.6098 " 
+                 Height="40"
+                Width="60" 
                 Margin="0"
                 Background="#f10000" 
                 BorderBrush="#01002b" 
-                 BorderThickness="4,5,4,4" >
+                 BorderThickness="4,4,4,4" >
                     <TextBlock  Text="Exit" 
+                                VerticalAlignment="Center"
                     FontFamily="Century Gothic" 
-                    FontSize="28" 
-                    FontWeight="Bold"
-                   TextAlignment="Center"/>
-                </Border>
-            </Button.Content>
-        </Button>
-
-        <!--login_grid-->
-
-        <Grid Name="login_grid" >
-            <Border x:Name="login_gridX" Height="600 "
-                Width="570"
-                Background="#ff9425"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Left"
-                    Margin="60,135,0,0"
-                CornerRadius="0,300,0,0"
-                 >
-
-
-            <!-- login content-->
-            <Grid>
-
-                <Label Content="Email"  Foreground="White" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" Height="36.5854" Width="100" FontSize="24" FontFamily="Calibri"/>
-                <TextBox x:Name="txtb_Email_login" HorizontalAlignment="Left" Height="36.5854" Margin="120,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="275.6098 " FontSize="24" FontFamily="Calibri" BorderBrush="{x:Null}" />
-                <!-- Label & Textbox-->
-                <Label Content="Password"  Foreground="White" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" Height="36.5854" Width="100" FontSize="24" FontFamily="Calibri"/>
-                <TextBox x:Name="txtb_Password_login" HorizontalAlignment="Left" Height="36.5854" Margin="120,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="275.6098 " FontSize="24" FontFamily="Calibri" BorderBrush="{x:Null}" />
-
-                    <!--login Button-->
-                    <Button x:Name="loginbtn_login"
-                Height="48.7805 "
-                Width="151.2195 " 
-                Background="Transparent" 
-                Foreground="White"  
-                 HorizontalAlignment="Left"
-                 VerticalAlignment="Top"
-                 Margin="140,539,0,0"
-                BorderThickness="0" 
-                BorderBrush="Transparent" 
-                Click="Submitbtn_regClick"
-                 Style="{StaticResource SomeButtonStyle}"
-                >
-                    <Button.Content>
-                        <Border CornerRadius="10"  
-                 Height="48.7805 "
-                Width="151.2195" 
-                Margin="0"
-                Background="#15d6ff" 
-                BorderBrush="Transparent" 
-                 BorderThickness="4,5,4,4" >
-                                <TextBlock  Text="login" 
-                    FontFamily="Century Gothic" 
-                    FontSize="28" 
-                    FontWeight="Bold"
-                   TextAlignment="Center"/>
-                        </Border>
-                    </Button.Content>
-                </Button>
-                <!--Clear  Button-->
-                    <Button x:Name="Clearbtn_login"
-                Height="48.7805 "
-                Width="151.2195 " 
-                Background="Transparent" 
-                Foreground="White"  
-                 HorizontalAlignment="Left"
-                 VerticalAlignment="Top"
-                 Margin="300,539,0,0"
-                BorderThickness="0" 
-                BorderBrush="Transparent" 
-                Click="Clearbtn_regClick"
-                 Style="{StaticResource SomeButtonStyle}"
-                >
-                    <Button.Content>
-                        <Border CornerRadius="10"  
-                 Height="48.7805 "
-                Width="151.2195" 
-                Margin="0"
-                Background="#15d6ff" 
-                BorderBrush="Transparent" 
-                 BorderThickness="4,5,4,4" >
-                            <TextBlock  Text="Clear" 
-                    FontFamily="Century Gothic" 
-                    FontSize="28" 
-                    FontWeight="Bold"
-                   TextAlignment="Center"/>
-                        </Border>
-                    </Button.Content>
-                </Button>
-
-            </Grid>
-            </Border>
-
-        </Grid>
-        <!--Login Button-->
-        <Button x:Name="loginbtn"
-                Height="48.7805"
-                Width="151.2195" 
-                Background="#01002b" 
-                Foreground="White"  
-                 HorizontalAlignment="Left"
-                 VerticalAlignment="Top"
-                 Margin="499,15,0,0"
-                BorderThickness="0" 
-                BorderBrush="#01002b" 
-                Click="LoginbtnClick"
-                 Style="{StaticResource SomeButtonStyle}"
-                >
-            <Button.Content>
-                <Border CornerRadius="10"  
-                 Height="48.7805 "
-                Width="151.219" 
-                Margin="0"
-                Background="#ff9425" 
-                BorderBrush="#01002b" 
-                 BorderThickness="4,5,4,4" >
-                    <TextBlock  Text="Login" 
-                    FontFamily="Century Gothic" 
-                    FontSize="28" 
+                    FontSize="18" 
                     FontWeight="Bold"
                    TextAlignment="Center"/>
                 </Border>
@@ -209,44 +247,44 @@
         <!--Registration_grid-->
 
         <Grid  Name="Registration_grid">
-            <Border x:Name="Registration_gridX" Height="600 "
-                Width="570"
+            <Border x:Name="Registration_gridX" Height="400 "
+                Width="370"
                 Background="#15d6ff"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Left"
-                    Margin="60,135,0,0"
-                CornerRadius="0,300,0,0"
+                    Margin="30,100,0,0"
+                CornerRadius="0,200,0,0"
                  >
                 <!-- Reg content-->
                 <Grid>
                     <!-- Label & Textbox-->
-                    <Label Content="Name"  Foreground="White" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Height="36.5854" Width="100" FontSize="24" FontFamily="Calibri"/>
-                    <TextBox x:Name="txtb_Name_user" HorizontalAlignment="Left" Height="36.5854" Margin="120,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="275.6098 " FontSize="24" FontFamily="Calibri" BorderBrush="{x:Null}" />
+                    <Label Content="Name"  Foreground="White" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Height="30" Width="60" FontSize="16" FontFamily="Calibri"/>
+                    <TextBox x:Name="txtb_Name_user" HorizontalAlignment="Left" Height="25" Margin="70,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" />
                     <!-- Label & Textbox-->
-                    <Label Content="Email"  Foreground="White" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" Height="36.5854" Width="100" FontSize="24" FontFamily="Calibri"/>
-                    <TextBox x:Name="txtb_Email_user" HorizontalAlignment="Left" Height="36.5854" Margin="120,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="275.6098 " FontSize="24" FontFamily="Calibri" BorderBrush="{x:Null}" />
+                    <Label Content="Email"  Foreground="White" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Height="30" Width="60" FontSize="16" FontFamily="Calibri"/>
+                    <TextBox x:Name="txtb_Email_user" HorizontalAlignment="Left" Height="25" Margin="70,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" />
                     <!-- Label & Textbox-->
-                    <Label Content="Password"  Foreground="White" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" Height="36.5854" Width="100" FontSize="24" FontFamily="Calibri"/>
-                    <TextBox x:Name="txtb_Password_user" HorizontalAlignment="Left" Height="36.5854" Margin="120,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="275.6098 " FontSize="24" FontFamily="Calibri" BorderBrush="{x:Null}" />
+                    <Label Content="Password"  Foreground="White" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top" Height="30" Width="80" FontSize="16" FontFamily="Calibri"/>
+                    <PasswordBox x:Name="txtb_Password_user" HorizontalAlignment="Left" Height="25" Margin="130,140,0,0"  VerticalAlignment="Top" Width="160" FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" />
                     <!-- Label & Textbox-->
-                    <Label Content="Repeat Password"  Foreground="White" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,200,0,0" VerticalAlignment="Top" Height="36.5854" Width="190" FontSize="24" FontFamily="Calibri"/>
-                    <TextBox x:Name="txtb_RepeatPassword_user" HorizontalAlignment="Left" Height="36.5854" Margin="200,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="275.6098 " FontSize="24" FontFamily="Calibri" BorderBrush="{x:Null}" />
+                    <Label Content="Repeat Password"  Foreground="White" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top" Height="30" Width="120" FontSize="16" FontFamily="Calibri"/>
+                    <PasswordBox x:Name="txtb_RepeatPassword_user" HorizontalAlignment="Left" Height="25" Margin="130,170,0,0"  VerticalAlignment="Top" Width="160" FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" />
                     <!-- Label & CheckBok-->
-                    <CheckBox x:Name="ckb_freetrial" HorizontalAlignment="Left" Margin="50,270,0,0" VerticalAlignment="Top" Height="36.5854" Width="30" RenderTransformOrigin="10,0.521" />
-                    <Label Content="30 day free trial"  Foreground="#FFFF9425" Background="{x:Null}" HorizontalAlignment="Left" Margin="70,260,0,0" VerticalAlignment="Top" Height="36.5854" Width="190" FontSize="24" FontFamily="Calibri"/>
+                    <CheckBox x:Name="ckb_freetrial" HorizontalAlignment="Left" Margin="20,214,0,0" VerticalAlignment="Top" Height="37" Width="30" RenderTransformOrigin="10,0.521" />
+                    <Label Content="30 day free trial"  Foreground="#FFFF9425" Background="{x:Null}" HorizontalAlignment="Left" Margin="50,205,0,0" VerticalAlignment="Top" Height="30" Width="140" FontSize="16" FontFamily="Calibri"/>
 
                     <!-- Label & Textbox-->
-                    <Label Content="Activated Key"  Foreground="White" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,310,0,0" VerticalAlignment="Top" Height="36.5854" Width="150" FontSize="24" FontFamily="Calibri"/>
-                    <TextBox x:Name="txtb_ActivatedKey" HorizontalAlignment="Left" Height="36.5854" Margin="200,310,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="275.6098 " FontSize="24" FontFamily="Calibri" BorderBrush="{x:Null}" Background="#FFABA3A3" Foreground="White" />
+                    <Label Content="Activated Key"  Foreground="White" Background="{x:Null}" HorizontalAlignment="Left" Margin="20,242,0,0" VerticalAlignment="Top" Height="30" Width="100" FontSize="16" FontFamily="Calibri"/>
+                    <TextBox x:Name="txtb_ActivatedKey" HorizontalAlignment="Left" Height="25" Margin="130,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" Background="#FFABA3A3" Foreground="White" />
                     <!--Submit Button-->
                     <Button x:Name="Submitbtn_reg"
-                Height="48.7805 "
-                Width="151.2195 " 
+                Height="40"
+                Width="100" 
                 Background="Transparent" 
                 Foreground="White"  
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top"
-                 Margin="140,539,0,0"
+                 Margin="80,340,0,0"
                 BorderThickness="0" 
                 BorderBrush="Transparent" 
                 Click="Submitbtn_regClick"
@@ -254,29 +292,30 @@
                 >
                         <Button.Content>
                             <Border CornerRadius="10"  
-                 Height="48.7805 "
-                Width="151.2195" 
+                 Height="40"
+                Width="100" 
                 Margin="0"
                 Background="#ff9425" 
                 BorderBrush="Transparent" 
-                 BorderThickness="4,5,4,4" >
+                 BorderThickness="4,4,4,4" >
                                 <TextBlock  Text="Submit" 
                     FontFamily="Century Gothic" 
-                    FontSize="28" 
+                    FontSize="18" 
                     FontWeight="Bold"
+                    VerticalAlignment="Center"
                    TextAlignment="Center"/>
                             </Border>
                         </Button.Content>
                     </Button>
                     <!--Clear  Button-->
                     <Button x:Name="Clearbtn_reg"
-                Height="48.7805 "
-                Width="151.2195 " 
+                Height="40"
+                Width="100" 
                 Background="Transparent" 
                 Foreground="White"  
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top"
-                 Margin="300,539,0,0"
+                 Margin="190,340,0,0"
                 BorderThickness="0" 
                 BorderBrush="Transparent" 
                 Click="Clearbtn_regClick"
@@ -284,15 +323,17 @@
                 >
                         <Button.Content>
                             <Border CornerRadius="10"  
-                 Height="48.7805 "
-                Width="151.2195" 
+                   Height="40"
+                Width="100"  
                 Margin="0"
                 Background="#ff9425" 
                 BorderBrush="Transparent" 
-                 BorderThickness="4,5,4,4" >
+                                      
+                        BorderThickness="4,4,4,4" >
                                 <TextBlock  Text="Clear" 
+                        VerticalAlignment="Center"
                     FontFamily="Century Gothic" 
-                    FontSize="28" 
+                    FontSize="18" 
                     FontWeight="Bold"
                    TextAlignment="Center"/>
                             </Border>
@@ -300,40 +341,12 @@
                     </Button>
 
                 </Grid>
-               
+
             </Border>
-        
-  
+
+
         </Grid>
-        <!--Registration   Button-->
-        <Button x:Name="Registrationbtn"
-                Height="48.7805"
-                Width="219.5122 " 
-                Background="#01002b" 
-                Foreground="White"  
-                 HorizontalAlignment="Left"
-                 VerticalAlignment="Top"
-                 Margin="275,15,0,0"
-                BorderThickness="0" 
-                BorderBrush="#01002b"
-                 Style="{StaticResource SomeButtonStyle}" Click="RegistrationbtnClick"
-                >
-            <Button.Content>
-                <Border CornerRadius="10"  
-                 Height="48.7805 "
-                Width="219.5122" 
-                Margin="0"
-                Background="#15d6ff" 
-                BorderBrush="#01002b" 
-                 BorderThickness="4,5,4,4" >
-                    <TextBlock  Text="Registration" 
-                    FontFamily="Century Gothic" 
-                    FontSize="28" 
-                    FontWeight="Bold"
-                   TextAlignment="Center"/>
-                </Border>
-            </Button.Content>
-        </Button>
+       
 
     </Grid>
 </Window>
