@@ -1,9 +1,0 @@
-ADD   Clean  Print
-
-Customer Name:   
-Address:
-Mobile No:
-Email:
-
-Warranty:
-VAT:

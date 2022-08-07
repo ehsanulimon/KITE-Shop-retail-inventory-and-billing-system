@@ -74,3 +74,24 @@ quantity
 ###Billing
 
 ###Account
+
+Offer package        megaOffer     megaOfferChecked
+Discount
+mega offers
+Combo Offer                  ComboOfferbt ComboOffeChecked
+Price Ranges       PriceRanges PriceRangesChecked
+
+Previous Previousbt_category  Previousbt_categoryClick 
+Next     Nextbt_category       Nextbt_categoryClick 
+
+Search 
+
+ADD   Clean  Print
+
+Customer Name:   
+Address:
+Mobile No:
+Email:
+
+Warranty:
+VAT:
