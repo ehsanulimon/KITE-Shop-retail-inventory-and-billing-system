@@ -83,18 +83,20 @@ namespace kite
            
         }
 
-      /*  private void StockInput_MLBD(object sender, MouseButtonEventArgs e)
+        private void StockInput_MLBD(object sender, MouseButtonEventArgs e)
         {
            OfferFairgridX.Visibility = Visibility.Collapsed;
            CategorygridX.Visibility = Visibility.Collapsed;
           BillinggridX.Visibility = Visibility.Collapsed;
            AccountgridX.Visibility = Visibility.Collapsed;
+            StartGrid.Visibility = Visibility.Collapsed;
 
             //Visible
-           StockinputgridX.Visibility = Visibility.Visible;
+            StockinputgridX.Visibility = Visibility.Visible;
+            
         }
-      */
-   /*     private void StockinputADDClick(object sender, RoutedEventArgs e)
+      
+       private void StockinputADDClick(object sender, RoutedEventArgs e)
         {
 
         }
@@ -107,18 +109,19 @@ namespace kite
         private void StockinputDeleteClick(object sender, RoutedEventArgs e)
         {
 
-        } */
-  /*        private void OfferFair_MLBD(object sender, MouseButtonEventArgs e)
+        } 
+          private void OfferFair_MLBD(object sender, MouseButtonEventArgs e)
     {
       StockinputgridX.Visibility = Visibility.Collapsed;
 CategorygridX.Visibility = Visibility.Collapsed;
 BillinggridX.Visibility = Visibility.Collapsed;
 AccountgridX.Visibility = Visibility.Collapsed;
-//Visible
-OfferFairgridX.Visibility = Visibility.Visible;
-        } */
+            StartGrid.Visibility = Visibility.Collapsed;
+            //Visible
+            OfferFairgridX.Visibility = Visibility.Visible;
+        } 
 
-    /*    private void offerfairnextbtClick(object sender, RoutedEventArgs e)
+        private void offerfairnextbtClick(object sender, RoutedEventArgs e)
         {
 
         }
@@ -132,8 +135,8 @@ OfferFairgridX.Visibility = Visibility.Visible;
         {
 
         }
-        */
-/*    
+        
+   
 
         private void megaOfferChecked(object sender, RoutedEventArgs e)
         {
@@ -156,19 +159,20 @@ OfferFairgridX.Visibility = Visibility.Visible;
             megaoffergrid.Visibility = Visibility.Collapsed;
             pricerangesgrid.Visibility = Visibility.Visible;
         }
-        */
+        
 
-   /*    private void Category_MLBD(object sender, MouseButtonEventArgs e)
+      private void Category_MLBD(object sender, MouseButtonEventArgs e)
 {
 StockinputgridX.Visibility = Visibility.Collapsed;
 OfferFairgridX.Visibility = Visibility.Collapsed;
 BillinggridX.Visibility = Visibility.Collapsed;
 AccountgridX.Visibility = Visibility.Collapsed;
-Visible
-CategorygridX.Visibility = Visibility.Visible;
-} */
+            StartGrid.Visibility = Visibility.Collapsed;
+            //Visible
+            CategorygridX.Visibility = Visibility.Visible;
+} 
 
-     /*   private void NextbtcategoryClick(object sender, RoutedEventArgs e)
+       private void NextbtcategoryClick(object sender, RoutedEventArgs e)
         {
 
        
@@ -245,17 +249,18 @@ CategorygridX.Visibility = Visibility.Visible;
         {
 
         }
-        */
+        
 
 
-      private void Billing_MLBD(object sender, MouseButtonEventArgs e)
+     private void Billing_MLBD(object sender, MouseButtonEventArgs e)
 {
-//StockinputgridX.Visibility = Visibility.Collapsed;
-//OfferFairgridX.Visibility = Visibility.Collapsed;
-//CategorygridX.Visibility = Visibility.Collapsed;
-//AccountgridX.Visibility = Visibility.Collapsed;
-//Visible
-BillinggridX.Visibility = Visibility.Visible;
+StockinputgridX.Visibility = Visibility.Collapsed;
+OfferFairgridX.Visibility = Visibility.Collapsed;
+CategorygridX.Visibility = Visibility.Collapsed;
+AccountgridX.Visibility = Visibility.Collapsed;
+            StartGrid.Visibility = Visibility.Collapsed;
+            //Visible
+            BillinggridX.Visibility = Visibility.Visible;
 
 }
 
@@ -266,24 +271,63 @@ BillinggridX.Visibility = Visibility.Visible;
 
         private void BillingCleanClick(object sender, RoutedEventArgs e)
         {
-
+          
         }
 
         private void BillingPrintClick(object sender, RoutedEventArgs e)
         {
+            
+        }
+        private void BillingPrintpreviewbtClick(object sender, RoutedEventArgs e)
+        {
 
         }
 
+        private void CustomertextboxcleanClick(object sender, RoutedEventArgs e)
+        {
 
-        /* private void Account_MLBD(object sender, MouseButtonEventArgs e)
+        }
+
+        private void productstextboxCleanClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+    
+
+ private void Account_MLBD(object sender, MouseButtonEventArgs e)
 {
 StockinputgridX.Visibility = Visibility.Collapsed;
 OfferFairgridX.Visibility = Visibility.Collapsed;
 CategorygridX.Visibility = Visibility.Collapsed;
 BillinggridX.Visibility = Visibility.Collapsed;
-//Visible
-AccountgridX.Visibility = Visibility.Visible;
+            StartGrid.Visibility = Visibility.Collapsed;
+            //Visible
+            AccountgridX.Visibility = Visibility.Visible;
+          
 
-} */
+}
+
+        private void AccountInstallmentsClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AccountBalancebtClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AccountPrintpreviewClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AccountPrintClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+     
     }
 }

@@ -34,7 +34,7 @@ namespace kite
        
         private void nextbtnClick(object sender, RoutedEventArgs e)
         {
-            CentralWindow op = new CentralWindow();
+            Login op = new Login();
             op.Show();
             Close();
         }
@@ -61,7 +61,7 @@ namespace kite
             }
             if (counter == 100)
             {
-                CentralWindow op = new CentralWindow();
+                Login op = new Login();
                 op.Show();
                 Close();
             }

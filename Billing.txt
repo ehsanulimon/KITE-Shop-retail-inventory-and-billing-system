@@ -1,0 +1,400 @@
+
+        <Grid  Name="Billinggrid" >
+            <Border x:Name="BillinggridX" Height="500"
+                Width="700"
+                Background="Transparent"
+                   
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                    Margin="180,40,0,0"
+              
+                 >
+                <Grid>
+                    <!-- Label=> products Name: & Textbox-->
+                    <Label Content="Products Name"  Height="27" Width="120" Margin="0,10,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <TextBox x:Name="txtb_ProductsName_billing" Height="25" Width="200"  Margin="120,10,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="14" FontFamily="Century Gothic" BorderBrush="{x:Null}" />
+
+                    <!-- Label=>Model No:: & ComboBox-->
+                    <Label Content="Model No"  Height="27" Width="120" Margin="0,40,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <ComboBox x:Name="cmb_box_ModelNo_billing" Height="25" Width="200"  Margin="120,40,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="14" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
+                        <ComboBoxItem Content="1"/>
+                        <ComboBoxItem Content="2"/>
+                        <ComboBoxItem Content="3"/>
+                        <ComboBoxItem Content="4"/>
+                    </ComboBox>
+
+                    <!-- Label=>Category::: & ComboBox-->
+                    <Label Content="Category"  Height="27" Width="120" Margin="0,70,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <ComboBox x:Name="cmb_box_ProductsCategory_billing" Height="25" Width="200"  Margin="120,70,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="14" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
+                        <ComboBoxItem Content="1"/>
+                        <ComboBoxItem Content="2"/>
+                        <ComboBoxItem Content="3"/>
+                        <ComboBoxItem Content="4"/>
+                    </ComboBox>
+                    <!-- Label=>price::: & Textbox-->
+                    <Label Content="Price"  Height="25" Width="120" Margin="0,100,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <TextBox x:Name="txtb_Price_billing" Height="25" Width="200"  Margin="120,100,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="14" FontFamily="Century Gothic" BorderBrush="{x:Null}" />
+                    <!-- Label=>Quantity ::: & ComboBox-->
+                    <Label Content="Quantity"  Height="25" Width="120" Margin="0,130,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <ComboBox x:Name="cmb_box_Quantity_billing" Height="25" Width="200"  Margin="120,130,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="14" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
+                        <ComboBoxItem Content="1"/>
+                        <ComboBoxItem Content="2"/>
+                        <ComboBoxItem Content="3"/>
+                        <ComboBoxItem Content="4"/>
+                    </ComboBox>
+
+                    <!--productsClean   Button-->
+
+                    <Button x:Name="productstextboxClean"
+                 Height="15"
+                            
+                Width="30" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="300,157,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="productstextboxCleanClick" 
+                >
+                        <Button.Content>
+                            <Border CornerRadius="5"  
+                 Height="15"
+                Width="30" 
+                Margin="0"
+                Background="Red" 
+                BorderBrush="Transparent" 
+                 BorderThickness="0" >
+                                <TextBlock   Text="x" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="17" 
+                    FontWeight="Medium"
+                   TextAlignment="Center"/>
+
+                            </Border>
+                        </Button.Content>
+                    </Button>
+                    
+                    <!---Customer info -->
+                    <!-- Label=>Customer Name:::: & Textbox-->
+                    <Label Content="Customer Name"  Height="27" Width="120" Margin="0,180,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <TextBox x:Name="txtb_CustomerName_billing" Height="25" Width="200"  Margin="120,180,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="16" FontFamily="Century Gothic" BorderBrush="{x:Null}" />
+                    <!-- Label=>Address:::: & Textbox-->
+                    <Label Content="Address "  Height="27" Width="120" Margin="0,210,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <TextBox x:Name="txtb_CustomerAddress_billing" Height="25" Width="200"  Margin="120,210,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="16" FontFamily="Century Gothic" BorderBrush="{x:Null}" />
+
+                    <!-- Label=>Mobile No:::: & Textbox-->
+                    <Label Content="Mobile No"  Height="27" Width="120" Margin="0,240,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <TextBox x:Name="txtb_CustomerMobileNo_billing" Height="25" Width="200"  Margin="120,240,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="16" FontFamily="Century Gothic" BorderBrush="{x:Null}" />
+
+                    <!-- Label=>Email:::: & Textbox-->
+                    <Label Content="Email"  Height="27" Width="90" Margin="0,270,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <TextBox x:Name="txtb_CustomerEmail_billing" Height="25" Width="230"  Margin="90,270,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="16" FontFamily="Century Gothic" BorderBrush="{x:Null}" />
+                    <!--CustomerClean   Button-->
+
+                    <Button x:Name="CustomertextboxClean"
+                 Height="15"
+                            
+                Width="30" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="300,297,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="CustomertextboxcleanClick" 
+                >
+                        <Button.Content>
+                            <Border CornerRadius="5"  
+                 Height="15"
+                Width="30" 
+                Margin="0"
+                Background="Red" 
+                BorderBrush="Transparent" 
+                 BorderThickness="0" >
+                                <TextBlock   Text="x" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="17" 
+                    FontWeight="Medium"
+                   TextAlignment="Center"/>
+
+                            </Border>
+                        </Button.Content>
+                    </Button>
+                    <!---service section -->
+
+                    <!-- Label=>Discount package: & ComboBox-->
+                    <Label Content="Discount"  Height="27" Width="120" Margin="0,320,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <ComboBox x:Name="cmb_box_Discountpackage_billing" Height="25" Width="200"  Margin="120,320,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="12" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
+
+                        <ComboBoxItem Content="a"></ComboBoxItem>
+                        <ComboBoxItem Content="a"></ComboBoxItem>
+                        <ComboBoxItem Content="a"></ComboBoxItem>
+                        <ComboBoxItem Content="a"></ComboBoxItem>
+
+                    </ComboBox>
+
+                    <!-- Label=>Warranty: & ComboBox-->
+                    <Label Content="Warranty"  Height="27" Width="120" Margin="0,350,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <ComboBox x:Name="cmb_box_Warranty_billing" Height="25" Width="200"  Margin="120,350,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="12" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
+                
+
+                        <ComboBoxItem Content="1 months"/>
+                        <ComboBoxItem Content="3 months"/>
+                        <ComboBoxItem Content="4 months"/>
+                        <ComboBoxItem Content="6 months"/>
+                        <ComboBoxItem Content="12 months"/>
+                        <ComboBoxItem Content="1 years"/>
+                        <ComboBoxItem Content="2 years"/>
+                        <ComboBoxItem Content="3 years"/>
+                        <ComboBoxItem Content="4 years"/>
+                        <ComboBoxItem Content="5 years"/>
+                        <ComboBoxItem Content="6 years"/>
+                        <ComboBoxItem Content="7 years"/>
+                        <ComboBoxItem Content="8 years"/>
+                        <ComboBoxItem Content="9 years"/>
+                        <ComboBoxItem Content="10 years"/>
+                        <ComboBoxItem Content="15 years"/>
+                    </ComboBox>
+
+                    <!-- Label=>VAT:::: & ComboBox-->
+                    <Label Content="VAT"  Height="27" Width="120" Margin="0,380,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+
+                    </Label>
+                    <ComboBox x:Name="cmb_box_VAT_billing" Height="27" Width="200"  Margin="120,380,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="12" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
+                        <ComboBoxItem Content="0.1%"/>
+                        <ComboBoxItem Content="0.2%"/>
+                        <ComboBoxItem Content="0.3%"/>
+                        <ComboBoxItem Content="0.4%"/>
+                        <ComboBoxItem Content="0.5%"/>
+                        <ComboBoxItem Content="0.6%"/>
+                        <ComboBoxItem Content="0.7%"/>
+                        <ComboBoxItem Content="0.8%"/>
+                        <ComboBoxItem Content="0.9%"/>
+
+                        <ComboBoxItem Content="1%"/>
+                        <ComboBoxItem Content="2%"/>
+                        <ComboBoxItem Content="3%"/>
+                        <ComboBoxItem Content="4%"/>
+                        <ComboBoxItem Content="5%"/>
+                        <ComboBoxItem Content="6%"/>
+                        <ComboBoxItem Content="7%"/>
+                        <ComboBoxItem Content="8%"/>
+                        <ComboBoxItem Content="9%"/>
+                        
+                        <ComboBoxItem Content="10%"/>
+                        <ComboBoxItem Content="11%"/>
+                        <ComboBoxItem Content="12%"/>
+                        <ComboBoxItem Content="13%"/>
+                        <ComboBoxItem Content="14%"/>
+                        <ComboBoxItem Content="15%"/>
+                        <ComboBoxItem Content="16%"/>
+                        <ComboBoxItem Content="17%"/>
+                        <ComboBoxItem Content="18%"/>
+                        <ComboBoxItem Content="19%"/>
+                        <ComboBoxItem Content="20%"/>
+                        <ComboBoxItem Content="21%"/>
+                        <ComboBoxItem Content="22%"/>
+                        <ComboBoxItem Content="23%"/>
+                        <ComboBoxItem Content="24%"/>
+                        <ComboBoxItem Content="25%"/>
+                        
+                        <ComboBoxItem Content="30%"/>
+                        <ComboBoxItem Content="35%"/>
+                        <ComboBoxItem Content="40%"/>
+                        <ComboBoxItem Content="45%"/>
+                        <ComboBoxItem Content="50%"/>
+                        <ComboBoxItem Content="55%"/>
+                    </ComboBox>
+                    <!-- Billing ADD Button-->
+
+                    <Button x:Name="BillingADD"
+                 Height="30"
+                            
+                Width="90" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="0,460,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="BillingADDClick" 
+                >
+                        <Button.Content>
+                            <Border CornerRadius="10"  
+                 Height="30"
+                Width="90" 
+                Margin="0"
+                Background="#ff9425" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                <TextBlock   Text="Add" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="14" 
+                    FontWeight="Medium"
+                   TextAlignment="Center"/>
+
+                            </Border>
+                        </Button.Content>
+                    </Button>
+                    <!--BillingClean   Button-->
+
+                    <Button x:Name="BillingClean"
+                 Height="30"
+                            
+                Width="90" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="85,460,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="BillingCleanClick" 
+                >
+                        <Button.Content>
+                            <Border CornerRadius="10"  
+                 Height="30"
+                Width="90" 
+                Margin="0"
+                Background="#ff9425" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                <TextBlock   Text="Clean" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="14" 
+                    FontWeight="Medium"
+                   TextAlignment="Center"/>
+
+                            </Border>
+                        </Button.Content>
+                    </Button>
+                    <!--BillingPrintpreview Button-->
+
+                    <Button x:Name="BillingPrintpreview"
+                 Height="30"
+                            
+                Width="90" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="170,460,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="BillingPrintpreviewClick" 
+                >
+                        <Button.Content>
+                            <Border CornerRadius="10"  
+                 Height="30"
+                Width="90" 
+                Margin="0"
+                Background="#15d6ff" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                <TextBlock   Text="Preview" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="14" 
+                    FontWeight="Medium"
+                   TextAlignment="Center"/>
+
+                            </Border>
+                        </Button.Content>
+                    </Button>
+                    <!--BillingPrint Button-->
+
+                    <Button x:Name="BillingPrint"
+                 Height="30"
+                            
+                Width="90" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="255,460,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="BillingPrintClick" 
+                >
+                        <Button.Content>
+                            <Border CornerRadius="10"  
+                 Height="30"
+                Width="90" 
+                Margin="0"
+                Background="#15d6ff" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                <TextBlock   Text="Print" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="14" 
+                    FontWeight="Medium"
+                   TextAlignment="Center"/>
+
+                            </Border>
+                        </Button.Content>
+                    </Button>
+
+
+                    <!--- Receipt                     <DataGrid x:Name="Receipt_datagridX" Width="350" Height="500" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="350,0,0,0" Background="White" BorderBrush="#ff9425" BorderThickness="1">
+ </DataGrid>
+-->
+                    <RichTextBox x:Name="Receipt_RichTextBox"
+                                 Width="350" Height="500" 
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top" 
+                                 Margin="350,0,0,0" 
+                                 Background="White" 
+                                 BorderBrush="#ff9425"
+                                 Foreground="Black"
+                                  FontFamily="Century Gothic" 
+                                   FontSize="12" 
+                                   FontWeight="Medium"
+                                 BorderThickness="1">
+                  
+
+                    </RichTextBox>
+
+                </Grid>
+
+
+            </Border>
+     
+
+        </Grid>
