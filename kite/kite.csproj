@@ -66,6 +66,7 @@
     <Compile Include="CentralWindow.xaml.cs">
       <DependentUpon>CentralWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TextBox_KeyDown.cs" />
     <Page Include="Assets\Font.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -90,6 +91,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CheckBox_KeyDown.cs" />
     <Compile Include="Circular ProgressBar_UC.xaml.cs">
       <DependentUpon>Circular ProgressBar_UC.xaml</DependentUpon>
     </Compile>

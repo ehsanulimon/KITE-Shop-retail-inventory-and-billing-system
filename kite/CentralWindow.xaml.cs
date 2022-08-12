@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Text;
 
 namespace kite
 {
@@ -251,7 +252,7 @@ AccountgridX.Visibility = Visibility.Collapsed;
         }
         
 
-
+//######################################  Billing method # ########################################
      private void Billing_MLBD(object sender, MouseButtonEventArgs e)
 {
 StockinputgridX.Visibility = Visibility.Collapsed;
@@ -265,13 +266,31 @@ AccountgridX.Visibility = Visibility.Collapsed;
 }
 
         private void BillingADDClick(object sender, RoutedEventArgs e)
-        {
+        { //txtb_CustomerName_billing txtb_CustomerAddress_billing  txtb_CustomerMobileNo_billing txtb_CustomerEmail_billing  
+          //Customer Name  //Address  //Mobile   //Email
 
+            /*Setting a string With:
+
+SelectAll()
+RichTextBox.Selection.Text = "AA"
+And returning with:
+
+SelectAll()
+Return RichTextBox.Selection.Text
+Returns "AA" with carriage-return*/
+            //Receipt_RichTextBox.AppendText("Customer Name: "+ txtb_CustomerName_billing.Text + "\nAddress: " + txtb_CustomerAddress_billing.Text + "\nMobile " + txtb_CustomerMobileNo_billing.Text + "\nEmail: " + txtb_CustomerEmail_billing.Text);
+
+            Receipt_RichTextBox.Document.Blocks.Clear();
+            Receipt_RichTextBox.Document.Blocks.Add(new Paragraph(new Run(
+                "Customer Name: " + txtb_CustomerName_billing.Text 
+                + "\nAddress: " + txtb_CustomerAddress_billing.Text 
+                + "\nMobile " + txtb_CustomerMobileNo_billing.Text
+                + "\nEmail: " + txtb_CustomerEmail_billing.Text)));
         }
-
+        
         private void BillingCleanClick(object sender, RoutedEventArgs e)
         {
-          
+            Receipt_RichTextBox.Document.Blocks.Clear();
         }
 
         private void BillingPrintClick(object sender, RoutedEventArgs e)

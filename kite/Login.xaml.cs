@@ -27,8 +27,7 @@ namespace kite
         private void exitbtnClick(object sender, RoutedEventArgs e)
         {
            
-            CentralWindow open = new CentralWindow();
-            open.Show();
+         
             this.Close();
            
         }
@@ -47,7 +46,9 @@ namespace kite
 
         private void Submitbtn_regClick(object sender, RoutedEventArgs e)
         {
-
+            CentralWindow open = new CentralWindow();
+            open.Show();
+            this.Close();
         }
 
         private void Clearbtn_regClick(object sender, RoutedEventArgs e)
@@ -57,7 +58,9 @@ namespace kite
 
         private void loginbtn_loginClick(object sender, RoutedEventArgs e)
         {
-
+            CentralWindow open = new CentralWindow();
+            open.Show();
+            this.Close();
         }
 
         private void Clearbtn_loginClick(object sender, RoutedEventArgs e)

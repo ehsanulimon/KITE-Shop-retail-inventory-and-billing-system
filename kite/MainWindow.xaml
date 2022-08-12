@@ -128,7 +128,7 @@
 
 
 
-        <!--Exit Button <Button x:Name="exitbtn"
+      <Button x:Name="exitbtn"
                 Height="48.7805 "
                 Width="75.6098 " 
                 Background="#01002b" 
@@ -156,8 +156,7 @@
                    TextAlignment="Center"/>
                 </Border>
             </Button.Content>
-        </Button> -->
-
+        </Button> 
         
 
     </Grid>
