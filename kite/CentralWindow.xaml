@@ -17,6 +17,7 @@
         Background="Transparent"
         WindowStyle="None"
         AllowsTransparency="True"
+    
       
         Icon="img/icon.png" ResizeMode="CanResize" MaxWidth="1250" MaxHeight="720" 
        >
@@ -27,13 +28,20 @@
         <CommandBinding x:Name="New" Command="New" Executed="NewCommandBinding_Executed"/>
         <CommandBinding x:Name="Open" Command="Open" Executed="OpenCommandBinding_Executed"/>
         <CommandBinding x:Name="Save" Command="Save" Executed="SaveCommandBinding_Executed"/>
+
+  
+
     </Window.CommandBindings>
+
 
     <!-- Associate the commands with the wanted keys-->
     <Window.InputBindings>
         <KeyBinding Key="N" Modifiers="Control" Command="New"/>
         <KeyBinding Key="O" Modifiers="Control" Command="Open"/>
-        <KeyBinding Key="S" Modifiers="Control" Command="Save"/>
+        <KeyBinding Key="S" Modifiers="Ctrl" Command="Save"/>
+
+  
+
     </Window.InputBindings>
 
 
@@ -116,7 +124,8 @@
 
 
     <Grid Height="550 "
-          Width="900">
+          Width="900"
+        >
         <!--// Border //-->
 
         <Border x:Name="gridm" Height="550 "
@@ -163,6 +172,7 @@
                           
                            FontSize="16"   FontFamily="Century Gothic"  FontWeight="Normal" 
                 DockPanel.Dock="Top">
+                        <!--file menu-->
                         <MenuItem   Width="60" Background="#FF32393A" Foreground="#ffff"  Header="_File" Cursor="Hand">
 
                             <MenuItem  Style="{StaticResource  MenuItemStyle}"  Name="menuNew" Header="_New" Command="New" InputGestureText="Ctrl+N">
@@ -183,45 +193,44 @@
 
 
                         </MenuItem>
+                        <!-- window menu-->
+                        <MenuItem   Width="90"  Background="#FF32393A" Foreground="#ffff" Header="_Window"  Cursor="Hand">
 
-                        <MenuItem  Width="90"  Background="#FF32393A" Foreground="#ffff" Header="_Window">
-
-                            <MenuItem  Style="{StaticResource  MenuItemStyle}"  Name="menufNew" Header="_New" Command="New" InputGestureText="Ctrl+N">
-
-                                <MenuItem.Icon>
-                                    <Image Source="img/new file icon w.png" />
-                                </MenuItem.Icon>
-
-                            </MenuItem>
-
-                            <MenuItem  Style="{StaticResource  MenuItemStyle}"  Name="menudfNew" Header="_New" Command="New" InputGestureText="Ctrl+N">
+                            <MenuItem  Style="{StaticResource  MenuItemStyle}" Click="StockInput_Grid_menu_Click" Header="_Stock Input Window">
                                 <MenuItem.Icon>
                                     <Image Source="img/new file icon w.png" />
                                 </MenuItem.Icon>
                             </MenuItem>
-                            <MenuItem Style="{StaticResource MenuItemStyle}"  Name="menuOdfpen" Header="_Open" Command="Open" InputGestureText="Ctrl+O">
+                            <MenuItem  Style="{StaticResource  MenuItemStyle}" Click="OfferFair_Grid_menu_Click" Header="_Offer Fai Window">
                                 <MenuItem.Icon>
-                                    <Image Source="img/icons8-opened-folder-50.png" />
+                                    <Image Source="img/new file icon w.png" />
                                 </MenuItem.Icon>
                             </MenuItem>
-                            <MenuItem Style="{StaticResource MenuItemStyle}"  Name="menufdSave" Header="_Save" Command="Save" InputGestureText="Ctrl+S">
+                            <MenuItem  Style="{StaticResource  MenuItemStyle}" Click="Category_Grid_menu_Click" Header="_Category Window">
                                 <MenuItem.Icon>
-                                    <Image Source="img/icons8-save-file-66.png" />
+                                    <Image Source="img/new file icon w.png" />
                                 </MenuItem.Icon>
                             </MenuItem>
-
-
-                            >
+                            <MenuItem  Style="{StaticResource  MenuItemStyle}" Click="Billing_Grid_menu_Click" Header="_Billing Window">
+                                <MenuItem.Icon>
+                                    <Image Source="img/new file icon w.png" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem  Style="{StaticResource  MenuItemStyle}" Click="Account_Grid_menu_Click" Header="_Account Window">
+                                <MenuItem.Icon>
+                                    <Image Source="img/new file icon w.png" />
+                                </MenuItem.Icon>
+                            </MenuItem>
 
 
 
                         </MenuItem>
-
-                        <MenuItem Width="80"  Background="#FF32393A" Foreground="#ffff" Header="_Setting">
+                        <!-- _Setting menu-->
+                        <MenuItem Width="80"  Background="#FF32393A" Foreground="#ffff" Header="_Setting"  Cursor="Hand">
 
                         </MenuItem>
-
-                        <MenuItem Width="80"  Background="#FF32393A" Foreground="#ffff" Header="_Help">
+                        <!-- _Help menu-->
+                        <MenuItem Width="80"  Background="#FF32393A" Foreground="#ffff" Header="_Help"  Cursor="Hand">
 
                         </MenuItem>
                     </Menu>
@@ -475,7 +484,7 @@
                     </Label>
                     <TextBox x:Name="txtb_Quantity_Stock" Height="25" Width="220"  Margin="145,210,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="16" FontFamily="Century Gothic" BorderBrush="{x:Null}" />
 
-                    <DataGrid x:Name="Stockinput_datagridX"  Margin="0,250,10,10"
+                    <DataGrid x:Name="Stockinput_datagridX"  Margin="0,250,20,10"
                              
                        
                          >
@@ -2202,13 +2211,13 @@
         </Grid>
 <!--########################3 start grid #############3 -->
         <Grid  Name="StartGrid" >
-            <Border x:Name="StartGridX" Height="500"
-                Width="700"
+            <Border x:Name="StartGridX" Height="510"
+                Width="710"
                 Background="#FF01002B"
                    
                 VerticalAlignment="Top"
                 HorizontalAlignment="Left"
-                    Margin="180,40,0,0"
+                    Margin="178,38,0,0"
                
                  >
             </Border>

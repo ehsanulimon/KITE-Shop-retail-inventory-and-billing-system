@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Text;
+
 
 namespace kite
 {
@@ -25,6 +25,7 @@ namespace kite
             InitializeComponent();
         }
 
+        //############## Mix min close program action method ############
         private void XbtbClick(object sender, RoutedEventArgs e)
         {
             Close();
@@ -48,21 +49,16 @@ namespace kite
           
 
         }
-
         private void minbtnClick(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
         }
 
-        private void sevetestclick(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Click seve");
-        }
-
-
+        //########## file menu action method #########
         private void OpenCommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             MessageBox.Show("OpenCommandBinding_Executed");
+
         }
         private void SaveCommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
         {
@@ -70,20 +66,75 @@ namespace kite
         }
         private void NewCommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            MessageBox.Show("NewCommandBinding_Executed");
+         // MessageBox.Show("NewCommandBinding_Executed");
+            CentralWindow open = new CentralWindow();
+            open.Show();
+            this.Close();
+
+
+
         }
-        //Label_MouseLeftButtonDown
-        private void Label_MouseLeftButtonDown(object sender, ExecutedRoutedEventArgs e)
+        //################## Window munu ##############
+        private void StockInput_Grid_menu_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Label_MouseLeftButtonDown");
+            MessageBox.Show("StockInput_MLBD_Click");
+            OfferFairgridX.Visibility = Visibility.Collapsed;
+            CategorygridX.Visibility = Visibility.Collapsed;
+            BillinggridX.Visibility = Visibility.Collapsed;
+            AccountgridX.Visibility = Visibility.Collapsed;
+            StartGrid.Visibility = Visibility.Collapsed;
+
+            //Visible
+            StockinputgridX.Visibility = Visibility.Visible;
+        }
+        private void OfferFair_Grid_menu_Click(object sender, RoutedEventArgs e)
+        {
+            StockinputgridX.Visibility = Visibility.Collapsed;
+            CategorygridX.Visibility = Visibility.Collapsed;
+            BillinggridX.Visibility = Visibility.Collapsed;
+            AccountgridX.Visibility = Visibility.Collapsed;
+            StartGrid.Visibility = Visibility.Collapsed;
+            //Visible
+            OfferFairgridX.Visibility = Visibility.Visible;
+        }
+        private void Category_Grid_menu_Click(object sender, RoutedEventArgs e)
+        {
+            StockinputgridX.Visibility = Visibility.Collapsed;
+            OfferFairgridX.Visibility = Visibility.Collapsed;
+            BillinggridX.Visibility = Visibility.Collapsed;
+            AccountgridX.Visibility = Visibility.Collapsed;
+            StartGrid.Visibility = Visibility.Collapsed;
+            //Visible
+            CategorygridX.Visibility = Visibility.Visible;
+        }
+        private void Billing_Grid_menu_Click(object sender, RoutedEventArgs e)
+        {
+            StockinputgridX.Visibility = Visibility.Collapsed;
+            OfferFairgridX.Visibility = Visibility.Collapsed;
+            CategorygridX.Visibility = Visibility.Collapsed;
+            AccountgridX.Visibility = Visibility.Collapsed;
+            StartGrid.Visibility = Visibility.Collapsed;
+            //Visible
+            BillinggridX.Visibility = Visibility.Visible;
+
+        }
+        private void Account_Grid_menu_Click(object sender, RoutedEventArgs e)
+        {
+            StockinputgridX.Visibility = Visibility.Collapsed;
+            OfferFairgridX.Visibility = Visibility.Collapsed;
+            CategorygridX.Visibility = Visibility.Collapsed;
+            BillinggridX.Visibility = Visibility.Collapsed;
+            StartGrid.Visibility = Visibility.Collapsed;
+            //Visible
+            AccountgridX.Visibility = Visibility.Visible;
+
+
         }
 
-        private void test(object sender, MouseButtonEventArgs e)
-        {
-            MessageBox.Show("MouseButtonEventArgs");
-           
-        }
+        //############################ end window menu ##############
 
+
+        //################## StockInput_MLBD ##############
         private void StockInput_MLBD(object sender, MouseButtonEventArgs e)
         {
            OfferFairgridX.Visibility = Visibility.Collapsed;
@@ -112,11 +163,11 @@ namespace kite
 
         } 
           private void OfferFair_MLBD(object sender, MouseButtonEventArgs e)
-    {
-      StockinputgridX.Visibility = Visibility.Collapsed;
-CategorygridX.Visibility = Visibility.Collapsed;
-BillinggridX.Visibility = Visibility.Collapsed;
-AccountgridX.Visibility = Visibility.Collapsed;
+           {
+            StockinputgridX.Visibility = Visibility.Collapsed;
+            CategorygridX.Visibility = Visibility.Collapsed;
+            BillinggridX.Visibility = Visibility.Collapsed;
+             AccountgridX.Visibility = Visibility.Collapsed;
             StartGrid.Visibility = Visibility.Collapsed;
             //Visible
             OfferFairgridX.Visibility = Visibility.Visible;
@@ -160,20 +211,20 @@ AccountgridX.Visibility = Visibility.Collapsed;
             megaoffergrid.Visibility = Visibility.Collapsed;
             pricerangesgrid.Visibility = Visibility.Visible;
         }
-        
 
-      private void Category_MLBD(object sender, MouseButtonEventArgs e)
-{
-StockinputgridX.Visibility = Visibility.Collapsed;
-OfferFairgridX.Visibility = Visibility.Collapsed;
-BillinggridX.Visibility = Visibility.Collapsed;
-AccountgridX.Visibility = Visibility.Collapsed;
+
+        private void Category_MLBD(object sender, MouseButtonEventArgs e)
+        {
+            StockinputgridX.Visibility = Visibility.Collapsed;
+            OfferFairgridX.Visibility = Visibility.Collapsed;
+            BillinggridX.Visibility = Visibility.Collapsed;
+            AccountgridX.Visibility = Visibility.Collapsed;
             StartGrid.Visibility = Visibility.Collapsed;
             //Visible
             CategorygridX.Visibility = Visibility.Visible;
-} 
+        }
 
-       private void NextbtcategoryClick(object sender, RoutedEventArgs e)
+        private void NextbtcategoryClick(object sender, RoutedEventArgs e)
         {
 
        
@@ -250,20 +301,20 @@ AccountgridX.Visibility = Visibility.Collapsed;
         {
 
         }
-        
 
-//######################################  Billing method # ########################################
-     private void Billing_MLBD(object sender, MouseButtonEventArgs e)
-{
-StockinputgridX.Visibility = Visibility.Collapsed;
-OfferFairgridX.Visibility = Visibility.Collapsed;
-CategorygridX.Visibility = Visibility.Collapsed;
-AccountgridX.Visibility = Visibility.Collapsed;
+
+        //######################################  Billing method # ########################################
+        private void Billing_MLBD(object sender, MouseButtonEventArgs e)
+        {
+            StockinputgridX.Visibility = Visibility.Collapsed;
+            OfferFairgridX.Visibility = Visibility.Collapsed;
+            CategorygridX.Visibility = Visibility.Collapsed;
+            AccountgridX.Visibility = Visibility.Collapsed;
             StartGrid.Visibility = Visibility.Collapsed;
             //Visible
             BillinggridX.Visibility = Visibility.Visible;
 
-}
+        }
 
         private void BillingADDClick(object sender, RoutedEventArgs e)
         { //txtb_CustomerName_billing txtb_CustomerAddress_billing  txtb_CustomerMobileNo_billing txtb_CustomerEmail_billing  
@@ -312,20 +363,20 @@ Returns "AA" with carriage-return*/
 
         }
 
-    
 
- private void Account_MLBD(object sender, MouseButtonEventArgs e)
-{
-StockinputgridX.Visibility = Visibility.Collapsed;
-OfferFairgridX.Visibility = Visibility.Collapsed;
-CategorygridX.Visibility = Visibility.Collapsed;
-BillinggridX.Visibility = Visibility.Collapsed;
+
+        private void Account_MLBD(object sender, MouseButtonEventArgs e)
+        {
+            StockinputgridX.Visibility = Visibility.Collapsed;
+            OfferFairgridX.Visibility = Visibility.Collapsed;
+            CategorygridX.Visibility = Visibility.Collapsed;
+            BillinggridX.Visibility = Visibility.Collapsed;
             StartGrid.Visibility = Visibility.Collapsed;
             //Visible
             AccountgridX.Visibility = Visibility.Visible;
-          
 
-}
+
+        }
 
         private void AccountInstallmentsClick(object sender, RoutedEventArgs e)
         {
