@@ -143,16 +143,22 @@
     <Resource Include="img\icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="img\new file icon b.png" />
+    <Resource Include="img\stoctinputicon65px.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="img\new file icon w.png" />
+    <Resource Include="img\accounts.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="img\icons8-save-file-66.png" />
+    <Resource Include="img\category.png" />
+    <Resource Include="img\diskette.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="img\icons8-opened-folder-50.png" />
+    <Resource Include="img\invoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\new-page.png" />
+    <Resource Include="img\open-folder.png" />
+    <Resource Include="img\price-tag.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />

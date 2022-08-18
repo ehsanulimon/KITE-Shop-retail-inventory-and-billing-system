@@ -177,17 +177,17 @@
 
                             <MenuItem  Style="{StaticResource  MenuItemStyle}"  Name="menuNew" Header="_New" Command="New" InputGestureText="Ctrl+N">
                                 <MenuItem.Icon>
-                                    <Image Source="img/new file icon w.png" />
+                                    <Image Source="img/new-page.png" />
                                 </MenuItem.Icon>
                             </MenuItem>
                             <MenuItem Style="{StaticResource MenuItemStyle}"  Name="menuOpen" Header="_Open" Command="Open" InputGestureText="Ctrl+O">
                                 <MenuItem.Icon>
-                                    <Image Source="img/icons8-opened-folder-50.png" />
+                                    <Image Source="img/open-folder.png" />
                                 </MenuItem.Icon>
                             </MenuItem>
                             <MenuItem Style="{StaticResource MenuItemStyle}"  Name="menuSave" Header="_Save" Command="Save" InputGestureText="Ctrl+S">
                                 <MenuItem.Icon>
-                                    <Image Source="img/icons8-save-file-66.png" />
+                                    <Image Source="img/diskette.png" />
                                 </MenuItem.Icon>
                             </MenuItem>
 
@@ -196,29 +196,29 @@
                         <!-- window menu-->
                         <MenuItem   Width="90"  Background="#FF32393A" Foreground="#ffff" Header="_Window"  Cursor="Hand">
 
-                            <MenuItem  Style="{StaticResource  MenuItemStyle}" Click="StockInput_Grid_menu_Click" Header="_Stock Input Window">
+                            <MenuItem  Style="{StaticResource  MenuItemStyle}" Click="StockInput_Grid_menu_Click" Header="_Stock Input Window" IsCheckable="True">
                                 <MenuItem.Icon>
-                                    <Image Source="img/new file icon w.png" />
+                                    <Image Source="img/stoctinputicon65px.png" />
                                 </MenuItem.Icon>
                             </MenuItem>
                             <MenuItem  Style="{StaticResource  MenuItemStyle}" Click="OfferFair_Grid_menu_Click" Header="_Offer Fai Window">
                                 <MenuItem.Icon>
-                                    <Image Source="img/new file icon w.png" />
+                                    <Image Source="img/price-tag.png" />
                                 </MenuItem.Icon>
                             </MenuItem>
                             <MenuItem  Style="{StaticResource  MenuItemStyle}" Click="Category_Grid_menu_Click" Header="_Category Window">
                                 <MenuItem.Icon>
-                                    <Image Source="img/new file icon w.png" />
+                                    <Image Source="img/category.png" />
                                 </MenuItem.Icon>
                             </MenuItem>
                             <MenuItem  Style="{StaticResource  MenuItemStyle}" Click="Billing_Grid_menu_Click" Header="_Billing Window">
                                 <MenuItem.Icon>
-                                    <Image Source="img/new file icon w.png" />
+                                    <Image Source="img/invoice.png" />
                                 </MenuItem.Icon>
                             </MenuItem>
                             <MenuItem  Style="{StaticResource  MenuItemStyle}" Click="Account_Grid_menu_Click" Header="_Account Window">
                                 <MenuItem.Icon>
-                                    <Image Source="img/new file icon w.png" />
+                                    <Image Source="img/accounts.png" />
                                 </MenuItem.Icon>
                             </MenuItem>
 
