@@ -80,6 +80,13 @@
                     <Label Content="Password"  Foreground="White" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top" Height="30" Width="80" FontSize="16" FontFamily="Calibri"/>
                     <PasswordBox x:Name="txtb_Password_login" HorizontalAlignment="Left" Height="25" Margin="130,140,0,0"  VerticalAlignment="Top" Width="160" FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" />
 
+                    
+                   <!--text block-->
+                    <TextBlock
+                         x:Name="txtBlock_login" HorizontalAlignment="Left" Height="100" Margin="10,210,0,0"  VerticalAlignment="Top" Width="350" FontSize="14" FontFamily="Calibri" Background="Transparent">
+                        
+                        
+                    </TextBlock>
                     <!--loginbtn_login Button-->
                     <Button x:Name="loginbtn_login"
                 Height="40"
@@ -102,7 +109,7 @@
                 Background="#15d6ff" 
                 BorderBrush="Transparent" 
                  BorderThickness="4,4,4,4" >
-                                <TextBlock  Text="Submit" 
+                                <TextBlock  Text="Sign in" 
                     FontFamily="Century Gothic" 
                     FontSize="18" 
                     FontWeight="Bold"
@@ -149,6 +156,121 @@
             </Border>
 
         </Grid>
+       
+
+        <!--Registration_grid-->
+
+        <Grid  Name="Registration_grid">
+            <Border x:Name="Registration_gridX" Height="400 "
+                Width="370"
+                Background="#15d6ff"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                    Margin="30,100,0,0"
+                CornerRadius="0,200,0,0"
+                 >
+                <!-- Reg content-->
+                <Grid>
+                    <!-- Label & Textbox-->
+                    <Label Content="Name"  Foreground="White" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Height="30" Width="60" FontSize="16" FontFamily="Calibri"/>
+                    <TextBox x:Name="txtb_Name_user" HorizontalAlignment="Left" Height="25" Margin="70,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" />
+                    <!-- Label & Textbox-->
+                    <Label Content="Email"  Foreground="White" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Height="30" Width="60" FontSize="16" FontFamily="Calibri"/>
+                    <TextBox x:Name="txtb_Email_user" HorizontalAlignment="Left" Height="25" Margin="70,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" />
+                    <!-- Label & Textbox-->
+                    <Label Content="Password"  Foreground="White" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top" Height="30" Width="80" FontSize="16" FontFamily="Calibri"/>
+                    <PasswordBox x:Name="txtb_Password_user" HorizontalAlignment="Left" Height="25" Margin="130,140,0,0"  VerticalAlignment="Top" Width="160" FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" />
+                    <!-- Label & Textbox-->
+                    <Label Content="Repeat Password"  Foreground="White" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top" Height="30" Width="120" FontSize="16" FontFamily="Calibri"/>
+                    <PasswordBox x:Name="txtb_RepeatPassword_user" HorizontalAlignment="Left" Height="25" Margin="130,170,0,0"  VerticalAlignment="Top" Width="160" FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" />
+                    <!--text block-->
+                    <TextBlock
+                         x:Name="txtBlock_Reg" HorizontalAlignment="Left" Height="50" Margin="10,200,0,0"  VerticalAlignment="Top" Width="350" FontSize="12" FontFamily="Calibri" Background="Transparent">
+
+
+                    </TextBlock>
+
+
+                    <!-- Label & CheckBok-->
+                    <CheckBox x:Name="ckb_freetrial" HorizontalAlignment="Left" Margin="40,254,0,0" VerticalAlignment="Top" Height="37" Width="30" RenderTransformOrigin="10,0.521" ClickMode="Release" />
+                    <Label Content="30 day free trial"  Foreground="#FFFF9425" Background="{x:Null}" HorizontalAlignment="Left" Margin="60,250,0,0" VerticalAlignment="Top" Height="30" Width="140" FontSize="16" FontFamily="Calibri"/>
+
+                    <!-- Label & Textbox-->
+                    <Label Content="Activated Key"  Foreground="White" Background="{x:Null}" HorizontalAlignment="Left" Margin="20,282,0,0" VerticalAlignment="Top" Height="30" Width="100" FontSize="16" FontFamily="Calibri"/>
+                    <TextBox x:Name="txtb_ActivatedKey" HorizontalAlignment="Left" Height="25" Margin="130,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" Background="#FFABA3A3" Foreground="White" />
+                    <!--Submit Button-->
+                    <Button x:Name="Submitbtn_reg"
+                Height="40"
+                Width="100" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="80,340,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                Click="Submitbtn_regClick"
+                 Style="{StaticResource SomeButtonStyle}"
+                >
+                        <Button.Content>
+                            <Border CornerRadius="10"  
+                 Height="40"
+                Width="100" 
+                Margin="0"
+                Background="#ff9425" 
+                BorderBrush="Transparent" 
+                 BorderThickness="4,4,4,4" >
+                                <TextBlock  Text="Submit" 
+                    FontFamily="Century Gothic" 
+                    FontSize="18" 
+                    FontWeight="Bold"
+                    VerticalAlignment="Center"
+                   TextAlignment="Center"/>
+                            </Border>
+                        </Button.Content>
+                    </Button>
+                    <!--Clear  Button-->
+                    <Button x:Name="Clearbtn_reg"
+                Height="40"
+                Width="100" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Margin="190,340,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                Click="Clearbtn_regClick"
+                 Style="{StaticResource SomeButtonStyle}"
+                >
+                        <Button.Content>
+                            <Border CornerRadius="10"  
+                   Height="40"
+                Width="100"  
+                Margin="0"
+                Background="#ff9425" 
+                BorderBrush="Transparent" 
+                                      
+                        BorderThickness="4,4,4,4" >
+                                <TextBlock  Text="Clear" 
+                        VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="18" 
+                    FontWeight="Bold"
+                   TextAlignment="Center"/>
+                            </Border>
+                        </Button.Content>
+                    </Button>
+
+                </Grid>
+
+            </Border>
+
+
+        </Grid>
+
+        
+        
         <!--Registration   Button-->
         <Button x:Name="Registrationbtn"
                      Height="40"
@@ -244,109 +366,6 @@
             </Button.Content>
         </Button>
 
-        <!--Registration_grid-->
-
-        <Grid  Name="Registration_grid">
-            <Border x:Name="Registration_gridX" Height="400 "
-                Width="370"
-                Background="#15d6ff"
-                VerticalAlignment="Top"
-                HorizontalAlignment="Left"
-                    Margin="30,100,0,0"
-                CornerRadius="0,200,0,0"
-                 >
-                <!-- Reg content-->
-                <Grid>
-                    <!-- Label & Textbox-->
-                    <Label Content="Name"  Foreground="White" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Height="30" Width="60" FontSize="16" FontFamily="Calibri"/>
-                    <TextBox x:Name="txtb_Name_user" HorizontalAlignment="Left" Height="25" Margin="70,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" />
-                    <!-- Label & Textbox-->
-                    <Label Content="Email"  Foreground="White" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Height="30" Width="60" FontSize="16" FontFamily="Calibri"/>
-                    <TextBox x:Name="txtb_Email_user" HorizontalAlignment="Left" Height="25" Margin="70,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" />
-                    <!-- Label & Textbox-->
-                    <Label Content="Password"  Foreground="White" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top" Height="30" Width="80" FontSize="16" FontFamily="Calibri"/>
-                    <PasswordBox x:Name="txtb_Password_user" HorizontalAlignment="Left" Height="25" Margin="130,140,0,0"  VerticalAlignment="Top" Width="160" FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" />
-                    <!-- Label & Textbox-->
-                    <Label Content="Repeat Password"  Foreground="White" Background="{x:Null}" HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top" Height="30" Width="120" FontSize="16" FontFamily="Calibri"/>
-                    <PasswordBox x:Name="txtb_RepeatPassword_user" HorizontalAlignment="Left" Height="25" Margin="130,170,0,0"  VerticalAlignment="Top" Width="160" FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" />
-                    <!-- Label & CheckBok-->
-                    <CheckBox x:Name="ckb_freetrial" HorizontalAlignment="Left" Margin="20,214,0,0" VerticalAlignment="Top" Height="37" Width="30" RenderTransformOrigin="10,0.521" />
-                    <Label Content="30 day free trial"  Foreground="#FFFF9425" Background="{x:Null}" HorizontalAlignment="Left" Margin="50,205,0,0" VerticalAlignment="Top" Height="30" Width="140" FontSize="16" FontFamily="Calibri"/>
-
-                    <!-- Label & Textbox-->
-                    <Label Content="Activated Key"  Foreground="White" Background="{x:Null}" HorizontalAlignment="Left" Margin="20,242,0,0" VerticalAlignment="Top" Height="30" Width="100" FontSize="16" FontFamily="Calibri"/>
-                    <TextBox x:Name="txtb_ActivatedKey" HorizontalAlignment="Left" Height="25" Margin="130,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" Background="#FFABA3A3" Foreground="White" />
-                    <!--Submit Button-->
-                    <Button x:Name="Submitbtn_reg"
-                Height="40"
-                Width="100" 
-                Background="Transparent" 
-                Foreground="White"  
-                 HorizontalAlignment="Left"
-                 VerticalAlignment="Top"
-                 Margin="80,340,0,0"
-                BorderThickness="0" 
-                BorderBrush="Transparent" 
-                Click="Submitbtn_regClick"
-                 Style="{StaticResource SomeButtonStyle}"
-                >
-                        <Button.Content>
-                            <Border CornerRadius="10"  
-                 Height="40"
-                Width="100" 
-                Margin="0"
-                Background="#ff9425" 
-                BorderBrush="Transparent" 
-                 BorderThickness="4,4,4,4" >
-                                <TextBlock  Text="Submit" 
-                    FontFamily="Century Gothic" 
-                    FontSize="18" 
-                    FontWeight="Bold"
-                    VerticalAlignment="Center"
-                   TextAlignment="Center"/>
-                            </Border>
-                        </Button.Content>
-                    </Button>
-                    <!--Clear  Button-->
-                    <Button x:Name="Clearbtn_reg"
-                Height="40"
-                Width="100" 
-                Background="Transparent" 
-                Foreground="White"  
-                 HorizontalAlignment="Left"
-                 VerticalAlignment="Top"
-                 Margin="190,340,0,0"
-                BorderThickness="0" 
-                BorderBrush="Transparent" 
-                Click="Clearbtn_regClick"
-                 Style="{StaticResource SomeButtonStyle}"
-                >
-                        <Button.Content>
-                            <Border CornerRadius="10"  
-                   Height="40"
-                Width="100"  
-                Margin="0"
-                Background="#ff9425" 
-                BorderBrush="Transparent" 
-                                      
-                        BorderThickness="4,4,4,4" >
-                                <TextBlock  Text="Clear" 
-                        VerticalAlignment="Center"
-                    FontFamily="Century Gothic" 
-                    FontSize="18" 
-                    FontWeight="Bold"
-                   TextAlignment="Center"/>
-                            </Border>
-                        </Button.Content>
-                    </Button>
-
-                </Grid>
-
-            </Border>
-
-
-        </Grid>
-       
 
     </Grid>
 </Window>
