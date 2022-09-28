@@ -51,7 +51,7 @@ namespace kite
             counter++;
             TimerLabel.Text = counter.ToString();
 
-            if (counter == 101)
+            if (counter == 100)
             {
                
                 _timer.Stop();
@@ -59,7 +59,7 @@ namespace kite
                 
             
             }
-            if (counter == 100)
+            if (counter == 99)
             {
                 Login op = new Login();
                 op.Show();
@@ -78,7 +78,7 @@ namespace kite
                 counter = 0;
             }
 
-            _timer.Interval = TimeSpan.FromMilliseconds(188);
+            _timer.Interval = TimeSpan.FromMilliseconds(110);
             _timer.Tick += timer_Tick;
             _timer.Start();
            

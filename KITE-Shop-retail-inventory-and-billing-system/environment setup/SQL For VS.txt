@@ -1,0 +1,15 @@
+using MySql.Data.MySqlClient;
+using System.Data;
+
+
+INSERT::
+
+	    string mycon = "server=127.0.0.1;user id=root;database=nwu_bank;allowuservariables=True";
+            string query = "insert into login values ('abcde','qwert')";
+            MySqlConnection con = new MySqlConnection(mycon);
+            MySqlCommand com = new MySqlCommand(query, con);
+            MySqlDataReader reader;
+
+            con.Open();
+            reader = com.ExecuteReader();
+            con.Close();

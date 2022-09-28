@@ -35,16 +35,76 @@
 
         <!--// Channel //-->
 
-        <TextBlock FontSize="24"
+        <TextBlock x:Name="titaltextBlock"  FontSize="24"
                    FontFamily="{StaticResource Cocogoose_Pro_Ultralight-trial}"
                    VerticalAlignment="Bottom"
                    HorizontalAlignment="Center"
-                   Margin="0,0,0,50">
+                   Margin="0,0,0,50"
+                   Text="Shop retail inventory and billing system"
+                 Foreground="#FFFFFF"
+                   >
             
-            <Run Text="Shop retail inventory and billing system"
-                 Foreground="#FFFFFF" />
+           <!--- <Run Text="Shop retail inventory and billing system"
+                 Foreground="#FFFFFF" /> 
+             AutoReverse="True"
+            RepeatBehavior="Forever"
+            -->
+                      <!-- text style -->
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <StringAnimationUsingKeyFrames
+                                            Storyboard.TargetName="titaltextBlock"
+                                            Storyboard.TargetProperty="(TextBlock.Text)"
+                                            Duration="0:0:10.1"
+                                     
+                                            >
+                                <DiscreteStringKeyFrame Value=" " KeyTime="0:0:0"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="S" KeyTime="0:0:0.4"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Sh" KeyTime="0:0:0.6"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Sho" KeyTime="0:0:0.8"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop" KeyTime="0:0:1"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop " KeyTime="0:0:1.2"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop r" KeyTime="0:0:1.4"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop re" KeyTime="0:0:1.6"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop ret" KeyTime="0:0:1.8"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop reta" KeyTime="0:0:2"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retai" KeyTime="0:0:2.2"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retail" KeyTime="0:0:2.4"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retail " KeyTime="0:0:2.6"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retail i" KeyTime="0:0:2.8"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retail in" KeyTime="0:0:3"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retail inv" KeyTime="0:0:3.2"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retail inve" KeyTime="0:0:3.4"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retail inven" KeyTime="0:0:3.6"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retail invent" KeyTime="0:0:3.8"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retail invento" KeyTime="0:0:4"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retail inventor" KeyTime="0:0:4.2"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retail inventory" KeyTime="0:0:4.4"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retail inventory a" KeyTime="0:0:4.6"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retail inventory an" KeyTime="0:0:4.8"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retail inventory and" KeyTime="0:0:5"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retail inventory and b" KeyTime="0:0:5.2"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retail inventory and bi" KeyTime="0:0:5.4"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retail inventory and bil" KeyTime="0:0:5.6"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retail inventory and bill" KeyTime="0:0:5.8"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retail inventory and billi" KeyTime="0:0:6"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retail inventory and billin" KeyTime="0:0:6.2"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retail inventory and billing " KeyTime="0:0:6.4"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retail inventory and billing s" KeyTime="0:0:6.8"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retail inventory and billing sy" KeyTime="0:0:7.2"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retail inventory and billing sys" KeyTime="0:0:7.4"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retail inventory and billing syst" KeyTime="0:0:7.6"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retail inventory and billing syste" KeyTime="0:0:7.8"></DiscreteStringKeyFrame>
+                                <DiscreteStringKeyFrame Value="Shop retail inventory and billing system " KeyTime="0:0:8"></DiscreteStringKeyFrame>
 
+                            </StringAnimationUsingKeyFrames>
 
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TextBlock.Triggers>
 
         </TextBlock>
 
