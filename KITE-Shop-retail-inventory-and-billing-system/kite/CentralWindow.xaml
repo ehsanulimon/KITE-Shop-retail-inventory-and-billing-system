@@ -2222,7 +2222,7 @@
                  >
 
                 <Grid>
-                    <TextBlock x:Name="textBlock" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Ehsanul" FontSize="32" Foreground="White" Margin="10,10,10,10">
+                    <TextBlock x:Name="textBlock" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Welcome" FontSize="32" Foreground="White" Margin="10,10,10,10">
                         <TextBlock.Triggers>
                             <EventTrigger RoutedEvent="Loaded">
                                 <BeginStoryboard>
@@ -2230,17 +2230,17 @@
                                         <StringAnimationUsingKeyFrames
                                             Storyboard.TargetName="textBlock"
                                             Storyboard.TargetProperty="(TextBlock.Text)"
-                                            Duration="0:0:3.8"
+                                            Duration="0:0:2.8"
                                             AutoReverse="True"
                                             RepeatBehavior="Forever">
-                                            <DiscreteStringKeyFrame Value="E" KeyTime="0:0:0"></DiscreteStringKeyFrame>
-                                            <DiscreteStringKeyFrame Value="Eh" KeyTime="0:0:0.2"></DiscreteStringKeyFrame>
-                                            <DiscreteStringKeyFrame Value="Ehs" KeyTime="0:0:0.6"></DiscreteStringKeyFrame>
-                                            <DiscreteStringKeyFrame Value="Ehsa" KeyTime="0:0:1"></DiscreteStringKeyFrame>
-                                            <DiscreteStringKeyFrame Value="Ehsan" KeyTime="0:0:1.5"></DiscreteStringKeyFrame>
-                                            <DiscreteStringKeyFrame Value="Ehsanu" KeyTime="0:0:2"></DiscreteStringKeyFrame>
-                                            <DiscreteStringKeyFrame Value="Ehsanul" KeyTime="0:0:2.5"></DiscreteStringKeyFrame>
-
+                                            <DiscreteStringKeyFrame Value=" " KeyTime="0:0:0"></DiscreteStringKeyFrame>
+                                            <DiscreteStringKeyFrame Value="W" KeyTime="0:0:0.2"></DiscreteStringKeyFrame>
+                                            <DiscreteStringKeyFrame Value="We" KeyTime="0:0:0.6"></DiscreteStringKeyFrame>
+                                            <DiscreteStringKeyFrame Value="Wel" KeyTime="0:0:1"></DiscreteStringKeyFrame>
+                                            <DiscreteStringKeyFrame Value="Welc" KeyTime="0:0:1.5"></DiscreteStringKeyFrame>
+                                            <DiscreteStringKeyFrame Value="Welco" KeyTime="0:0:2"></DiscreteStringKeyFrame>
+                                            <DiscreteStringKeyFrame Value="Welcom" KeyTime="0:0:2.5"></DiscreteStringKeyFrame>
+                                            <DiscreteStringKeyFrame Value="Welcome" KeyTime="0:0:2.8"></DiscreteStringKeyFrame>
                                         </StringAnimationUsingKeyFrames>
                                             
                                     </Storyboard>

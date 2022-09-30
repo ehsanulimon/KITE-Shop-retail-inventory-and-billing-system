@@ -188,36 +188,6 @@
 
 
 
-      <Button x:Name="exitbtn"
-                Height="48.7805 "
-                Width="75.6098 " 
-                Background="#01002b" 
-                Foreground="White"  
-                 HorizontalAlignment="Right"
-                VerticalAlignment="Top"
-                 Margin="0,15,15,0"
-                BorderThickness="0" 
-                BorderBrush="#01002b" 
-                Click="nextbtnClick"
-               
-                >
-            <Button.Content>
-                <Border CornerRadius="10"  
-                 Height="48.7805 "
-                Width="75.6098 " 
-                Margin="0"
-                Background="#f10000" 
-                BorderBrush="#01002b" 
-                 BorderThickness="4,7,4,4" >
-                    <TextBlock  Text="Next" 
-                    FontFamily="Century Gothic" 
-                    FontSize="28" 
-                    FontWeight="Bold"
-                   TextAlignment="Center"/>
-                </Border>
-            </Button.Content>
-        </Button> 
-        
 
     </Grid>
 
