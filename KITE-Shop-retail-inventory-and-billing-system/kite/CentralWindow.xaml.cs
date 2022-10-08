@@ -1,7 +1,9 @@
-﻿using System;
+﻿using kite.Assets;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,7 +13,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
 
 namespace kite
 {
@@ -33,18 +34,21 @@ namespace kite
 
         private void maxbtnClick(object sender, RoutedEventArgs e)
         {
+            this.WindowState = WindowState.Maximized;
+            this.WindowStyle = WindowStyle.None;
 
-          
-                if (this.WindowState == System.Windows.WindowState.Normal)
+           if (this.WindowState == System.Windows.WindowState.Normal)
                 {
-                    this.WindowState = System.Windows.WindowState.Maximized;
-                    
+                    //this.WindowState = System.Windows.WindowState.Maximized;
+                   this.WindowState = WindowState.Maximized;
+                   this.WindowStyle = WindowStyle.None;
             }
                 else
                 {
                     this.WindowState = System.Windows.WindowState.Normal;
                      
                 }
+            
             
           
 
@@ -132,6 +136,104 @@ namespace kite
         }
 
         //############################ end window menu ##############
+        //############################setting menu #################  theme_setting_click
+        private void userinfo_setting_click(object sender, RoutedEventArgs e)
+        {
+            exView open = new exView();
+            open.Show();
+            open.userData();
+
+        }
+        private void theme_setting1_click(object sender, RoutedEventArgs e)   ///StartGridX CustomertextboxClean productstextboxClean megaoffergrid <<red
+        {
+            
+                this.gridm.Background = System.Windows.Media.Brushes.MediumVioletRed;
+            this.megaoffergrid.Background = System.Windows.Media.Brushes.MediumVioletRed;
+            this.StartGridX.Background = System.Windows.Media.Brushes.MediumVioletRed;
+
+            // this.CustomertextboxClean.Background = System.Windows.Media.Brushes.Black;
+            //   this.productstextboxClean.Background = System.Windows.Media.Brushes.Black;
+
+
+            this.StockinputgridX.Background = System.Windows.Media.Brushes.MediumVioletRed;
+            this.OfferFairgridX.Background = System.Windows.Media.Brushes.MediumVioletRed;
+            this.CategorygridX.Background = System.Windows.Media.Brushes.MediumVioletRed;
+            this.BillinggridX.Background = System.Windows.Media.Brushes.MediumVioletRed;
+            this.AccountgridX.Background = System.Windows.Media.Brushes.MediumVioletRed;
+        }
+        private void theme_setting2_click(object sender, RoutedEventArgs e)   
+        {
+
+            this.gridm.Background = System.Windows.Media.Brushes.Tan; //tan Beige Ivory Searchlable
+            this.megaoffergrid.Background = System.Windows.Media.Brushes.Tan;
+            this.StartGridX.Background = System.Windows.Media.Brushes.Tan;
+
+            this.StockinputgridX.Background = System.Windows.Media.Brushes.Tan;
+            this.OfferFairgridX.Background = System.Windows.Media.Brushes.Tan;
+            this.CategorygridX.Background = System.Windows.Media.Brushes.Tan;
+            this.BillinggridX.Background = System.Windows.Media.Brushes.Tan;
+            this.AccountgridX.Background = System.Windows.Media.Brushes.Tan;
+
+            this.Searchlable.Foreground = System.Windows.Media.Brushes.Black;
+        }
+        private void theme_setting3_click(object sender, RoutedEventArgs e)   
+        {
+
+            this.gridm.Background = System.Windows.Media.Brushes.Black;
+            this.megaoffergrid.Background = System.Windows.Media.Brushes.Black;
+            this.StartGridX.Background = System.Windows.Media.Brushes.Black;
+
+            this.StockinputgridX.Background = System.Windows.Media.Brushes.Black;
+            this.OfferFairgridX.Background = System.Windows.Media.Brushes.Black;
+            this.CategorygridX.Background = System.Windows.Media.Brushes.Black;
+            this.BillinggridX.Background = System.Windows.Media.Brushes.Black;
+            this.AccountgridX.Background = System.Windows.Media.Brushes.Black;
+
+        }
+
+        private void theme_setting4_click(object sender, RoutedEventArgs e)   ///StartGridX CustomertextboxClean productstextboxClean megaoffergrid <<red
+        {
+
+            this.gridm.Background = System.Windows.Media.Brushes.DimGray;
+            this.megaoffergrid.Background = System.Windows.Media.Brushes.DimGray;
+            this.StartGridX.Background = System.Windows.Media.Brushes.DimGray;
+
+            this.StockinputgridX.Background = System.Windows.Media.Brushes.DimGray;
+            this.OfferFairgridX.Background = System.Windows.Media.Brushes.DimGray;
+            this.CategorygridX.Background = System.Windows.Media.Brushes.DimGray;
+            this.BillinggridX.Background = System.Windows.Media.Brushes.DimGray;
+            this.AccountgridX.Background = System.Windows.Media.Brushes.DimGray;
+
+        }
+        private void theme_setting5_click(object sender, RoutedEventArgs e)
+        {
+
+            this.gridm.Background = System.Windows.Media.Brushes.Beige; //tan Beige Ivory
+            this.megaoffergrid.Background = System.Windows.Media.Brushes.DarkGray;
+            this.StartGridX.Background = System.Windows.Media.Brushes.DarkGray;
+
+
+
+            this.StockinputgridX.Background = System.Windows.Media.Brushes.DarkGray;
+            this.OfferFairgridX.Background = System.Windows.Media.Brushes.DarkGray;
+            this.CategorygridX.Background = System.Windows.Media.Brushes.DarkGray;
+            this.BillinggridX.Background = System.Windows.Media.Brushes.DarkGray;
+            this.AccountgridX.Background = System.Windows.Media.Brushes.DarkGray;
+        }
+        private void theme_setting6_click(object sender, RoutedEventArgs e)
+        {
+
+            this.gridm.Background = System.Windows.Media.Brushes.Ivory; 
+            this.megaoffergrid.Background = System.Windows.Media.Brushes.DimGray;
+            this.StartGridX.Background = System.Windows.Media.Brushes.DimGray;
+
+            this.StockinputgridX.Background = System.Windows.Media.Brushes.DimGray;
+            this.OfferFairgridX.Background = System.Windows.Media.Brushes.DimGray;
+            this.CategorygridX.Background = System.Windows.Media.Brushes.DimGray;
+            this.BillinggridX.Background = System.Windows.Media.Brushes.DimGray;
+            this.AccountgridX.Background = System.Windows.Media.Brushes.DimGray;
+
+        }
 
 
         //################## StockInput_MLBD ##############
@@ -317,26 +419,11 @@ namespace kite
         }
 
         private void BillingADDClick(object sender, RoutedEventArgs e)
-        { //txtb_CustomerName_billing txtb_CustomerAddress_billing  txtb_CustomerMobileNo_billing txtb_CustomerEmail_billing  
-          //Customer Name  //Address  //Mobile   //Email
+        {
 
-            /*Setting a string With:
+            
 
-SelectAll()
-RichTextBox.Selection.Text = "AA"
-And returning with:
 
-SelectAll()
-Return RichTextBox.Selection.Text
-Returns "AA" with carriage-return*/
-            //Receipt_RichTextBox.AppendText("Customer Name: "+ txtb_CustomerName_billing.Text + "\nAddress: " + txtb_CustomerAddress_billing.Text + "\nMobile " + txtb_CustomerMobileNo_billing.Text + "\nEmail: " + txtb_CustomerEmail_billing.Text);
-
-            Receipt_RichTextBox.Document.Blocks.Clear();
-            Receipt_RichTextBox.Document.Blocks.Add(new Paragraph(new Run(
-                "Customer Name: " + txtb_CustomerName_billing.Text 
-                + "\nAddress: " + txtb_CustomerAddress_billing.Text 
-                + "\nMobile " + txtb_CustomerMobileNo_billing.Text
-                + "\nEmail: " + txtb_CustomerEmail_billing.Text)));
         }
         
         private void BillingCleanClick(object sender, RoutedEventArgs e)
@@ -346,24 +433,60 @@ Returns "AA" with carriage-return*/
 
         private void BillingPrintClick(object sender, RoutedEventArgs e)
         {
-            
+            PrintDialog pd = new PrintDialog();
+
+            if ((pd.ShowDialog() == true))
+
+            {
+
+                //use either one of the below     
+
+                pd.PrintVisual(Receipt_RichTextBox as Visual, "Print Visual");
+
+                pd.PrintDocument(documentPaginator: ((IDocumentPaginatorSource)Receipt_RichTextBox.Document).DocumentPaginator,
+
+                    description: "Microsoft Print to PDF");
+
+            }
+
         }
         private void BillingPrintpreviewbtClick(object sender, RoutedEventArgs e)
         {
+            PrintDialog printDlg = new PrintDialog();
+            FlowDocument doc = new FlowDocument(new Paragraph(new Run(" "+ txtb_CustomerEmail_billing.Text + "Some text goes here")));
+
+            doc.Name = "FlowDoc";
+            IDocumentPaginatorSource idpSource = doc;
+            printDlg.PrintDocument(idpSource.DocumentPaginator, "Hello WPF Printing.");
 
         }
 
         private void CustomertextboxcleanClick(object sender, RoutedEventArgs e)
         {
-
+            txtb_CustomerEmail_billing.Clear();
+            txtb_CustomerMobileNo_billing.Clear();
+            txtb_CustomerAddress_billing.Clear();
+            txtb_CustomerName_billing.Clear();
+        }
+        private void CustomertextboxAddClick(object sender, RoutedEventArgs e)
+        {
+            //txtb_CustomerEmail_billing.Text;
+           // txtb_CustomerMobileNo_billing.Text;
+            //txtb_CustomerAddress_billing.Text;
+            //txtb_CustomerName_billing.Text;
         }
 
         private void productstextboxCleanClick(object sender, RoutedEventArgs e)
         {
-
+            cmb_box_Quantity_billing.Text = " ";
+            txtb_Price_billing.Text = " ";
+            cmb_box_ProductsCategory_billing.Text = " ";
+            cmb_box_ModelNo_billing.Text = " ";
+            txtb_ProductsName_billing.Text = " ";
+            
         }
 
-
+        //######################################################ACCount ###############
 
         private void Account_MLBD(object sender, MouseButtonEventArgs e)
         {

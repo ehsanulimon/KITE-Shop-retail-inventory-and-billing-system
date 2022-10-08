@@ -8,8 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("img/new-page.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("img/open-folder.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("img/price-tag.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("img/social-group.png")]
 
 

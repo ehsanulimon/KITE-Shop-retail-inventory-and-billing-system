@@ -1,4 +1,5 @@
-﻿<!--/// <Summary> ///
+﻿ 
+    <!--/// <Summary> ///
     /// Author : Ehsanul imon ///
     /// Created : 29-07-2022 ///
         Group  : B9 ///
@@ -75,10 +76,6 @@
 
             </Style.Triggers>
         </Style>
-
-
-        <!-- ToggleButton style none-->
-
 
 
 
@@ -227,7 +224,30 @@
                         </MenuItem>
                         <!-- _Setting menu-->
                         <MenuItem Width="80"  Background="#FF32393A" Foreground="#ffff" Header="_Setting"  Cursor="Hand">
+                            <MenuItem  Style="{StaticResource  MenuItemStyle}" Click="userinfo_setting_click" Header="_User info Table" IsCheckable="True">
+                                <MenuItem.Icon>
+                                    <Image Source="img/userinfo.png" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <!--tan Beige Ivory-->
+                            <MenuItem  Style="{StaticResource  MenuItemStyle}" Click="theme_setting1_click" Header="_MediumVioletRed Color Theme" IsCheckable="True">
+                               
+                            </MenuItem>
+                            <MenuItem  Style="{StaticResource  MenuItemStyle}" Click="theme_setting2_click" Header="_Tan Color Theme" IsCheckable="True">
+                                 
+                            </MenuItem>
+                            <MenuItem  Style="{StaticResource  MenuItemStyle}" Click="theme_setting3_click" Header="_Dark Color Theme" IsCheckable="True">
+                                
+                            </MenuItem>
+                            <MenuItem  Style="{StaticResource  MenuItemStyle}" Click="theme_setting4_click" Header="_DimGray Color Theme" IsCheckable="True">
+  
+                            </MenuItem>
+                            <MenuItem  Style="{StaticResource  MenuItemStyle}" Click="theme_setting5_click" Header="_Beige Color Theme" IsCheckable="True">
 
+                            </MenuItem>
+                            <MenuItem  Style="{StaticResource  MenuItemStyle}" Click="theme_setting6_click" Header="_Ivory Color Theme" IsCheckable="True">
+
+                            </MenuItem>
                         </MenuItem>
                         <!-- _Help menu-->
                         <MenuItem Width="80"  Background="#FF32393A" Foreground="#ffff" Header="_Help"  Cursor="Hand">
@@ -446,7 +466,7 @@
                 VerticalAlignment="Top"
                 HorizontalAlignment="Left"
                     Margin="180,40,0,0"
-                 
+                 CornerRadius="10"
                  >
                 <Grid>
                     <!-- Label=> products Name: & Textbox-->
@@ -523,7 +543,7 @@
                         <!--   Style="{StaticResource  dataGrid_style}" -->
                         <DataGrid.Columns  >
                             <DataGridTextColumn Header="Series Number" Width="150"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Product's Name" Width="*"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Product's Name" Width="100"></DataGridTextColumn>
                             <DataGridTextColumn Header="Model No" Width="100"></DataGridTextColumn>
                             <DataGridTextColumn Header="Category" Width="100"></DataGridTextColumn>
                             <DataGridTextColumn Header="Quantity" Width="100"></DataGridTextColumn>
@@ -654,7 +674,7 @@
                 VerticalAlignment="Top"
                 HorizontalAlignment="Left"
                     Margin="180,40,0,0"
-               
+                 CornerRadius="10"
                  >
                 <Grid>
                     <!-- Label=> Category: & ComboBox-->
@@ -1110,14 +1130,14 @@
                 VerticalAlignment="Top"
                 HorizontalAlignment="Left"
                     Margin="180,40,0,0"
-               
+               CornerRadius="10"
                  >
 
                 <Grid>
                     <!-- Search lable" -->
                     <TextBox x:Name="txtb_Search_Category" 
                              Height="25" Width="180" 
-                             Margin="0,5,0,0" 
+                             Margin="5,5,0,0" 
                              HorizontalAlignment="Left" 
                              TextWrapping="Wrap" 
                              VerticalAlignment="Top"  
@@ -1132,7 +1152,7 @@
                            MouseLeftButtonDown="Search_MLBD"
                            Content="Search"  
                            HorizontalAlignment="Left" 
-                           Margin="175,2,0,0"
+                           Margin="180,2,0,0"
                            VerticalAlignment="Top" 
                            Height="30"
                            Width="80" 
@@ -1595,7 +1615,7 @@
 
         </Grid>
 
-        <!-- ########################3 Billing  grid########################  -->
+        <!-- ######################## Billing  grid########################  -->
 
 
         <Grid  Name="Billinggrid" >
@@ -1606,7 +1626,7 @@
                 VerticalAlignment="Top"
                 HorizontalAlignment="Left"
                     Margin="180,40,0,0"
-              
+              CornerRadius="10"
                  >
                 <Grid>
                     <!-- Label=> products Name: & Textbox-->
@@ -1735,6 +1755,39 @@
                 BorderBrush="Transparent" 
                  BorderThickness="0" >
                                 <TextBlock   Text="x" 
+                                VerticalAlignment="Center"
+                    FontFamily="Century Gothic" 
+                    FontSize="17" 
+                    FontWeight="Medium"
+                   TextAlignment="Center"/>
+
+                            </Border>
+                        </Button.Content>
+                    </Button>
+               <!--add bt customer info-->
+                    <Button x:Name="CustomertextboxAdd"
+                 Height="15"
+                            
+                Width="30" 
+                Background="Transparent" 
+                Foreground="White"  
+                 HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                 Margin="250,297,0,0"
+                BorderThickness="0" 
+                BorderBrush="Transparent" 
+                
+                 Style="{StaticResource SomeButtonStyle}" Click="CustomertextboxAddClick" 
+                >
+                        <Button.Content>
+                            <Border CornerRadius="5"  
+                 Height="15"
+                Width="30" 
+                Margin="0"
+                Background="#15d6ff" 
+                BorderBrush="Transparent" 
+                 BorderThickness="0" >
+                                <TextBlock   Text="+" 
                                 VerticalAlignment="Center"
                     FontFamily="Century Gothic" 
                     FontSize="17" 
@@ -1973,23 +2026,26 @@
 
                     <!--- Receipt                     <DataGrid x:Name="Receipt_datagridX" Width="350" Height="500" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="350,0,0,0" Background="White" BorderBrush="#ff9425" BorderThickness="1">
  </DataGrid>
+                  
+                    
 -->
                     <RichTextBox x:Name="Receipt_RichTextBox"
-                                 Width="350" Height="500" 
-                                 HorizontalAlignment="Left"
+                                 Width="300" Height="490" 
+                                 HorizontalAlignment="Center"
                                  VerticalAlignment="Top" 
                                  Margin="350,0,0,0" 
                                  Background="White" 
-                                 BorderBrush="#ff9425"
+                                
                                  Foreground="Black"
                                   FontFamily="Century Gothic" 
                                    FontSize="12" 
                                    FontWeight="Medium"
-                                 BorderThickness="1">
+                                 >
 
 
                     </RichTextBox>
 
+                    
                 </Grid>
 
 
@@ -2010,7 +2066,7 @@
                 VerticalAlignment="Top"
                 HorizontalAlignment="Left"
                     Margin="180,40,0,0"
-                
+                CornerRadius="10"
                  >
 
                 <Grid>
