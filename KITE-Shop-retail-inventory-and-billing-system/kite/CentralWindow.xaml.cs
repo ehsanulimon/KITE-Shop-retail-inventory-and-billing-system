@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -13,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace kite
 {
@@ -21,6 +22,17 @@ namespace kite
     /// </summary>
     public partial class CentralWindow : Window
     {
+
+      
+        public static String Var_Products_Name;
+        public static String Var_Model_No;
+
+        public static String Var_Series_Number;
+        public static String Var_Category;
+
+        public static int int_Price;
+        public static int int_Quantity;
+        // int_Quantity  int_Price  Var_Category Var_Series_Number Var_Model_No Var_Products_Name
         public CentralWindow()
         {
             InitializeComponent();
@@ -247,21 +259,149 @@ namespace kite
 
             //Visible
             StockinputgridX.Visibility = Visibility.Visible;
-            
-        }
-      
-       private void StockinputADDClick(object sender, RoutedEventArgs e)
-        {
 
+            // Table show Stock input data grid 
+            string mycon = "server=localhost;user id=root;database=kite_bd";
+            string sql = "SELECT * FROM `product`";
+            MySqlConnection connection = new MySqlConnection(mycon);
+            MySqlCommand cmdSel = new MySqlCommand(sql, connection);
+            DataTable dt = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmdSel);
+            da.Fill(dt);
+            Stockinput_datagridX.ItemsSource = dt.DefaultView;
+
+            // clear Stock input textbox
+            txtb_ProductsName_Stock.Clear();
+            txtb_ModelNo_Stock.Clear();
+            txtb_SeriesNumber_Stock.Clear();
+            txtb_Category_Stock.Clear();
+            txtb_Price_Stock.Clear();
+            txtb_Quantity_Stock.Clear();
+
+        }
+
+        private void StockinputADDClick(object sender, RoutedEventArgs e)  // 08-10-2022  
+        {   // txtb_ProductsName_Stock txtb_ModelNo_Stock txtb_SeriesNumber_Stock txtb_Category_Stock  txtb_Price_Stock txtb_Quantity_Stock Stockinput_datagridX
+            // Products Name || Model No || Series Number || Category ||  Price  || Quantity 
+            // int_Quantity  int_Price  Var_Category Var_Series_Number Var_Model_No Var_Products_Name
+            Var_Products_Name = txtb_ProductsName_Stock.Text;
+            Var_Model_No = txtb_ModelNo_Stock.Text;
+            Var_Series_Number = txtb_SeriesNumber_Stock.Text;
+            Var_Category = txtb_Category_Stock.Text;
+            int_Price = Convert.ToInt32(txtb_Price_Stock.Text);
+            int_Quantity = Convert.ToInt32(txtb_Quantity_Stock.Text);
+
+            string mycon = "server=localhost;user id=root;database=kite_bd";
+            string query = "INSERT INTO `product`(`Products Name`, `Model No`, `Series Number`, `Category`, `Price`, `Quantity`) VALUES ('" + Var_Products_Name + "','" + Var_Model_No + "','" + Var_Series_Number + "','" + Var_Category + "','" + int_Price + "','" + int_Quantity + "')";
+
+            MySqlConnection con = new MySqlConnection(mycon);
+            MySqlCommand com = new MySqlCommand(query, con);
+            MySqlDataReader reader;
+
+            con.Open();
+            reader = com.ExecuteReader();
+
+            con.Close(); 
+
+            txtb_ProductsName_Stock.Clear();
+            txtb_ModelNo_Stock.Clear();
+            txtb_SeriesNumber_Stock.Clear();
+            txtb_Category_Stock.Clear();
+            txtb_Price_Stock.Clear();
+            txtb_Quantity_Stock.Clear();
+
+            string sql = "SELECT * FROM `product`";
+            MySqlConnection connection = new MySqlConnection(mycon);
+            MySqlCommand cmdSel = new MySqlCommand(sql, connection);
+            DataTable dt = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmdSel);
+            da.Fill(dt);
+            Stockinput_datagridX.ItemsSource = dt.DefaultView;
         }
 
         private void StockinputUpdateClick(object sender, RoutedEventArgs e)
         {
+          
+            if(txtb_ProductsName_Stock.Text == null || txtb_SeriesNumber_Stock.Text == null)
+            {
+                Var_Products_Name = txtb_ProductsName_Stock.Text;
+                Var_Series_Number = txtb_SeriesNumber_Stock.Text;
+                //int_Price = Convert.ToInt32(txtb_Price_Stock.Text);
+                int_Quantity = Convert.ToInt32(txtb_Quantity_Stock.Text);
+                try
+                {
+                    string mycon = "server=localhost;user id=root;database=kite_bd";  //OR `Series Number` = @VarSeriesNumber
+
+                    string query = "UPDATE `product` SET `Price`= @intPrice WHERE `Products Name` = @VarproductName OR `Series Number` = @VarSeriesNumber ";
+
+                    MySqlConnection con = new MySqlConnection(mycon);
+                    MySqlCommand cmd = new MySqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@intPrice", Convert.ToInt32(int_Price));
+                    cmd.Parameters.AddWithValue("@VarproductName", Var_Products_Name);
+                    cmd.Parameters.AddWithValue("@VarSeriesNumber", Var_Series_Number);
+                    //  cmd.Parameters.AddWithValue("@intQuantity", Convert.ToInt32(int_Quantity));
+                    MySqlDataReader MyReader;
+                    con.Open();
+                    MyReader = cmd.ExecuteReader();
+                    MessageBox.Show("Data Updated");
+                    while (MyReader.Read())
+                    {
+                    }
+                    con.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                txtb_ProductsName_Stock.Clear();
+                txtb_SeriesNumber_Stock.Clear();
+                txtb_Price_Stock.Clear();
+
+            }
+            else
+            {
+                MessageBox.Show("\tData Not Updated !\n Pless enter product name or series number.");
+            }
 
         }
 
         private void StockinputDeleteClick(object sender, RoutedEventArgs e)
         {
+            if (txtb_ProductsName_Stock.Text == null || txtb_SeriesNumber_Stock.Text == null)
+            {
+                Var_Products_Name = txtb_ProductsName_Stock.Text;
+                Var_Series_Number = txtb_SeriesNumber_Stock.Text;
+                try
+                {
+
+                    string mycon = "server=localhost;port=3306; user id=root;database=kite_bd";
+                    string Query = "DELETE FROM `product` WHERE `Products Name` = @VarproductName OR `Series Number` = @VarSeriesNumber ";
+                    MySqlConnection MyConn = new MySqlConnection(mycon);
+                    MySqlCommand cmd = new MySqlCommand(Query, MyConn);
+                    cmd.Parameters.AddWithValue("@VarproductName", Var_Products_Name);
+                    cmd.Parameters.AddWithValue("@VarSeriesNumber", Var_Series_Number);
+                    MySqlDataReader MyReader;
+                    MyConn.Open();
+                    MyReader = cmd.ExecuteReader();
+                    MessageBox.Show("Data Deleted");
+                    while (MyReader.Read())
+                    {
+                    }
+                    MyConn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                txtb_ProductsName_Stock.Clear();
+                txtb_SeriesNumber_Stock.Clear();
+            }
+            else
+            {
+                MessageBox.Show("\tData Not Deleted !\n Pless enter product name or series number");
+            }
 
         } 
           private void OfferFair_MLBD(object sender, MouseButtonEventArgs e)

@@ -514,7 +514,7 @@
                                 <Setter Property="BorderThickness" Value="0,0,0,5"></Setter>
                                 <Setter Property="Background" Value="#FF32393A"></Setter>
                                 <Setter Property="Foreground" Value="#15d6ff"></Setter>
-                                <Setter Property="Margin" Value="0,0,0,0"></Setter>
+                                <Setter Property="Margin" Value="0,0,5,5"></Setter>
                                 <Setter Property="Padding" Value="0,5,0,5"></Setter>
                                 <Setter Property="FontFamily" Value="Century Gothic"></Setter>
                                 <Setter Property="FontWeight" Value="SemiBold"></Setter>
@@ -542,12 +542,7 @@
                         </DataGrid.Resources>
                         <!--   Style="{StaticResource  dataGrid_style}" -->
                         <DataGrid.Columns  >
-                            <DataGridTextColumn Header="Series Number" Width="150"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Product's Name" Width="100"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Model No" Width="100"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Category" Width="100"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Quantity" Width="100"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Price" Width="100"></DataGridTextColumn>
+                          
 
                         </DataGrid.Columns>
 
