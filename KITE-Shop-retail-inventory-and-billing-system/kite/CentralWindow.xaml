@@ -676,18 +676,15 @@
                     <Label Content="Category:"  Height="30" Width="135" Margin="10,60,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="16"  FontFamily="Century Gothic"  FontWeight="Normal" >
 
                     </Label>
-                    <ComboBox x:Name="cmb_box_ProductsCategory_offer" Height="25" Width="220"  Margin="145,60,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" >
-                        <ComboBoxItem Content="1"/>
-                        <ComboBoxItem Content="2"/>
-                        <ComboBoxItem Content="3"/>
-                        <ComboBoxItem Content="4"/>
+                    <ComboBox x:Name="cmb_box_ProductsCategory_offer" DisplayMemberPath="Category" ItemsSource="{Binding}" Height="25" Width="220"  Margin="145,60,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" >
+                     
                     </ComboBox>
 
                     <!-- Label=>products Name:: & ComboBox-->
                     <Label Content="Products Name:"  Height="30" Width="135" Margin="10,90,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="16"  FontFamily="Century Gothic"  FontWeight="Normal" >
 
                     </Label>
-                    <ComboBox x:Name="cmb_box_ProductsName_offer" Height="25" Width="220"  Margin="145,90,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" >
+                    <ComboBox x:Name="cmb_box_ProductsName_offer"  Height="25" Width="220"  Margin="145,90,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" >
                         <ComboBoxItem Content="adc"/>
                         <ComboBoxItem Content="adc"/>
                         <ComboBoxItem Content="adc"/>
@@ -1548,12 +1545,7 @@
                     <Label Content="Category"  Height="30" Width="100" Margin="10,160,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="16"  FontFamily="Century Gothic"  FontWeight="Normal" >
 
                     </Label>
-                    <ComboBox x:Name="cmb_box_ProductsCategory_Category" Height="25" Width="220"  Margin="100,165,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}" >
-                        <ComboBoxItem Content="1"/>
-                        <ComboBoxItem Content="2"/>
-                        <ComboBoxItem Content="3"/>
-                        <ComboBoxItem Content="4"/>
-                    </ComboBox>
+                    <ComboBox x:Name="cmb_box_ProductsCategory_Category"  DropDownClosed="ComboBox_DropDownClosed"  DisplayMemberPath="Category" ItemsSource="{Binding}" Height="25" Width="220"  Margin="100,165,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="16" FontFamily="Calibri" BorderBrush="{x:Null}"  />
 
                     <DataGrid x:Name="Category_datagridX"  Margin="0,206,10,10" >
                         <DataGrid.Resources>
@@ -1590,14 +1582,15 @@
                         </DataGrid.Resources>
                         <!--   Style="{StaticResource  dataGrid_style}" -->
                         <DataGrid.Columns  >
-                            <DataGridTextColumn Header="Category" Width="100"></DataGridTextColumn>
+                          
+                            <!-- <DataGridTextColumn Header="Category" Width="100"></DataGridTextColumn>
                             <DataGridTextColumn Header="Product's Name" Width="150"></DataGridTextColumn>
                             <DataGridTextColumn Header="Model No" Width="100"></DataGridTextColumn>
                             <DataGridTextColumn Header="Series Number" Width="150"></DataGridTextColumn>
                             <DataGridTextColumn Header="Offer package" Width="120"></DataGridTextColumn>
                             <DataGridTextColumn Header="Discount" Width="80"></DataGridTextColumn>
                           
-                          
+                          -->
 
                         </DataGrid.Columns>
 

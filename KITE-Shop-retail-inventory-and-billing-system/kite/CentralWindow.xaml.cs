@@ -33,6 +33,8 @@ namespace kite
         public static int int_Price;
         public static int int_Quantity;
         // int_Quantity  int_Price  Var_Category Var_Series_Number Var_Model_No Var_Products_Name
+
+        public static string v;
         public CentralWindow()
         {
             InitializeComponent();
@@ -413,11 +415,27 @@ namespace kite
             StartGrid.Visibility = Visibility.Collapsed;
             //Visible
             OfferFairgridX.Visibility = Visibility.Visible;
+
+
+            // Products Name || Model No || Series Number || Category ||  Price  || Quantity 
+            // int_Quantity  int_Price  Var_Category Var_Series_Number Var_Model_No Var_Products_Name
+            // cmb_box_ProductsCategory_offer
+           string mycon = "server=localhost;user id=root;database=kite_bd";
+            string sql = "SELECT  a.* FROM `product` a  INNER JOIN (SELECT `Category`, MAX(ID) max_ID FROM  `product`  GROUP BY `Category`) b ON a.`Category` = b.`Category` AND  a.ID = b.max_ID";
+
+            MySqlConnection connection = new MySqlConnection(mycon);
+            MySqlCommand cmdSel = new MySqlCommand(sql, connection);
+            DataTable dt = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmdSel);
+            da.Fill(dt);
+           
+            cmb_box_ProductsCategory_offer.ItemsSource = dt.DefaultView;
+           
+
         } 
 
         private void offerfairnextbtClick(object sender, RoutedEventArgs e)
-        {
-
+        { 
         }
 
         private void offerUpdateClick(object sender, RoutedEventArgs e)
@@ -464,13 +482,70 @@ namespace kite
             StartGrid.Visibility = Visibility.Collapsed;
             //Visible
             CategorygridX.Visibility = Visibility.Visible;
+            //Category_datagridX
+            //cmb_box_ProductsCategory_Category show  
+            string mycon = "server=localhost;user id=root;database=kite_bd";
+            string sql = "SELECT  a.* FROM `product` a  INNER JOIN (SELECT `Category`, MAX(ID) max_ID FROM  `product`  GROUP BY `Category`) b ON a.`Category` = b.`Category` AND  a.ID = b.max_ID";
+
+            MySqlConnection connection = new MySqlConnection(mycon);
+            MySqlCommand cmdSel = new MySqlCommand(sql, connection);
+            DataTable dt = new DataTable();
+            connection.Open();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmdSel);
+            da.Fill(dt);
+         
+            cmb_box_ProductsCategory_Category.ItemsSource = dt.DefaultView;
+
+            
+            connection.Close();
+         /*
+            try
+            {
+                string sql1 = "SELECT * FROM `product` WHERE `Category` = @C ";
+                MySqlConnection connection2 = new MySqlConnection(mycon);
+                MySqlCommand cmdSel2 = new MySqlCommand(sql1, connection);
+                cmdSel2.Parameters.AddWithValue("@C", v);
+                DataTable dt2 = new DataTable();
+                connection2.Open();
+                MySqlDataAdapter da2 = new MySqlDataAdapter(cmdSel2);
+                da2.Fill(dt2);
+
+                Category_datagridX.ItemsSource = dt2.DefaultView;
+
+                MessageBox.Show(" " +v);
+                connection2.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        */
+
         }
+   
+        private void ComboBox_DropDownClosed(object sender, EventArgs e)
+        {
+             
+            if(cmb_box_ProductsCategory_Category.SelectedItem.ToString() == "Mouse")
+            {
+                MessageBox.Show(" " + cmb_box_ProductsCategory_Category.SelectionBoxItem);
+            }
+            else
+            {
+                MessageBox.Show("No");
+            }
+          
+        }
+  
+      
+
 
         private void NextbtcategoryClick(object sender, RoutedEventArgs e)
         {
+            
 
-       
-            if(Category_Viewgrid2.Visibility == Visibility.Visible)
+            if (Category_Viewgrid2.Visibility == Visibility.Visible)
             {
                 Category_Viewgrid2.Visibility = Visibility.Collapsed;
                 Category_Viewgrid1.Visibility = Visibility.Visible;
@@ -501,6 +576,31 @@ namespace kite
 
         private void Search_MLBD(object sender, MouseButtonEventArgs e)
         {
+            v = txtb_Search_Category.Text;
+
+
+
+            try
+            {
+                string mycon = "server=localhost;user id=root;database=kite_bd";
+                string sql1 = "SELECT * FROM `product` WHERE  OR `Id` =@C `Products Name` =@C OR `Category` =@C  OR `Series Number` =@C OR `Price` =@C OR `Model No` =@C ";
+                MySqlConnection connection2 = new MySqlConnection(mycon);
+                MySqlCommand cmdSel2 = new MySqlCommand(sql1, connection2);
+                cmdSel2.Parameters.AddWithValue("@C",v);
+                DataTable dt2 = new DataTable();
+                connection2.Open();
+                MySqlDataAdapter da2 = new MySqlDataAdapter(cmdSel2);
+                da2.Fill(dt2);
+
+                Category_datagridX.ItemsSource = dt2.DefaultView;
+
+              
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             txtb_Search_Category.Text = " ";
         }
 
@@ -661,6 +761,6 @@ namespace kite
 
         }
 
-     
+    
     }
 }

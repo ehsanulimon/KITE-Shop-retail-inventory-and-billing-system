@@ -1,0 +1,10 @@
+
+SELECT  a.*
+FROM    `product` a
+        INNER JOIN
+        (
+            SELECT `Category`, MAX(ID) max_ID
+            FROM    `product`
+            GROUP BY `Category`
+        ) b ON a.`Category` = b.`Category` AND
+                a.ID = b.max_ID
