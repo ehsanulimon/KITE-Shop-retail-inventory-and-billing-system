@@ -1276,7 +1276,7 @@
                 Background="#15d6ff" 
                 BorderBrush="Transparent" 
                  BorderThickness="4,4,4,4" >
-                                    <TextBlock   Text="Category V5" 
+                                    <TextBlock x:Name="v1"  Text="Mouse" 
                                 VerticalAlignment="Center"
                     FontFamily="Century Gothic" 
                     FontSize="23" 
@@ -1425,7 +1425,7 @@
                 Background="#15d6ff" 
                 BorderBrush="Transparent" 
                  BorderThickness="4,4,4,4" >
-                                    <TextBlock   Text="Category V1" 
+                                    <TextBox x:Name="V5"  Text="Keyboard"  Background="Transparent" BorderThickness="0" Foreground="White"
                                 VerticalAlignment="Center"
                     FontFamily="Century Gothic" 
                     FontSize="23" 
@@ -1555,10 +1555,11 @@
                                 <Setter Property="Background" Value="#FF32393A"></Setter>
                                 <Setter Property="Foreground" Value="#15d6ff"></Setter>
                                 <Setter Property="Margin" Value="0,0,0,0"></Setter>
-                                <Setter Property="Padding" Value="0,5,0,5"></Setter>
+                                <Setter Property="Padding" Value="10,5,0,5"></Setter>
                                 <Setter Property="FontFamily" Value="Century Gothic"></Setter>
                                 <Setter Property="FontWeight" Value="SemiBold"></Setter>
                                 <Setter Property="FontSize" Value="12"></Setter>
+                                <Setter Property="HorizontalContentAlignment" Value="Left"></Setter>
 
                                 <Style.Triggers>
                                     <Trigger Property="IsEnabled" Value="False">
@@ -1591,7 +1592,7 @@
                             <DataGridTextColumn Header="Discount" Width="80"></DataGridTextColumn>
                           
                           -->
-
+                    
                         </DataGrid.Columns>
 
                     </DataGrid>
