@@ -1643,13 +1643,16 @@
                     <Label Content="Price"  Height="25" Width="120" Margin="0,100,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
 
                     </Label>
-                    <TextBox x:Name="txtb_Price_billing" Height="25" Width="200"  Margin="120,100,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="14" FontFamily="Century Gothic" BorderBrush="{x:Null}" />
+                    <ComboBox x:Name="cmb_box_Price_billing" DropDownClosed="ComboBox_DropDownClosed_Price_billing"  DisplayMemberPath="Price" ItemsSource="{Binding}" Height="25" Width="200"  Margin="120,100,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="14" FontFamily="Century Gothic" BorderBrush="{x:Null}"  />
                     <!-- Label=>Quantity ::: & ComboBox-->
-                    <Label Content="Quantity"  Height="25" Width="120" Margin="0,130,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+                    <Label Content="Quantity" Height="25" Width="120" Margin="0,130,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
 
                     </Label>
-                    <ComboBox x:Name="cmb_box_Quantity_billing" DropDownClosed="ComboBox_DropDownClosed_Quantity_billing"  DisplayMemberPath="Quantity" ItemsSource="{Binding}" Height="25" Width="200"  Margin="120,130,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="14" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
+                    <TextBox x:Name="txtb_box_Quantity_billing"  Height="25" Width="140"  Margin="120,130,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="14" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
                       
+                    </TextBox>
+                    <ComboBox x:Name="combobox_Quantity_billing" DropDownClosed="ComboBox_DropDownClosed_Q_billing"  DisplayMemberPath="Quantity" ItemsSource="{Binding}" Height="25" Width="60"  Margin="260,130,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="14" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
+
                     </ComboBox>
 
                     <!--productsClean   Button-->
@@ -2015,7 +2018,7 @@
                                  VerticalAlignment="Top" 
                                  Margin="350,0,0,0" 
                                  Background="White" 
-                                
+                                   
                                  Foreground="Black"
                                   FontFamily="Century Gothic" 
                                    FontSize="12" 

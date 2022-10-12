@@ -32,10 +32,22 @@ namespace kite
 
         public static int int_Price;
         public static int int_Quantity;
+        
+        public static string v;
         // int_Quantity  int_Price  Var_Category Var_Series_Number Var_Model_No Var_Products_Name
 
-        public static string v;
+        public static string Var_Customer_Name;  //Var_Customer_Name  Var_Customer_Address Var_Customer_Mobile Var_Customer_Email 
+        public static string Var_Customer_Address;
+        public static string Var_Customer_Email;
+        public static string Var_Customer_Mobile;
+        //selected_ProductsName selected__ProductsCategory selected_ModelNo  Set_Quantity Set_Price
+        public static string selected_ProductsName;
+        public static string selected__ProductsCategory;
+        public static string selected_ModelNo;
       
+        public static string selected_Quantity; //selected_Price
+        public static string selected_Price;
+        public static string Set_Price;
         public CentralWindow()
         {
             InitializeComponent();
@@ -324,13 +336,13 @@ namespace kite
 
         private void StockinputUpdateClick(object sender, RoutedEventArgs e)
         {
-          
-            if(txtb_ProductsName_Stock.Text == null || txtb_SeriesNumber_Stock.Text == null)
+            Var_Products_Name = txtb_ProductsName_Stock.Text;
+            Var_Series_Number = txtb_SeriesNumber_Stock.Text;
+            if (txtb_ProductsName_Stock.Text != null || txtb_SeriesNumber_Stock.Text != null)
             {
-                Var_Products_Name = txtb_ProductsName_Stock.Text;
-                Var_Series_Number = txtb_SeriesNumber_Stock.Text;
-                //int_Price = Convert.ToInt32(txtb_Price_Stock.Text);
-                int_Quantity = Convert.ToInt32(txtb_Quantity_Stock.Text);
+            
+                int_Price = Convert.ToInt32(txtb_Price_Stock.Text);
+               // int_Quantity = Convert.ToInt32(txtb_Quantity_Stock.Text);
                 try
                 {
                     string mycon = "server=localhost;user id=root;database=kite_bd";  //OR `Series Number` = @VarSeriesNumber
@@ -372,10 +384,11 @@ namespace kite
 
         private void StockinputDeleteClick(object sender, RoutedEventArgs e)
         {
-            if (txtb_ProductsName_Stock.Text == null || txtb_SeriesNumber_Stock.Text == null)
+            Var_Products_Name = txtb_ProductsName_Stock.Text;
+            Var_Series_Number = txtb_SeriesNumber_Stock.Text;
+            if (txtb_ProductsName_Stock.Text != null || txtb_SeriesNumber_Stock.Text != null)
             {
-                Var_Products_Name = txtb_ProductsName_Stock.Text;
-                Var_Series_Number = txtb_SeriesNumber_Stock.Text;
+                
                 try
                 {
 
@@ -608,7 +621,7 @@ namespace kite
                 }
             }
         
-            txtb_Search_Category.Text = " ";
+            txtb_Search_Category.Clear();
         }
 
         private void CategoryViewgrid2_BT1Click(object sender, RoutedEventArgs e)
@@ -868,16 +881,16 @@ namespace kite
         private void ComboBox_DropDownClosed_ProductsCategory_billing(object sender, EventArgs e)
         {
 
+           
 
-
-            string selected = cmb_box_ProductsCategory_billing.Text;
+             selected__ProductsCategory = cmb_box_ProductsCategory_billing.Text;
             try
             {
                 string mycon = "server=localhost;user id=root;database=kite_bd";
                 string sql1 = "SELECT `Products Name` FROM `product` WHERE `Category`= @P ";
                 MySqlConnection connection2 = new MySqlConnection(mycon);
                 MySqlCommand cmdSel2 = new MySqlCommand(sql1, connection2);
-                cmdSel2.Parameters.AddWithValue("@P", selected);
+                cmdSel2.Parameters.AddWithValue("@P", selected__ProductsCategory);
                 DataTable dt2 = new DataTable();
                 connection2.Open();
                 MySqlDataAdapter da2 = new MySqlDataAdapter(cmdSel2);
@@ -900,8 +913,8 @@ namespace kite
         {
 
 
-
-            string selected = cmb_ProductsName_billing.Text;
+           
+            selected_ProductsName = cmb_ProductsName_billing.Text;
 
 
             try
@@ -910,7 +923,7 @@ namespace kite
                 string sql1 = "SELECT `Model No` FROM `product` WHERE `Products Name`= @M ";
                 MySqlConnection connection2 = new MySqlConnection(mycon);
                 MySqlCommand cmdSel2 = new MySqlCommand(sql1, connection2);
-                cmdSel2.Parameters.AddWithValue("@M", selected);
+                cmdSel2.Parameters.AddWithValue("@M", selected_ProductsName);
                 DataTable dt2 = new DataTable();
                 connection2.Open();
                 MySqlDataAdapter da2 = new MySqlDataAdapter(cmdSel2);
@@ -931,31 +944,163 @@ namespace kite
         private void ComboBox_DropDownClosed_ModelNo_billing(object sender, EventArgs e)
         {
 
-
-
-            string selected = cmb_box_ModelNo_billing.Text;
-
-
            
 
+          selected_ModelNo = cmb_box_ModelNo_billing.Text;
+
+
+            try
+            {
+                string mycon = "server=localhost;user id=root;database=kite_bd";
+                string sql1 = "SELECT `Price` FROM `product` WHERE `Model No`= @t ";
+                MySqlConnection connection2 = new MySqlConnection(mycon);
+                MySqlCommand cmdSel2 = new MySqlCommand(sql1, connection2);
+                cmdSel2.Parameters.AddWithValue("@t", selected_ModelNo);
+                DataTable dt2 = new DataTable();
+                connection2.Open();
+                MySqlDataAdapter da2 = new MySqlDataAdapter(cmdSel2);
+                da2.Fill(dt2);
+
+                cmb_box_Price_billing.ItemsSource = dt2.DefaultView;
+
+
+                connection2.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
-        private void ComboBox_DropDownClosed_Quantity_billing(object sender, EventArgs e)
+        public static int count1;
+        public static string Quantity1;
+        public static string Quantity2;
+        public static int count2;
+        public static int Q1;
+        public static string price_count;
+        public static int re_Quantity;
+        private void ComboBox_DropDownClosed_Price_billing(object sender, EventArgs e)
         {
 
 
 
-            string selected = cmb_box_Quantity_billing.Text;
-            
+            selected_Price = cmb_box_Price_billing.Text;
+            count1 = Convert.ToInt32(selected_Price);
+
+            try
+            {
+                string mycon = "server=localhost;user id=root;database=kite_bd";
+                string sql1 = "SELECT `Quantity` FROM `product` WHERE `Price`= @t ";
+                MySqlConnection connection2 = new MySqlConnection(mycon);
+                MySqlCommand cmdSel2 = new MySqlCommand(sql1, connection2);
+                cmdSel2.Parameters.AddWithValue("@t", selected_Price);
+                DataTable dt2 = new DataTable();
+                connection2.Open();
+                MySqlDataAdapter da2 = new MySqlDataAdapter(cmdSel2);
+                da2.Fill(dt2);
+
+                combobox_Quantity_billing.ItemsSource = dt2.DefaultView;
+          
+                connection2.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+        }
+        private void ComboBox_DropDownClosed_Q_billing(object sender, EventArgs e)
+        {
+
+
+            Quantity2 = combobox_Quantity_billing.Text;
+          
+
 
         }
 
 
+        private void CustomertextboxAddClick(object sender, RoutedEventArgs e)
+        {//Var_Customer_Name  Var_Customer_Address Var_Customer_Mobile Var_Customer_Email 
+
+            Var_Customer_Name = txtb_CustomerName_billing.Text;
+            Var_Customer_Address = txtb_CustomerAddress_billing.Text;
+            Var_Customer_Mobile = txtb_CustomerMobileNo_billing.Text;
+            Var_Customer_Email = txtb_CustomerEmail_billing.Text;
+
+          /*  Receipt_RichTextBox.Selection.Text = 
+                                                 "CustomerName : " + Var_Customer_Name + " . "+ "Address : " + Var_Customer_Address + "\n"
+                                                   +
+                                                 "Mobile No : " + Var_Customer_Mobile + " . " + "Email : " + Var_Customer_Email + "\n";
+          */
+        }
+        private void CustomertextboxcleanClick(object sender, RoutedEventArgs e)
+        {
+            txtb_CustomerEmail_billing.Clear();
+            txtb_CustomerMobileNo_billing.Clear();
+            txtb_CustomerAddress_billing.Clear();
+            txtb_CustomerName_billing.Clear();
+        }
+        private void productstextboxCleanClick(object sender, RoutedEventArgs e)
+        {
+            txtb_box_Quantity_billing.Text = "";
+            cmb_box_Price_billing.Text = "";
+            cmb_box_ProductsCategory_billing.Text = "";
+            cmb_box_ModelNo_billing.Text = "";
+            cmb_ProductsName_billing.Text = "";
+
+        }
+
+     
         private void BillingADDClick(object sender, RoutedEventArgs e)
         {
 
-            
+
+          int Q1 = Convert.ToInt32(Quantity2);
+          
+            Quantity1 = txtb_box_Quantity_billing.Text;
 
 
+           count2 = Convert.ToInt32(Quantity1);
+           
+            re_Quantity = (Q1 - count2);
+            MessageBox.Show(" " + re_Quantity + " ");
+
+      
+          
+            try
+            {
+                string mycon = "server=localhost;user id=root;database=kite_bd";
+                //OR `Series Number` = @VarSeriesNumber
+
+                string query = "UPDATE `product` SET `Quantity`= @reQ WHERE `Price`= @selectedPrice OR `Model No`= @Number";
+
+                MySqlConnection con = new MySqlConnection(mycon);
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@reQ", Convert.ToInt16(re_Quantity));
+                cmd.Parameters.AddWithValue("@selectedModelNo", Convert.ToInt16(selected_Price));
+                cmd.Parameters.AddWithValue("@Number", selected_ModelNo);
+
+
+                MySqlDataReader MyReader;
+                con.Open();
+                MyReader = cmd.ExecuteReader();
+                MessageBox.Show("Data Updated");
+                while (MyReader.Read())
+                {
+                }
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            count2 = count2 * count1;
+            price_count = Convert.ToString(count2);
         }
         
         private void BillingCleanClick(object sender, RoutedEventArgs e)
@@ -984,40 +1129,24 @@ namespace kite
         }
         private void BillingPrintpreviewbtClick(object sender, RoutedEventArgs e)
         {
-            PrintDialog printDlg = new PrintDialog();
-            FlowDocument doc = new FlowDocument(new Paragraph(new Run(" "+ txtb_CustomerEmail_billing.Text + "Some text goes here")));
+            PrintDialog printDlg = new PrintDialog();  //Var_Customer_Name  Var_Customer_Address Var_Customer_Mobile Var_Customer_Email 
+            FlowDocument doc = new FlowDocument(new Paragraph(new Run("*******************KITE-Receipt****************\n"+
+                                                                     "Customer Name : "+Var_Customer_Name +" "+"Address : " + Var_Customer_Address + "\n" +
+                                                                     "Mobile No : " +Var_Customer_Mobile +" "+ "Email : " + Var_Customer_Email + "\n"+
+                                                                     "------------------------------------------------------------- \n"+
+                                                                     "Products Name : " + selected_ProductsName + "\n"+
+                                                                     "Model No : " + selected_ModelNo + "\n" +
+                                                                     "Quantity : " +Quantity1+ "\n"+
+                                                                     "Price : " + price_count + "\n"
+                                                                     )));
 
-            doc.Name = "FlowDoc";
+            doc.Name = "FlowDoc";//selected_ProductsName  selected_ModelNo selected_Quantity
             IDocumentPaginatorSource idpSource = doc;
             printDlg.PrintDocument(idpSource.DocumentPaginator, "Hello WPF Printing.");
 
         }
 
-        private void CustomertextboxcleanClick(object sender, RoutedEventArgs e)
-        {
-            txtb_CustomerEmail_billing.Clear();
-            txtb_CustomerMobileNo_billing.Clear();
-            txtb_CustomerAddress_billing.Clear();
-            txtb_CustomerName_billing.Clear();
-        }
-        private void CustomertextboxAddClick(object sender, RoutedEventArgs e)
-        {
-            //txtb_CustomerEmail_billing.Text;
-           // txtb_CustomerMobileNo_billing.Text;
-            //txtb_CustomerAddress_billing.Text;
-            //txtb_CustomerName_billing.Text;
-        }
-
-        private void productstextboxCleanClick(object sender, RoutedEventArgs e)
-        {
-            cmb_box_Quantity_billing.Text = " ";
-            txtb_Price_billing.Text = " ";
-            cmb_box_ProductsCategory_billing.Text = " ";
-            cmb_box_ModelNo_billing.Text = " ";
-            cmb_ProductsName_billing.Text = " ";
-            
-        }
-
+      
         //######################################################ACCount ###############
 
         private void Account_MLBD(object sender, MouseButtonEventArgs e)
