@@ -35,6 +35,7 @@ namespace kite
         // int_Quantity  int_Price  Var_Category Var_Series_Number Var_Model_No Var_Products_Name
 
         public static string v;
+      
         public CentralWindow()
         {
             InitializeComponent();
@@ -303,8 +304,8 @@ namespace kite
             con.Open();
             reader = com.ExecuteReader();
 
-            con.Close(); 
-
+            con.Close();
+         
             txtb_ProductsName_Stock.Clear();
             txtb_ModelNo_Stock.Clear();
             txtb_SeriesNumber_Stock.Clear();
@@ -502,7 +503,7 @@ namespace kite
 
         }
    
-        private void ComboBox_DropDownClosed(object sender, EventArgs e)
+        private void ComboBox_DropDownClosed_Category(object sender, EventArgs e)
         {
 
 
@@ -641,17 +642,86 @@ namespace kite
 
         private void CategoryViewgrid2_BT2Click(object sender, RoutedEventArgs e)
         {
+            string selected = V6.Text;
 
+            try
+            {
+                string mycon = "server=localhost;user id=root;database=kite_bd";
+                string sql1 = "SELECT * FROM `product` WHERE `Category` = @C ";
+                MySqlConnection connection2 = new MySqlConnection(mycon);
+                MySqlCommand cmdSel2 = new MySqlCommand(sql1, connection2);
+                cmdSel2.Parameters.AddWithValue("@C", selected);
+                DataTable dt2 = new DataTable();
+                connection2.Open();
+                MySqlDataAdapter da2 = new MySqlDataAdapter(cmdSel2);
+                da2.Fill(dt2);
+
+                Category_datagridX.ItemsSource = dt2.DefaultView;
+
+
+                connection2.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void CategoryViewgrid2_BT3Click(object sender, RoutedEventArgs e)
         {
+            string selected = V7.Text;
 
+            try
+            {
+                string mycon = "server=localhost;user id=root;database=kite_bd";
+                string sql1 = "SELECT * FROM `product` WHERE `Category` = @C ";
+                MySqlConnection connection2 = new MySqlConnection(mycon);
+                MySqlCommand cmdSel2 = new MySqlCommand(sql1, connection2);
+                cmdSel2.Parameters.AddWithValue("@C", selected);
+                DataTable dt2 = new DataTable();
+                connection2.Open();
+                MySqlDataAdapter da2 = new MySqlDataAdapter(cmdSel2);
+                da2.Fill(dt2);
+
+                Category_datagridX.ItemsSource = dt2.DefaultView;
+
+
+                connection2.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void CategoryViewgrid2_BT4Click(object sender, RoutedEventArgs e)
         {
+            string selected = V8.Text;
 
+            try
+            {
+                string mycon = "server=localhost;user id=root;database=kite_bd";
+                string sql1 = "SELECT * FROM `product` WHERE `Category` = @C ";
+                MySqlConnection connection2 = new MySqlConnection(mycon);
+                MySqlCommand cmdSel2 = new MySqlCommand(sql1, connection2);
+                cmdSel2.Parameters.AddWithValue("@C", selected);
+                DataTable dt2 = new DataTable();
+                connection2.Open();
+                MySqlDataAdapter da2 = new MySqlDataAdapter(cmdSel2);
+                da2.Fill(dt2);
+
+                Category_datagridX.ItemsSource = dt2.DefaultView;
+
+
+                connection2.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void CategoryViewgrid1_BT1Click(object sender, RoutedEventArgs e)
@@ -684,17 +754,86 @@ namespace kite
 
         private void CategoryViewgrid1_BT2Click(object sender, RoutedEventArgs e)
         {
+            string selected = V2.Text;
 
+            try
+            {
+                string mycon = "server=localhost;user id=root;database=kite_bd";
+                string sql1 = "SELECT * FROM `product` WHERE `Category` = @C ";
+                MySqlConnection connection2 = new MySqlConnection(mycon);
+                MySqlCommand cmdSel2 = new MySqlCommand(sql1, connection2);
+                cmdSel2.Parameters.AddWithValue("@C", selected);
+                DataTable dt2 = new DataTable();
+                connection2.Open();
+                MySqlDataAdapter da2 = new MySqlDataAdapter(cmdSel2);
+                da2.Fill(dt2);
+
+                Category_datagridX.ItemsSource = dt2.DefaultView;
+
+
+                connection2.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void CategoryViewgrid1_BT3Click(object sender, RoutedEventArgs e)
         {
+            string selected = V3.Text;
 
+            try
+            {
+                string mycon = "server=localhost;user id=root;database=kite_bd";
+                string sql1 = "SELECT * FROM `product` WHERE `Category` = @C ";
+                MySqlConnection connection2 = new MySqlConnection(mycon);
+                MySqlCommand cmdSel2 = new MySqlCommand(sql1, connection2);
+                cmdSel2.Parameters.AddWithValue("@C", selected);
+                DataTable dt2 = new DataTable();
+                connection2.Open();
+                MySqlDataAdapter da2 = new MySqlDataAdapter(cmdSel2);
+                da2.Fill(dt2);
+
+                Category_datagridX.ItemsSource = dt2.DefaultView;
+
+
+                connection2.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void CategoryViewgrid1_BT4Click(object sender, RoutedEventArgs e)
         {
+            string selected = V4.Text;
 
+            try
+            {
+                string mycon = "server=localhost;user id=root;database=kite_bd";
+                string sql1 = "SELECT * FROM `product` WHERE `Category` = @C ";
+                MySqlConnection connection2 = new MySqlConnection(mycon);
+                MySqlCommand cmdSel2 = new MySqlCommand(sql1, connection2);
+                cmdSel2.Parameters.AddWithValue("@C", selected);
+                DataTable dt2 = new DataTable();
+                connection2.Open();
+                MySqlDataAdapter da2 = new MySqlDataAdapter(cmdSel2);
+                da2.Fill(dt2);
+
+                Category_datagridX.ItemsSource = dt2.DefaultView;
+
+
+                connection2.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
  
 
@@ -709,7 +848,107 @@ namespace kite
             //Visible
             BillinggridX.Visibility = Visibility.Visible;
 
+
+            string mycon = "server=localhost;user id=root;database=kite_bd";
+            string sql_C = "SELECT  a.* FROM `product` a  INNER JOIN (SELECT `Category`, MAX(ID) max_ID FROM  `product`  GROUP BY `Category`) b ON a.`Category` = b.`Category` AND  a.ID = b.max_ID";
+
+            MySqlConnection connection = new MySqlConnection(mycon);
+            MySqlCommand cmd_C = new MySqlCommand(sql_C, connection);
+            DataTable dt = new DataTable();
+            connection.Open();
+            MySqlDataAdapter da_C = new MySqlDataAdapter(cmd_C);
+            da_C.Fill(dt);
+
+            cmb_box_ProductsCategory_billing.ItemsSource = dt.DefaultView;
+           
+
+            connection.Close();
+
         }
+        private void ComboBox_DropDownClosed_ProductsCategory_billing(object sender, EventArgs e)
+        {
+
+
+
+            string selected = cmb_box_ProductsCategory_billing.Text;
+            try
+            {
+                string mycon = "server=localhost;user id=root;database=kite_bd";
+                string sql1 = "SELECT `Products Name` FROM `product` WHERE `Category`= @P ";
+                MySqlConnection connection2 = new MySqlConnection(mycon);
+                MySqlCommand cmdSel2 = new MySqlCommand(sql1, connection2);
+                cmdSel2.Parameters.AddWithValue("@P", selected);
+                DataTable dt2 = new DataTable();
+                connection2.Open();
+                MySqlDataAdapter da2 = new MySqlDataAdapter(cmdSel2);
+                da2.Fill(dt2);
+
+                cmb_ProductsName_billing.ItemsSource = dt2.DefaultView;
+
+
+                connection2.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+        }
+        private void ComboBox_DropDownClosed_ProductsName_billing(object sender, EventArgs e)
+        {
+
+
+
+            string selected = cmb_ProductsName_billing.Text;
+
+
+            try
+            {
+                string mycon = "server=localhost;user id=root;database=kite_bd";
+                string sql1 = "SELECT `Model No` FROM `product` WHERE `Products Name`= @M ";
+                MySqlConnection connection2 = new MySqlConnection(mycon);
+                MySqlCommand cmdSel2 = new MySqlCommand(sql1, connection2);
+                cmdSel2.Parameters.AddWithValue("@M", selected);
+                DataTable dt2 = new DataTable();
+                connection2.Open();
+                MySqlDataAdapter da2 = new MySqlDataAdapter(cmdSel2);
+                da2.Fill(dt2);
+
+                cmb_box_ModelNo_billing.ItemsSource = dt2.DefaultView;
+
+
+                connection2.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+        private void ComboBox_DropDownClosed_ModelNo_billing(object sender, EventArgs e)
+        {
+
+
+
+            string selected = cmb_box_ModelNo_billing.Text;
+
+
+           
+
+        }
+        private void ComboBox_DropDownClosed_Quantity_billing(object sender, EventArgs e)
+        {
+
+
+
+            string selected = cmb_box_Quantity_billing.Text;
+            
+
+        }
+
 
         private void BillingADDClick(object sender, RoutedEventArgs e)
         {
@@ -775,7 +1014,7 @@ namespace kite
             txtb_Price_billing.Text = " ";
             cmb_box_ProductsCategory_billing.Text = " ";
             cmb_box_ModelNo_billing.Text = " ";
-            txtb_ProductsName_billing.Text = " ";
+            cmb_ProductsName_billing.Text = " ";
             
         }
 
