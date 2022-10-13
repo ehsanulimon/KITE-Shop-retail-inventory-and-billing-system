@@ -1786,88 +1786,29 @@
                     <Label Content="Discount"  Height="27" Width="120" Margin="0,320,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
 
                     </Label>
-                    <ComboBox x:Name="cmb_box_Discountpackage_billing" Height="25" Width="200"  Margin="120,320,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="12" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
+                    <ComboBox x:Name="cmb_box_Discountpackage_billing" DropDownClosed="ComboBox_DropDownClosed_Discount"  DisplayMemberPath="Discount" ItemsSource="{Binding}"  Height="25" Width="200"  Margin="120,320,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="12" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
 
-                        <ComboBoxItem Content="a"></ComboBoxItem>
-                        <ComboBoxItem Content="a"></ComboBoxItem>
-                        <ComboBoxItem Content="a"></ComboBoxItem>
-                        <ComboBoxItem Content="a"></ComboBoxItem>
 
+
+                       
                     </ComboBox>
 
                     <!-- Label=>Warranty: & ComboBox-->
                     <Label Content="Warranty"  Height="27" Width="120" Margin="0,350,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
 
                     </Label>
-                    <ComboBox x:Name="cmb_box_Warranty_billing" Height="25" Width="200"  Margin="120,350,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="12" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
+                    <ComboBox x:Name="cmb_box_Warranty_billing" DropDownClosed="ComboBox_DropDownClosed_Warranty"  DisplayMemberPath="Warranty" ItemsSource="{Binding}" Height="25" Width="200"  Margin="120,350,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="12" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
 
 
-                        <ComboBoxItem Content="1 months"/>
-                        <ComboBoxItem Content="3 months"/>
-                        <ComboBoxItem Content="4 months"/>
-                        <ComboBoxItem Content="6 months"/>
-                        <ComboBoxItem Content="12 months"/>
-                        <ComboBoxItem Content="1 years"/>
-                        <ComboBoxItem Content="2 years"/>
-                        <ComboBoxItem Content="3 years"/>
-                        <ComboBoxItem Content="4 years"/>
-                        <ComboBoxItem Content="5 years"/>
-                        <ComboBoxItem Content="6 years"/>
-                        <ComboBoxItem Content="7 years"/>
-                        <ComboBoxItem Content="8 years"/>
-                        <ComboBoxItem Content="9 years"/>
-                        <ComboBoxItem Content="10 years"/>
-                        <ComboBoxItem Content="15 years"/>
+                
                     </ComboBox>
 
                     <!-- Label=>VAT:::: & ComboBox-->
                     <Label Content="VAT"  Height="27" Width="120" Margin="0,380,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
 
                     </Label>
-                    <ComboBox x:Name="cmb_box_VAT_billing" Height="27" Width="200"  Margin="120,380,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="12" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
-                        <ComboBoxItem Content="0.1%"/>
-                        <ComboBoxItem Content="0.2%"/>
-                        <ComboBoxItem Content="0.3%"/>
-                        <ComboBoxItem Content="0.4%"/>
-                        <ComboBoxItem Content="0.5%"/>
-                        <ComboBoxItem Content="0.6%"/>
-                        <ComboBoxItem Content="0.7%"/>
-                        <ComboBoxItem Content="0.8%"/>
-                        <ComboBoxItem Content="0.9%"/>
-
-                        <ComboBoxItem Content="1%"/>
-                        <ComboBoxItem Content="2%"/>
-                        <ComboBoxItem Content="3%"/>
-                        <ComboBoxItem Content="4%"/>
-                        <ComboBoxItem Content="5%"/>
-                        <ComboBoxItem Content="6%"/>
-                        <ComboBoxItem Content="7%"/>
-                        <ComboBoxItem Content="8%"/>
-                        <ComboBoxItem Content="9%"/>
-
-                        <ComboBoxItem Content="10%"/>
-                        <ComboBoxItem Content="11%"/>
-                        <ComboBoxItem Content="12%"/>
-                        <ComboBoxItem Content="13%"/>
-                        <ComboBoxItem Content="14%"/>
-                        <ComboBoxItem Content="15%"/>
-                        <ComboBoxItem Content="16%"/>
-                        <ComboBoxItem Content="17%"/>
-                        <ComboBoxItem Content="18%"/>
-                        <ComboBoxItem Content="19%"/>
-                        <ComboBoxItem Content="20%"/>
-                        <ComboBoxItem Content="21%"/>
-                        <ComboBoxItem Content="22%"/>
-                        <ComboBoxItem Content="23%"/>
-                        <ComboBoxItem Content="24%"/>
-                        <ComboBoxItem Content="25%"/>
-
-                        <ComboBoxItem Content="30%"/>
-                        <ComboBoxItem Content="35%"/>
-                        <ComboBoxItem Content="40%"/>
-                        <ComboBoxItem Content="45%"/>
-                        <ComboBoxItem Content="50%"/>
-                        <ComboBoxItem Content="55%"/>
+                    <ComboBox x:Name="cmb_box_VAT_billing" DropDownClosed="ComboBox_DropDownClosed_VAT"  DisplayMemberPath="VAT" ItemsSource="{Binding}" Height="27" Width="200"  Margin="120,380,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="12" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
+                      
                     </ComboBox>
                     <!-- Billing ADD Button-->
 
@@ -2269,7 +2210,7 @@
                                         <StringAnimationUsingKeyFrames
                                             Storyboard.TargetName="textBlock"
                                             Storyboard.TargetProperty="(TextBlock.Text)"
-                                            Duration="0:0:2.8"
+                                            Duration="0:0:3.9"
                                             AutoReverse="True"
                                             RepeatBehavior="Forever">
                                             <DiscreteStringKeyFrame Value=" " KeyTime="0:0:0"></DiscreteStringKeyFrame>

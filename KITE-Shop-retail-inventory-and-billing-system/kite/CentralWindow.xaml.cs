@@ -47,7 +47,10 @@ namespace kite
       
         public static string selected_Quantity; //selected_Price
         public static string selected_Price;
-        public static string Set_Price;
+        public static string Set_Price;        //V_Discount_billing V_Warranty_billing V_VAT_billing
+        public static string V_Discount_billing;
+        public static string V_Warranty_billing;
+        public static string V_VAT_billing;
         public CentralWindow()
         {
             InitializeComponent();
@@ -979,7 +982,13 @@ namespace kite
         public static int count2;
         public static int Q1;
         public static string price_count;
-        public static int re_Quantity;
+        public static int re_Quantity; 
+        public static int int_Discount;
+        public static int total_Discount;
+        public static string Discount;
+        public static int int_vat;
+        public static int total_vat;
+        public static string VAT;
         private void ComboBox_DropDownClosed_Price_billing(object sender, EventArgs e)
         {
 
@@ -1016,11 +1025,104 @@ namespace kite
 
 
             Quantity2 = combobox_Quantity_billing.Text;
-          
+
+
+            try
+            {
+                string mycon = "server=localhost;user id=root;database=kite_bd";
+                string sql1 = "SELECT  `Discount` FROM `others` ";
+                MySqlConnection connection2 = new MySqlConnection(mycon);
+                MySqlCommand cmdSel2 = new MySqlCommand(sql1, connection2);
+
+                DataTable dt2 = new DataTable();
+                connection2.Open();
+                MySqlDataAdapter da2 = new MySqlDataAdapter(cmdSel2);
+                da2.Fill(dt2);
+
+                cmb_box_Discountpackage_billing.ItemsSource = dt2.DefaultView;
+
+
+                connection2.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+        private void ComboBox_DropDownClosed_Warranty(object sender, EventArgs e)
+        {
+
+
+            V_Warranty_billing = cmb_box_Warranty_billing.Text;
+
+            try
+            {
+                string mycon = "server=localhost;user id=root;database=kite_bd";
+                string sql1 = "SELECT  `VAT` FROM `others`";
+                MySqlConnection connection2 = new MySqlConnection(mycon);
+                MySqlCommand cmdSel2 = new MySqlCommand(sql1, connection2);
+
+                DataTable dt2 = new DataTable();
+                connection2.Open();
+                MySqlDataAdapter da2 = new MySqlDataAdapter(cmdSel2);
+                da2.Fill(dt2);
+
+                cmb_box_VAT_billing.ItemsSource = dt2.DefaultView;
+
+
+                connection2.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
 
         }
+        private void ComboBox_DropDownClosed_VAT(object sender, EventArgs e)
+        {
 
+
+            V_VAT_billing = cmb_box_VAT_billing.Text;
+
+
+           
+
+        }
+        private void ComboBox_DropDownClosed_Discount(object sender, EventArgs e)
+        {
+
+            V_Discount_billing = cmb_box_Discountpackage_billing.Text;
+
+
+
+            try
+            {
+                string mycon = "server=localhost;user id=root;database=kite_bd";
+                string sql1 = "SELECT  `Warranty` FROM `others` ";
+                MySqlConnection connection2 = new MySqlConnection(mycon);
+                MySqlCommand cmdSel2 = new MySqlCommand(sql1, connection2);
+
+                DataTable dt2 = new DataTable();
+                connection2.Open();
+                MySqlDataAdapter da2 = new MySqlDataAdapter(cmdSel2);
+                da2.Fill(dt2);
+
+                cmb_box_Warranty_billing.ItemsSource = dt2.DefaultView;
+
+
+                connection2.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
 
         private void CustomertextboxAddClick(object sender, RoutedEventArgs e)
         {//Var_Customer_Name  Var_Customer_Address Var_Customer_Mobile Var_Customer_Email 
@@ -1056,9 +1158,9 @@ namespace kite
      
         private void BillingADDClick(object sender, RoutedEventArgs e)
         {
+            
 
-
-          int Q1 = Convert.ToInt32(Quantity2);
+            int Q1 = Convert.ToInt32(Quantity2);
           
             Quantity1 = txtb_box_Quantity_billing.Text;
 
@@ -1073,24 +1175,19 @@ namespace kite
             try
             {
                 string mycon = "server=localhost;user id=root;database=kite_bd";
-                //OR `Series Number` = @VarSeriesNumber
+          
 
-                string query = "UPDATE `product` SET `Quantity`= @reQ WHERE `Price`= @selectedPrice OR `Model No`= @Number";
+                string query = "UPDATE `product` SET `Quantity`= @reQ WHERE `Model No`= @Number";
 
                 MySqlConnection con = new MySqlConnection(mycon);
-                MySqlCommand cmd = new MySqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@reQ", Convert.ToInt16(re_Quantity));
-                cmd.Parameters.AddWithValue("@selectedModelNo", Convert.ToInt16(selected_Price));
-                cmd.Parameters.AddWithValue("@Number", selected_ModelNo);
-
-
-                MySqlDataReader MyReader;
+                MySqlCommand cmd = new MySqlCommand(query, con); 
                 con.Open();
-                MyReader = cmd.ExecuteReader();
-                MessageBox.Show("Data Updated");
-                while (MyReader.Read())
-                {
-                }
+                cmd.Parameters.Add(new MySqlParameter("@reQ", Convert.ToInt16(re_Quantity)));
+                cmd.Parameters.Add(new MySqlParameter("@Number",selected_ModelNo));
+                //close data reader
+                cmd.ExecuteNonQuery();
+
+      
                 con.Close();
 
             }
@@ -1098,9 +1195,26 @@ namespace kite
             {
                 MessageBox.Show(ex.Message);
             }
+            int_Discount = Convert.ToInt32(V_Discount_billing);
+            int_vat = Convert.ToInt32(V_Discount_billing);
 
             count2 = count2 * count1;
-            price_count = Convert.ToString(count2);
+            int count3 = count2;
+            price_count = Convert.ToString(count3);
+            int temp = int_Discount * count2;
+            temp = temp / 100;
+            total_Discount = temp;
+            count2 = count2 - temp;
+           
+            Discount = Convert.ToString(count2);
+            int count4 = count2;
+            temp = int_vat * count4;
+            temp = temp / 100;
+            total_vat = temp;
+            int temp1 = count2 + temp;
+            
+            VAT = Convert.ToString(temp1);
+
         }
         
         private void BillingCleanClick(object sender, RoutedEventArgs e)
@@ -1110,39 +1224,32 @@ namespace kite
 
         private void BillingPrintClick(object sender, RoutedEventArgs e)
         {
-            PrintDialog pd = new PrintDialog();
-
-            if ((pd.ShowDialog() == true))
-
-            {
-
-                //use either one of the below     
-
-                pd.PrintVisual(Receipt_RichTextBox as Visual, "Print Visual");
-
-                pd.PrintDocument(documentPaginator: ((IDocumentPaginatorSource)Receipt_RichTextBox.Document).DocumentPaginator,
-
-                    description: "Microsoft Print to PDF");
-
-            }
-
-        }
-        private void BillingPrintpreviewbtClick(object sender, RoutedEventArgs e)
-        {
             PrintDialog printDlg = new PrintDialog();  //Var_Customer_Name  Var_Customer_Address Var_Customer_Mobile Var_Customer_Email 
-            FlowDocument doc = new FlowDocument(new Paragraph(new Run("*******************KITE-Receipt****************\n"+
-                                                                     "Customer Name : "+Var_Customer_Name +" "+"Address : " + Var_Customer_Address + "\n" +
-                                                                     "Mobile No : " +Var_Customer_Mobile +" "+ "Email : " + Var_Customer_Email + "\n"+
-                                                                     "------------------------------------------------------------- \n"+
-                                                                     "Products Name : " + selected_ProductsName + "\n"+
+            FlowDocument doc = new FlowDocument(new Paragraph(new Run("*******************KITE-Receipt****************\n" +
+                                                                     "Customer Name : " + Var_Customer_Name + " " + "Address : " + Var_Customer_Address + "\n" +
+                                                                     "Mobile No : " + Var_Customer_Mobile + " " + "Email : " + Var_Customer_Email + "\n" +
+                                                                     "------------------------------------------------------------- \n" +
+                                                                     "Products Name : " + selected_ProductsName + "\n" +
                                                                      "Model No : " + selected_ModelNo + "\n" +
-                                                                     "Quantity : " +Quantity1+ "\n"+
-                                                                     "Price : " + price_count + "\n"
+                                                                     "Quantity : " + Quantity1 + "\n" +
+                                                                     "Price :                                                 " + price_count + " TK" + "\n" +
+                                                                     "------------------------------------------------------------- \n" +
+                                                                     "Discount (-%)  :  " + V_Discount_billing + "% : : " + total_Discount+"\t"+ Discount + " TK" + "\n" +
+                                                                     "Warranty  :  " + V_Warranty_billing + "\n" +
+                                                                     "VAT(+%):   " + V_VAT_billing + "%  :  : " + total_vat +"\t"+ VAT + " TK" + "\n" +
+                                                                      "------------------------------------------------------------- \n" +
+                                                                     "Total :                                                 " + VAT +" TK"+"\n"+
+                                                                      "------------------------------------------------------------- \n" 
                                                                      )));
 
             doc.Name = "FlowDoc";//selected_ProductsName  selected_ModelNo selected_Quantity
             IDocumentPaginatorSource idpSource = doc;
             printDlg.PrintDocument(idpSource.DocumentPaginator, "Hello WPF Printing.");
+
+        }
+        private void BillingPrintpreviewbtClick(object sender, RoutedEventArgs e)
+        {
+            
 
         }
 
