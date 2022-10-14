@@ -23,7 +23,7 @@ namespace kite
     public partial class CentralWindow : Window
     {
 
-      
+
         public static String Var_Products_Name;
         public static String Var_Model_No;
 
@@ -32,7 +32,7 @@ namespace kite
 
         public static int int_Price;
         public static int int_Quantity;
-        
+
         public static string v;
         // int_Quantity  int_Price  Var_Category Var_Series_Number Var_Model_No Var_Products_Name
 
@@ -44,13 +44,15 @@ namespace kite
         public static string selected_ProductsName;
         public static string selected__ProductsCategory;
         public static string selected_ModelNo;
-      
+
         public static string selected_Quantity; //selected_Price
         public static string selected_Price;
         public static string Set_Price;        //V_Discount_billing V_Warranty_billing V_VAT_billing
         public static string V_Discount_billing;
         public static string V_Warranty_billing;
         public static string V_VAT_billing;
+
+        public static string Text_Receipt;
         public CentralWindow()
         {
             InitializeComponent();
@@ -67,20 +69,20 @@ namespace kite
             this.WindowState = WindowState.Maximized;
             this.WindowStyle = WindowStyle.None;
 
-           if (this.WindowState == System.Windows.WindowState.Normal)
-                {
-                    //this.WindowState = System.Windows.WindowState.Maximized;
-                   this.WindowState = WindowState.Maximized;
-                   this.WindowStyle = WindowStyle.None;
+            if (this.WindowState == System.Windows.WindowState.Normal)
+            {
+                //this.WindowState = System.Windows.WindowState.Maximized;
+                this.WindowState = WindowState.Maximized;
+                this.WindowStyle = WindowStyle.None;
             }
-                else
-                {
-                    this.WindowState = System.Windows.WindowState.Normal;
-                     
-                }
-            
-            
-          
+            else
+            {
+                this.WindowState = System.Windows.WindowState.Normal;
+
+            }
+
+
+
 
         }
         private void minbtnClick(object sender, RoutedEventArgs e)
@@ -100,7 +102,7 @@ namespace kite
         }
         private void NewCommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-         // MessageBox.Show("NewCommandBinding_Executed");
+            // MessageBox.Show("NewCommandBinding_Executed");
             CentralWindow open = new CentralWindow();
             open.Show();
             this.Close();
@@ -176,8 +178,8 @@ namespace kite
         }
         private void theme_setting1_click(object sender, RoutedEventArgs e)   ///StartGridX CustomertextboxClean productstextboxClean megaoffergrid <<red
         {
-            
-                this.gridm.Background = System.Windows.Media.Brushes.MediumVioletRed;
+
+            this.gridm.Background = System.Windows.Media.Brushes.MediumVioletRed;
             this.megaoffergrid.Background = System.Windows.Media.Brushes.MediumVioletRed;
             this.StartGridX.Background = System.Windows.Media.Brushes.MediumVioletRed;
 
@@ -191,7 +193,7 @@ namespace kite
             this.BillinggridX.Background = System.Windows.Media.Brushes.MediumVioletRed;
             this.AccountgridX.Background = System.Windows.Media.Brushes.MediumVioletRed;
         }
-        private void theme_setting2_click(object sender, RoutedEventArgs e)   
+        private void theme_setting2_click(object sender, RoutedEventArgs e)
         {
 
             this.gridm.Background = System.Windows.Media.Brushes.Tan; //tan Beige Ivory Searchlable
@@ -206,7 +208,7 @@ namespace kite
 
             this.Searchlable.Foreground = System.Windows.Media.Brushes.Black;
         }
-        private void theme_setting3_click(object sender, RoutedEventArgs e)   
+        private void theme_setting3_click(object sender, RoutedEventArgs e)
         {
 
             this.gridm.Background = System.Windows.Media.Brushes.Black;
@@ -253,7 +255,7 @@ namespace kite
         private void theme_setting6_click(object sender, RoutedEventArgs e)
         {
 
-            this.gridm.Background = System.Windows.Media.Brushes.Ivory; 
+            this.gridm.Background = System.Windows.Media.Brushes.Ivory;
             this.megaoffergrid.Background = System.Windows.Media.Brushes.DimGray;
             this.StartGridX.Background = System.Windows.Media.Brushes.DimGray;
 
@@ -269,10 +271,10 @@ namespace kite
         //################## StockInput_MLBD ##############
         private void StockInput_MLBD(object sender, MouseButtonEventArgs e)
         {
-           OfferFairgridX.Visibility = Visibility.Collapsed;
-           CategorygridX.Visibility = Visibility.Collapsed;
-          BillinggridX.Visibility = Visibility.Collapsed;
-           AccountgridX.Visibility = Visibility.Collapsed;
+            OfferFairgridX.Visibility = Visibility.Collapsed;
+            CategorygridX.Visibility = Visibility.Collapsed;
+            BillinggridX.Visibility = Visibility.Collapsed;
+            AccountgridX.Visibility = Visibility.Collapsed;
             StartGrid.Visibility = Visibility.Collapsed;
 
             //Visible
@@ -320,7 +322,7 @@ namespace kite
             reader = com.ExecuteReader();
 
             con.Close();
-         
+
             txtb_ProductsName_Stock.Clear();
             txtb_ModelNo_Stock.Clear();
             txtb_SeriesNumber_Stock.Clear();
@@ -343,9 +345,9 @@ namespace kite
             Var_Series_Number = txtb_SeriesNumber_Stock.Text;
             if (txtb_ProductsName_Stock.Text != null || txtb_SeriesNumber_Stock.Text != null)
             {
-            
+
                 int_Price = Convert.ToInt32(txtb_Price_Stock.Text);
-               // int_Quantity = Convert.ToInt32(txtb_Quantity_Stock.Text);
+                // int_Quantity = Convert.ToInt32(txtb_Quantity_Stock.Text);
                 try
                 {
                     string mycon = "server=localhost;user id=root;database=kite_bd";  //OR `Series Number` = @VarSeriesNumber
@@ -391,7 +393,7 @@ namespace kite
             Var_Series_Number = txtb_SeriesNumber_Stock.Text;
             if (txtb_ProductsName_Stock.Text != null || txtb_SeriesNumber_Stock.Text != null)
             {
-                
+
                 try
                 {
 
@@ -422,13 +424,13 @@ namespace kite
                 MessageBox.Show("\tData Not Deleted !\n Pless enter product name or series number");
             }
 
-        } 
-          private void OfferFair_MLBD(object sender, MouseButtonEventArgs e)
-           {
+        }
+        private void OfferFair_MLBD(object sender, MouseButtonEventArgs e)
+        {
             StockinputgridX.Visibility = Visibility.Collapsed;
             CategorygridX.Visibility = Visibility.Collapsed;
             BillinggridX.Visibility = Visibility.Collapsed;
-             AccountgridX.Visibility = Visibility.Collapsed;
+            AccountgridX.Visibility = Visibility.Collapsed;
             StartGrid.Visibility = Visibility.Collapsed;
             //Visible
             OfferFairgridX.Visibility = Visibility.Visible;
@@ -437,7 +439,7 @@ namespace kite
             // Products Name || Model No || Series Number || Category ||  Price  || Quantity 
             // int_Quantity  int_Price  Var_Category Var_Series_Number Var_Model_No Var_Products_Name
             // cmb_box_ProductsCategory_offer
-           string mycon = "server=localhost;user id=root;database=kite_bd";
+            string mycon = "server=localhost;user id=root;database=kite_bd";
             string sql = "SELECT  a.* FROM `product` a  INNER JOIN (SELECT `Category`, MAX(ID) max_ID FROM  `product`  GROUP BY `Category`) b ON a.`Category` = b.`Category` AND  a.ID = b.max_ID";
 
             MySqlConnection connection = new MySqlConnection(mycon);
@@ -445,14 +447,14 @@ namespace kite
             DataTable dt = new DataTable();
             MySqlDataAdapter da = new MySqlDataAdapter(cmdSel);
             da.Fill(dt);
-           
-            cmb_box_ProductsCategory_offer.ItemsSource = dt.DefaultView;
-           
 
-        } 
+            cmb_box_ProductsCategory_offer.ItemsSource = dt.DefaultView;
+
+
+        }
 
         private void offerfairnextbtClick(object sender, RoutedEventArgs e)
-        { 
+        {
         }
 
         private void offerUpdateClick(object sender, RoutedEventArgs e)
@@ -464,8 +466,8 @@ namespace kite
         {
 
         }
-        
-   
+
+
 
         private void megaOfferChecked(object sender, RoutedEventArgs e)
         {
@@ -510,15 +512,15 @@ namespace kite
             connection.Open();
             MySqlDataAdapter da = new MySqlDataAdapter(cmdSel);
             da.Fill(dt);
-         
+
             cmb_box_ProductsCategory_Category.ItemsSource = dt.DefaultView;
 
-            
+
             connection.Close();
-  
+
 
         }
-   
+
         private void ComboBox_DropDownClosed_Category(object sender, EventArgs e)
         {
 
@@ -540,7 +542,7 @@ namespace kite
 
                 Category_datagridX.ItemsSource = dt2.DefaultView;
 
-            
+
                 connection2.Close();
 
             }
@@ -550,11 +552,11 @@ namespace kite
             }
 
         }
-  
+
 
         private void NextbtcategoryClick(object sender, RoutedEventArgs e)
         {
-            
+
 
             if (Category_Viewgrid2.Visibility == Visibility.Visible)
             {
@@ -588,7 +590,7 @@ namespace kite
         private void Search_MLBD(object sender, MouseButtonEventArgs e)
         {
             v = txtb_Search_Category.Text;
-           if(v=="all" || v=="All"|| v == "*")
+            if (v == "all" || v == "All" || v == "*")
             {
                 string mycon = "server=localhost;user id=root;database=kite_bd";
                 string sql = "SELECT * FROM `product`";
@@ -623,13 +625,13 @@ namespace kite
                     MessageBox.Show(ex.Message);
                 }
             }
-        
+
             txtb_Search_Category.Clear();
         }
 
         private void CategoryViewgrid2_BT1Click(object sender, RoutedEventArgs e)
-        { 
-            string selected = V5.Text; 
+        {
+            string selected = V5.Text;
 
             try
             {
@@ -653,8 +655,8 @@ namespace kite
             {
                 MessageBox.Show(ex.Message);
             }
-        
-    }
+
+        }
 
         private void CategoryViewgrid2_BT2Click(object sender, RoutedEventArgs e)
         {
@@ -743,7 +745,7 @@ namespace kite
         private void CategoryViewgrid1_BT1Click(object sender, RoutedEventArgs e)
         {
             string selected = v1.Text;
-            
+
             try
             {
                 string mycon = "server=localhost;user id=root;database=kite_bd";
@@ -851,7 +853,7 @@ namespace kite
                 MessageBox.Show(ex.Message);
             }
         }
- 
+
 
         //######################################  Billing method # ########################################
         private void Billing_MLBD(object sender, MouseButtonEventArgs e)
@@ -876,7 +878,7 @@ namespace kite
             da_C.Fill(dt);
 
             cmb_box_ProductsCategory_billing.ItemsSource = dt.DefaultView;
-           
+
 
             connection.Close();
 
@@ -884,9 +886,9 @@ namespace kite
         private void ComboBox_DropDownClosed_ProductsCategory_billing(object sender, EventArgs e)
         {
 
-           
 
-             selected__ProductsCategory = cmb_box_ProductsCategory_billing.Text;
+
+            selected__ProductsCategory = cmb_box_ProductsCategory_billing.Text;
             try
             {
                 string mycon = "server=localhost;user id=root;database=kite_bd";
@@ -916,7 +918,7 @@ namespace kite
         {
 
 
-           
+
             selected_ProductsName = cmb_ProductsName_billing.Text;
 
 
@@ -947,9 +949,9 @@ namespace kite
         private void ComboBox_DropDownClosed_ModelNo_billing(object sender, EventArgs e)
         {
 
-           
 
-          selected_ModelNo = cmb_box_ModelNo_billing.Text;
+
+            selected_ModelNo = cmb_box_ModelNo_billing.Text;
 
 
             try
@@ -982,7 +984,7 @@ namespace kite
         public static int count2;
         public static int Q1;
         public static string price_count;
-        public static int re_Quantity; 
+        public static int re_Quantity;
         public static int int_Discount;
         public static int total_Discount;
         public static string Discount;
@@ -1010,7 +1012,7 @@ namespace kite
                 da2.Fill(dt2);
 
                 combobox_Quantity_billing.ItemsSource = dt2.DefaultView;
-          
+
                 connection2.Close();
             }
             catch (Exception ex)
@@ -1089,7 +1091,7 @@ namespace kite
             V_VAT_billing = cmb_box_VAT_billing.Text;
 
 
-           
+
 
         }
         private void ComboBox_DropDownClosed_Discount(object sender, EventArgs e)
@@ -1132,11 +1134,18 @@ namespace kite
             Var_Customer_Mobile = txtb_CustomerMobileNo_billing.Text;
             Var_Customer_Email = txtb_CustomerEmail_billing.Text;
 
-          /*  Receipt_RichTextBox.Selection.Text = 
-                                                 "CustomerName : " + Var_Customer_Name + " . "+ "Address : " + Var_Customer_Address + "\n"
-                                                   +
-                                                 "Mobile No : " + Var_Customer_Mobile + " . " + "Email : " + Var_Customer_Email + "\n";
-          */
+
+            string mycon = "server=localhost;user id=root;database=kite_bd";
+            string query = "INSERT INTO `customer`(`Customer Name`, `Customer Address`, `Customer Mobile`, `Customer Email`) VALUES ('" + Var_Customer_Name + "','" + Var_Customer_Address + "','" + Var_Customer_Mobile + "','" + Var_Customer_Email + "')";
+
+            MySqlConnection con = new MySqlConnection(mycon);
+            MySqlCommand com = new MySqlCommand(query, con);
+            MySqlDataReader reader;
+
+            con.Open();
+            reader = com.ExecuteReader();
+
+            con.Close();
         }
         private void CustomertextboxcleanClick(object sender, RoutedEventArgs e)
         {
@@ -1155,39 +1164,39 @@ namespace kite
 
         }
 
-     
+
         private void BillingADDClick(object sender, RoutedEventArgs e)
         {
-            
+
 
             int Q1 = Convert.ToInt32(Quantity2);
-          
+
             Quantity1 = txtb_box_Quantity_billing.Text;
 
 
-           count2 = Convert.ToInt32(Quantity1);
-           
+            count2 = Convert.ToInt32(Quantity1);
+
             re_Quantity = (Q1 - count2);
             MessageBox.Show(" " + re_Quantity + " ");
 
-      
-          
+
+
             try
             {
                 string mycon = "server=localhost;user id=root;database=kite_bd";
-          
+
 
                 string query = "UPDATE `product` SET `Quantity`= @reQ WHERE `Model No`= @Number";
 
                 MySqlConnection con = new MySqlConnection(mycon);
-                MySqlCommand cmd = new MySqlCommand(query, con); 
+                MySqlCommand cmd = new MySqlCommand(query, con);
                 con.Open();
                 cmd.Parameters.Add(new MySqlParameter("@reQ", Convert.ToInt16(re_Quantity)));
-                cmd.Parameters.Add(new MySqlParameter("@Number",selected_ModelNo));
+                cmd.Parameters.Add(new MySqlParameter("@Number", selected_ModelNo));
                 //close data reader
                 cmd.ExecuteNonQuery();
 
-      
+
                 con.Close();
 
             }
@@ -1205,18 +1214,18 @@ namespace kite
             temp = temp / 100;
             total_Discount = temp;
             count2 = count2 - temp;
-           
+
             Discount = Convert.ToString(count2);
             int count4 = count2;
             temp = int_vat * count4;
             temp = temp / 100;
             total_vat = temp;
             int temp1 = count2 + temp;
-            
+
             VAT = Convert.ToString(temp1);
 
         }
-        
+
         private void BillingCleanClick(object sender, RoutedEventArgs e)
         {
             Receipt_RichTextBox.Document.Blocks.Clear();
@@ -1224,36 +1233,69 @@ namespace kite
 
         private void BillingPrintClick(object sender, RoutedEventArgs e)
         {
-            PrintDialog printDlg = new PrintDialog();  //Var_Customer_Name  Var_Customer_Address Var_Customer_Mobile Var_Customer_Email 
-            FlowDocument doc = new FlowDocument(new Paragraph(new Run("*******************KITE-Receipt****************\n" +
-                                                                     "Customer Name : " + Var_Customer_Name + " " + "Address : " + Var_Customer_Address + "\n" +
-                                                                     "Mobile No : " + Var_Customer_Mobile + " " + "Email : " + Var_Customer_Email + "\n" +
-                                                                     "------------------------------------------------------------- \n" +
-                                                                     "Products Name : " + selected_ProductsName + "\n" +
-                                                                     "Model No : " + selected_ModelNo + "\n" +
-                                                                     "Quantity : " + Quantity1 + "\n" +
-                                                                     "Price :                                                 " + price_count + " TK" + "\n" +
-                                                                     "------------------------------------------------------------- \n" +
-                                                                     "Discount (-%)  :  " + V_Discount_billing + "% : : " + total_Discount+"\t"+ Discount + " TK" + "\n" +
-                                                                     "Warranty  :  " + V_Warranty_billing + "\n" +
-                                                                     "VAT(+%):   " + V_VAT_billing + "%  :  : " + total_vat +"\t"+ VAT + " TK" + "\n" +
-                                                                      "------------------------------------------------------------- \n" +
-                                                                     "Total :                                                 " + VAT +" TK"+"\n"+
-                                                                      "------------------------------------------------------------- \n" 
-                                                                     )));
+
+            PrintDialog printDlg = new PrintDialog();
+            FlowDocument doc = new FlowDocument(new Paragraph(new Run(Text_Receipt)));
 
             doc.Name = "FlowDoc";//selected_ProductsName  selected_ModelNo selected_Quantity
             IDocumentPaginatorSource idpSource = doc;
             printDlg.PrintDocument(idpSource.DocumentPaginator, "Hello WPF Printing.");
 
+            try
+            {
+                string mycon = "server=localhost;user id=root;database=kite_bd";
+                string query = "UPDATE `customer` SET `Customer Receipt`= @Receipt WHERE `Customer Name`= @name AND `Customer Mobile`= @Number1";
+
+                MySqlConnection con = new MySqlConnection(mycon);
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                con.Open();
+
+                cmd.Parameters.Add(new MySqlParameter("@name", Var_Customer_Name));
+                cmd.Parameters.Add(new MySqlParameter("@Number1", Var_Customer_Mobile));
+                cmd.Parameters.Add(new MySqlParameter("@Receipt", Text_Receipt));
+                //close data reader
+                cmd.ExecuteNonQuery();
+
+
+                con.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
         private void BillingPrintpreviewbtClick(object sender, RoutedEventArgs e)
         {
-            
+
+
+
+            Text_Receipt = "*******************KITE-Receipt****************\n" +
+                         "Customer Name : " + Var_Customer_Name + " " + "Address : " + Var_Customer_Address + "\n" +
+                         "Mobile No : " + Var_Customer_Mobile + " " + "Email : " + Var_Customer_Email + "\n" +
+                         "------------------------------------------------------------- \n" +
+                         "Products Name : " + selected_ProductsName + "\n" +
+                         "Model No : " + selected_ModelNo + "\n" +
+                         "Quantity : " + Quantity1 + "\n" +
+                         "Price :                                                 " + price_count + " TK" + "\n" +
+                         "------------------------------------------------------------- \n" +
+                         "Discount (-%)  :  " + V_Discount_billing + "% : : " + total_Discount + "\t" + Discount + " TK" + "\n" +
+                         "Warranty  :  " + V_Warranty_billing + "\n" +
+                         "VAT(+%):   " + V_VAT_billing + "%  :  : " + total_vat + "\t" + VAT + " TK" + "\n" +
+                          "------------------------------------------------------------- \n" +
+                         "Total :                                                 " + VAT + " TK" + "\n" +
+                          "------------------------------------------------------------- \n" +
+                          "\t\t Bill generated by\n\t\t\t KITE Software\n";
+
+
+            Receipt_RichTextBox.Document.Blocks.Clear();
+            Receipt_RichTextBox.Document.Blocks.Add(new Paragraph(new Run(Text_Receipt)));
+
 
         }
 
-      
+
         //######################################################ACCount ###############
 
         private void Account_MLBD(object sender, MouseButtonEventArgs e)
@@ -1268,7 +1310,8 @@ namespace kite
 
 
         }
-
+        public static string C_M;
+        public static string C_N;
         private void AccountInstallmentsClick(object sender, RoutedEventArgs e)
         {
 
@@ -1276,8 +1319,42 @@ namespace kite
 
         private void AccountBalancebtClick(object sender, RoutedEventArgs e)
         {
+            C_N=txtb_CustomerName_Account.Text;
+             C_M =txtb_CustomerMobileNo_Account.Text;
+            try
+            {
+                string mycon = "server=localhost;user id=root;database=kite_bd";
+                string query = "SELECT * FROM `customer` WHERE `Customer Name`= @name2 AND `Customer Mobile`= @Number2 ";
+                MySqlConnection con = new MySqlConnection(mycon);
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                con.Open();
+
+                cmd.Parameters.Add(new MySqlParameter("@name2", C_N));
+                cmd.Parameters.Add(new MySqlParameter("@Number2", C_M));
+
+                //close data reader
+                cmd.ExecuteNonQuery();
+
+                DataTable dt2 = new DataTable();
+                
+                MySqlDataAdapter da2 = new MySqlDataAdapter(cmd);
+                da2.Fill(dt2);
+                //Account_RichTextBox
+                Account_DataGrid.ItemsSource = dt2.DefaultView;
+
+                con.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+
 
         }
+
+    
 
         private void AccountPrintpreviewClick(object sender, RoutedEventArgs e)
         {
@@ -1288,7 +1365,7 @@ namespace kite
         {
 
         }
-
+      
     
     }
 }
