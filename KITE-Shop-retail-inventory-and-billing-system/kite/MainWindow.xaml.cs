@@ -59,10 +59,10 @@ namespace kite
                 
             
             }
-            if (counter == 2) // 99 
+            if (counter == 99) // 99 
             {
-                // Login op = new Login();
-                CentralWindow op = new CentralWindow();
+                 Login op = new Login();
+              
                 op.Show();
                 Close();
             }

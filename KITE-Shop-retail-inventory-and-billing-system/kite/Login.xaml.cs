@@ -144,8 +144,8 @@ namespace kite
                     reader = com.ExecuteReader();
                     //--------------------------------
 
-                    txtb_Name_user.Text = " ";
-                    txtb_Email_user.Text = " ";
+                    txtb_Name_user.Text = "";
+                    txtb_Email_user.Text = "";
                     txtb_Password_user.Password = "";
                     txtb_RepeatPassword_user.Password = "";
 

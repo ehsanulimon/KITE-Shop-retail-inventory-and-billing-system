@@ -1628,7 +1628,7 @@
                     <Label Content="Products Name"  Height="27" Width="120" Margin="0,10,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
 
                     </Label>
-                    <ComboBox x:Name="cmb_ProductsName_billing" DropDownClosed="ComboBox_DropDownClosed_ProductsName_billing"  DisplayMemberPath="Products Name" ItemsSource="{Binding}" Height="25" Width="200"  Margin="120,10,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="13" FontFamily="Century Gothic" BorderBrush="{x:Null}" />
+                    <ComboBox x:Name="cmb_ProductsName_billing" DropDownClosed="ComboBox_DropDownClosed_ProductsName_billing"  DisplayMemberPath="Products Name" ItemsSource="{Binding}" Height="25" Width="200"  Margin="120,10,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="12" FontFamily="Century Gothic" BorderBrush="{x:Null}" />
 
                     <!-- Label=>Model No:: & ComboBox-->
                     <Label Content="Model No"  Height="27" Width="120" Margin="0,40,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
@@ -1789,7 +1789,7 @@
                     <!---service section -->
 
                     <!-- Label=>Discount package: & ComboBox-->
-                    <Label Content="Discount"  Height="27" Width="120" Margin="0,320,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+                    <Label Content="Discount(-%)"  Height="27" Width="120" Margin="0,320,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
 
                     </Label>
                     <ComboBox x:Name="cmb_box_Discountpackage_billing" DropDownClosed="ComboBox_DropDownClosed_Discount"  DisplayMemberPath="Discount" ItemsSource="{Binding}"  Height="25" Width="200"  Margin="120,320,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="12" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
@@ -1810,7 +1810,7 @@
                     </ComboBox>
 
                     <!-- Label=>VAT:::: & ComboBox-->
-                    <Label Content="VAT"  Height="27" Width="120" Margin="0,380,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
+                    <Label Content="VAT(+%)"  Height="27" Width="120" Margin="0,380,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
 
                     </Label>
                     <ComboBox x:Name="cmb_box_VAT_billing" DropDownClosed="ComboBox_DropDownClosed_VAT"  DisplayMemberPath="VAT" ItemsSource="{Binding}" Height="27" Width="200"  Margin="120,380,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="12" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
@@ -2017,9 +2017,7 @@
 
 
 
-                    <!-- Account Installments Button   -->
-
-                    <Button x:Name="AccountInstallments"
+                    <!-- Account Installments Button        <Button x:Name="AccountInstallments"
                  Height="35"
                             
                 Width="120" 
@@ -2050,10 +2048,12 @@
 
                             </Border>
                         </Button.Content>
-                    </Button>
+                    </Button> -->
+
+               
 
 
-                    <!-- Account Balance Button-->
+                    <!-- Account Balance Button Receipt -->
 
                     <Button x:Name="AccountBalancebt"
                  Height="35"
@@ -2077,7 +2077,7 @@
                 Background="#ff9425" 
                 BorderBrush="Transparent" 
                  BorderThickness="4,4,4,4" >
-                                <TextBlock   Text="Balance" 
+                                <TextBlock   Text="Receipt" 
                                 VerticalAlignment="Center"
                     FontFamily="Century Gothic" 
                     FontSize="15" 
@@ -2182,7 +2182,7 @@
                                 
                                  Foreground="Black"
                                   FontFamily="Century Gothic" 
-                                   FontSize="11" 
+                                   FontSize="14" 
                                    FontWeight="Medium"
                       >
                         
