@@ -2092,12 +2092,28 @@
                     <Label Content="Statistik"  Height="27" Width="100" Margin="70,160,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="COCOGOOSE "  FontWeight="Bold" >
 
                     </Label>
-                    <ComboBox x:Name="cmb_box_Statistik_Account" Height="25" Width="200"  Margin="5,200,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="14" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
-                        <ComboBoxItem Content="1"/>
-                        <ComboBoxItem Content="2"/>
-                        <ComboBoxItem Content="3"/>
-                        <ComboBoxItem Content="4"/>
+                    <ComboBox x:Name="cmb_box_Statistik_Account" DropDownClosed="ComboBox_DropDownClosed_Statistik_Account" Height="25" Width="200"  Margin="5,200,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="14" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
+                        <ComboBoxItem Content="total product"/>
+                        <ComboBoxItem Content="No. of Products"/>
+                        <ComboBoxItem Content="total stock price"/>
+                        <ComboBoxItem Content="total no. of sell"/>
+                        <ComboBoxItem Content="total amount sell"/>
                     </ComboBox>
+
+                    <DataGrid x:Name="StatistikDataGrid"
+                                 Width="200" Height="100" 
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Top" 
+                                 Margin="5,240,0,0" 
+                                 Background="White" 
+                                
+                                 Foreground="Black"
+                                  FontFamily="Century Gothic" 
+                                   FontSize="14" 
+                                   FontWeight="Bold"
+                      >
+
+                    </DataGrid>
 
                     <!--AccountPrintpreview Button-->
 
@@ -2187,6 +2203,7 @@
                       >
                         
                     </DataGrid>
+
 
 
                 </Grid>
