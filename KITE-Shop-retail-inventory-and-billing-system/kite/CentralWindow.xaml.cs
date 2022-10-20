@@ -33,6 +33,16 @@ namespace kite
         public static int int_Price;
         public static int int_Quantity;
 
+        public static String Var_Category_offer;
+        public static String Var_Products_Name_offer;
+        public static String Var_Model_No_offer;
+
+        public static String Var_Offer_package_offer;
+        public static int int_Quantity_offer;
+        public static int int_Discount_offer;
+        public static int int_Price_offer;
+        
+
         public static string v;
         // int_Quantity  int_Price  Var_Category Var_Series_Number Var_Model_No Var_Products_Name
 
@@ -280,8 +290,32 @@ namespace kite
             //Visible
             StockinputgridX.Visibility = Visibility.Visible;
 
+            string mycon = "server=localhost;port=3306; user id=root;database=kite_bd";
+            try
+            {
+                int stock_out = 0;
+               
+                string Query = "DELETE FROM `product` WHERE `Quantity` = @Stockout ";
+                MySqlConnection MyConn = new MySqlConnection(mycon);
+                MySqlCommand cmd = new MySqlCommand(Query, MyConn);
+                cmd.Parameters.AddWithValue("@Stockout", stock_out);
+               
+                MySqlDataReader MyReader;
+                MyConn.Open();
+                MyReader = cmd.ExecuteReader();
+              
+                while (MyReader.Read())
+                {
+                }
+                MyConn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             // Table show Stock input data grid 
-            string mycon = "server=localhost;user id=root;database=kite_bd";
+            
             string sql = "SELECT * FROM `product`";
             MySqlConnection connection = new MySqlConnection(mycon);
             MySqlCommand cmdSel = new MySqlCommand(sql, connection);
@@ -425,6 +459,7 @@ namespace kite
             }
 
         }
+        //################################ Offer Fair #########################################################################
         private void OfferFair_MLBD(object sender, MouseButtonEventArgs e)
         {
             StockinputgridX.Visibility = Visibility.Collapsed;
@@ -440,6 +475,17 @@ namespace kite
             // int_Quantity  int_Price  Var_Category Var_Series_Number Var_Model_No Var_Products_Name
             // cmb_box_ProductsCategory_offer
             string mycon = "server=localhost;user id=root;database=kite_bd";
+
+            string sql1 = "SELECT * FROM `offer`";
+            MySqlConnection connection1 = new MySqlConnection(mycon);
+            MySqlCommand cmdSel1 = new MySqlCommand(sql1, connection1);
+            DataTable dt1 = new DataTable();
+            MySqlDataAdapter da1 = new MySqlDataAdapter(cmdSel1);
+            da1.Fill(dt1);
+            Offerfair_datagridX.ItemsSource = dt1.DefaultView;
+
+
+
             string sql = "SELECT  a.* FROM `product` a  INNER JOIN (SELECT `Category`, MAX(ID) max_ID FROM  `product`  GROUP BY `Category`) b ON a.`Category` = b.`Category` AND  a.ID = b.max_ID";
 
             MySqlConnection connection = new MySqlConnection(mycon);
@@ -450,11 +496,288 @@ namespace kite
 
             cmb_box_ProductsCategory_offer.ItemsSource = dt.DefaultView;
 
+          
+
+        }
+        private void ComboBox_DropDownClosed_ProductsCategory_offer(object sender, EventArgs e)
+        {
+
+
+
+            string selected = cmb_box_ProductsCategory_offer.Text;
+
+            try
+            {
+                string mycon = "server=localhost;user id=root;database=kite_bd";
+                string sql1 = "SELECT `Products Name` FROM `product` WHERE `Category`= @c ";
+                MySqlConnection connection2 = new MySqlConnection(mycon);
+                MySqlCommand cmdSel2 = new MySqlCommand(sql1, connection2);
+                cmdSel2.Parameters.AddWithValue("@c", selected);
+                DataTable dt2 = new DataTable();
+                connection2.Open();
+                MySqlDataAdapter da2 = new MySqlDataAdapter(cmdSel2);
+                da2.Fill(dt2);
+
+                cmb_box_ProductsName_offer.ItemsSource = dt2.DefaultView;
+
+
+                connection2.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+        private void ComboBox_DropDownClosed_ProductsName_offer(object sender, EventArgs e)
+        {
+
+
+
+            string selected = cmb_box_ProductsName_offer.Text;
+
+            try
+            {
+                string mycon = "server=localhost;user id=root;database=kite_bd";
+                string sql1 = "SELECT `Model No` FROM `product` WHERE `Products Name`= @n ";
+                MySqlConnection connection2 = new MySqlConnection(mycon);
+                MySqlCommand cmdSel2 = new MySqlCommand(sql1, connection2);
+                cmdSel2.Parameters.AddWithValue("@n", selected);
+                DataTable dt2 = new DataTable();
+                connection2.Open();
+                MySqlDataAdapter da2 = new MySqlDataAdapter(cmdSel2);
+                da2.Fill(dt2);
+
+                combobox_ModelNo_offer.ItemsSource = dt2.DefaultView;
+
+
+                connection2.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+        private void ComboBox_DropDownClosed_ModelNo_offer(object sender, EventArgs e)
+        {
+
+
+
+            string selected = combobox_ModelNo_offer.Text;
+
+            try
+            {
+                string mycon = "server=localhost;user id=root;database=kite_bd";
+                string sql1 = "SELECT `Quantity` FROM `product` WHERE `Model No`= @M ";
+                MySqlConnection connection2 = new MySqlConnection(mycon);
+                MySqlCommand cmdSel2 = new MySqlCommand(sql1, connection2);
+                cmdSel2.Parameters.AddWithValue("@M", selected);
+                DataTable dt2 = new DataTable();
+                connection2.Open();
+                MySqlDataAdapter da2 = new MySqlDataAdapter(cmdSel2);
+                da2.Fill(dt2);
+
+                cmb_Quantity_offer.ItemsSource = dt2.DefaultView;
+                cmb_price_offer.ItemsSource = dt2.DefaultView;
+
+                connection2.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+        public static int Quantity_old;
+        private void ComboBox_DropDownClosed_Quantity_offer(object sender, EventArgs e)
+        {
+
+
+
+            string selected = cmb_Quantity_offer.Text;
+            Quantity_old = Convert.ToInt32(selected);
+            try
+            {
+                string mycon = "server=localhost;user id=root;database=kite_bd";
+                string sql1 = "SELECT `Price` FROM `product` WHERE `Quantity`= @M ";
+                MySqlConnection connection2 = new MySqlConnection(mycon);
+                MySqlCommand cmdSel2 = new MySqlCommand(sql1, connection2);
+                cmdSel2.Parameters.AddWithValue("@M", selected);
+                DataTable dt2 = new DataTable();
+                connection2.Open();
+                MySqlDataAdapter da2 = new MySqlDataAdapter(cmdSel2);
+                da2.Fill(dt2);
+
+                
+                cmb_price_offer.ItemsSource = dt2.DefaultView;
+
+                connection2.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+           
+
+
+        }
+
+        private void ComboBox_DropDownClosed_Discount_offer(object sender, EventArgs e)
+        {
+
+
+
+            int_Discount_offer = Convert.ToInt32(cmb_Discount_offer.Text);
+           
+
+
+        }
+
+        public static int price_old;
+        private void ComboBox_DropDownClosed_price_offer(object sender, EventArgs e)
+        {
+
+
+
+            string selected = cmb_price_offer.Text;
+            price_old = Convert.ToInt32(selected);
+
+            try
+            {
+                string mycon = "server=localhost;user id=root;database=kite_bd";
+                string sql1 = "SELECT  `Discount` FROM `others` ";
+                MySqlConnection connection2 = new MySqlConnection(mycon);
+                MySqlCommand cmdSel2 = new MySqlCommand(sql1, connection2);
+
+                DataTable dt2 = new DataTable();
+                connection2.Open();
+                MySqlDataAdapter da2 = new MySqlDataAdapter(cmdSel2);
+                da2.Fill(dt2);
+
+                cmb_Discount_offer.ItemsSource = dt2.DefaultView;
+
+
+                connection2.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+        }
+    
+        private void ComboBox_DropDownClosed_comboofferlistbox(object sender, EventArgs e)
+        {
+
+
+
+            string selected = comboofferlistbox.Text;
+
+           
 
         }
 
         private void offerfairnextbtClick(object sender, RoutedEventArgs e)
         {
+
+          
+
+            Var_Category_offer = cmb_box_ProductsCategory_offer.Text;
+             Var_Products_Name_offer = cmb_box_ProductsName_offer.Text;
+             Var_Model_No_offer = combobox_ModelNo_offer.Text;
+
+            Var_Offer_package_offer = txtb_Offerpackage_offer.Text;
+
+
+            // textbox into var
+            int_Quantity_offer = Convert.ToInt32(txtb_Quantity_offer.Text);
+            // current Quantity
+            int Quantity_set= ( Quantity_old  - int_Quantity_offer);
+
+            // current Price
+            int_Price_offer = (price_old * int_Quantity_offer);
+            int price_new = int_Price_offer;
+
+
+
+            int temp = int_Discount_offer * price_new;
+            temp = temp / 100;
+
+            // total Discount
+            int_Discount_offer = temp;
+
+            // current Price with Discount
+            int_Price_offer = (int_Price_offer - int_Discount_offer);
+
+            string mycon = "server=localhost;user id=root;database=kite_bd";
+            try
+            {
+                
+            string query = "INSERT INTO `offer`(`Category`, `Products Name`, `Model No`, `Offer package`, `Discount`, `Price`, `Quantity`) VALUES ('" + Var_Category_offer + "','" + Var_Products_Name_offer + "','" + Var_Model_No_offer + "','" + Var_Offer_package_offer + "','" + int_Discount_offer + "','" + int_Price_offer + "','" + int_Quantity_offer + "')";
+
+            MySqlConnection con = new MySqlConnection(mycon);
+            MySqlCommand com = new MySqlCommand(query, con);
+            MySqlDataReader reader;
+
+            con.Open();
+            reader = com.ExecuteReader();
+
+            con.Close();
+             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+       cmb_box_ProductsCategory_offer.Text ="";
+            cmb_box_ProductsName_offer.Text="";
+            combobox_ModelNo_offer.Text="";
+            txtb_Offerpackage_offer.Clear();
+            cmb_Quantity_offer.Text = "";
+            txtb_Quantity_offer.Clear();
+            cmb_Discount_offer.Text = "";
+            cmb_price_offer.Text = "";
+
+            try
+            {
+
+                string query = "UPDATE `product` SET `Quantity`= @reQ WHERE `Model No`= @Number";
+
+                MySqlConnection con = new MySqlConnection(mycon);
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                con.Open();
+                cmd.Parameters.Add(new MySqlParameter("@reQ", Quantity_set));
+                cmd.Parameters.Add(new MySqlParameter("@Number", Var_Model_No_offer));
+                //close data reader
+                cmd.ExecuteNonQuery();
+
+
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            string sql1 = "SELECT * FROM `offer`";
+            MySqlConnection connection1 = new MySqlConnection(mycon);
+            MySqlCommand cmdSel1 = new MySqlCommand(sql1, connection1);
+            DataTable dt1 = new DataTable();
+            MySqlDataAdapter da1 = new MySqlDataAdapter(cmdSel1);
+            da1.Fill(dt1);
+            Offerfair_datagridX.ItemsSource = dt1.DefaultView;
+
+
         }
 
         private void offerUpdateClick(object sender, RoutedEventArgs e)

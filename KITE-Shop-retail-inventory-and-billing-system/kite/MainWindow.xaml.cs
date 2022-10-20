@@ -59,7 +59,7 @@ namespace kite
                 
             
             }
-            if (counter == 99) // 99 
+            if (counter == 1) // 99 
             {
                  Login op = new Login();
               
