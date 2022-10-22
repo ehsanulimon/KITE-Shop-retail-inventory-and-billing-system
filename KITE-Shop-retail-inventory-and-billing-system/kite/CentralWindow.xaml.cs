@@ -290,7 +290,10 @@ namespace kite
             //Visible
             StockinputgridX.Visibility = Visibility.Visible;
 
-            string mycon = "server=localhost;port=3306; user id=root;database=kite_bd";
+             string mycon = "server=localhost;port=3306; user id=root;database=kite_bd";
+
+
+
             try
             {
                 int stock_out = 0;
@@ -782,7 +785,40 @@ namespace kite
 
         private void offerUpdateClick(object sender, RoutedEventArgs e)
         {
+            Var_Offer_package_offer = txtb_Offerpackage_offer.Text;
+           
+            if (txtb_Offerpackage_offer.Text != null)
+            {
 
+                try
+                {
+
+                    string mycon = "server=localhost;port=3306; user id=root;database=kite_bd";
+                    string Query = "DELETE FROM `offer` WHERE `Offer package` = @Offerpackage ";
+                    MySqlConnection MyConn = new MySqlConnection(mycon);
+                    MySqlCommand cmd = new MySqlCommand(Query, MyConn);
+                    cmd.Parameters.AddWithValue("@Offerpackage", Var_Offer_package_offer);
+                   
+                    MySqlDataReader MyReader;
+                    MyConn.Open();
+                    MyReader = cmd.ExecuteReader();
+                    MessageBox.Show("Data Deleted");
+                    while (MyReader.Read())
+                    {
+                    }
+                    MyConn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                txtb_ProductsName_Stock.Clear();
+                txtb_SeriesNumber_Stock.Clear();
+            }
+            else
+            {
+                MessageBox.Show("\tData Not Deleted !\n Pless enter Offer package Name");
+            }
         }
 
         private void offerDeleteClick(object sender, RoutedEventArgs e)
@@ -814,7 +850,7 @@ namespace kite
             pricerangesgrid.Visibility = Visibility.Visible;
         }
 
-
+        //########################################  Category ######################################################################
         private void Category_MLBD(object sender, MouseButtonEventArgs e)
         {
             StockinputgridX.Visibility = Visibility.Collapsed;
@@ -1191,7 +1227,33 @@ namespace kite
 
 
             string mycon = "server=localhost;user id=root;database=kite_bd";
-            string sql_C = "SELECT  a.* FROM `product` a  INNER JOIN (SELECT `Category`, MAX(ID) max_ID FROM  `product`  GROUP BY `Category`) b ON a.`Category` = b.`Category` AND  a.ID = b.max_ID";
+
+            try
+            {
+
+                string sql1 = "SELECT `Offer package` FROM `offer`";
+
+                MySqlConnection connection2 = new MySqlConnection(mycon);
+                MySqlCommand cmdSel2 = new MySqlCommand(sql1, connection2);
+
+                DataTable dt2 = new DataTable();
+                connection2.Open();
+                MySqlDataAdapter da2 = new MySqlDataAdapter(cmdSel2);
+                da2.Fill(dt2);
+
+                cmb_Offer_billing.ItemsSource = dt2.DefaultView;
+
+
+                connection2.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            try
+            {
+                string sql_C = "SELECT  a.* FROM `product` a  INNER JOIN (SELECT `Category`, MAX(ID) max_ID FROM  `product`  GROUP BY `Category`) b ON a.`Category` = b.`Category` AND  a.ID = b.max_ID";
 
             MySqlConnection connection = new MySqlConnection(mycon);
             MySqlCommand cmd_C = new MySqlCommand(sql_C, connection);
@@ -1204,6 +1266,16 @@ namespace kite
 
 
             connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+     
+
+          
+
 
         }
         private void ComboBox_DropDownClosed_ProductsCategory_billing(object sender, EventArgs e)
@@ -1453,6 +1525,33 @@ namespace kite
         private void CustomertextboxAddClick(object sender, RoutedEventArgs e)
         {//Var_Customer_Name  Var_Customer_Address Var_Customer_Mobile Var_Customer_Email 
 
+    
+        }
+
+        
+        private void ComboBox_DropDownClosed_Offer_billing(object sender, EventArgs e)
+        {
+            string offer_V = cmb_Offer_billing.Text;
+
+
+
+        }
+
+
+        private void CustomertextboxcleanClick(object sender, RoutedEventArgs e)
+        {
+            txtb_CustomerEmail_billing.Clear();
+            txtb_CustomerMobileNo_billing.Clear();
+            txtb_CustomerAddress_billing.Clear();
+            txtb_CustomerName_billing.Clear();
+        }
+     
+
+
+        private void BillingADDClick(object sender, RoutedEventArgs e)
+        {
+
+
             Var_Customer_Name = txtb_CustomerName_billing.Text;
             Var_Customer_Address = txtb_CustomerAddress_billing.Text;
             Var_Customer_Mobile = txtb_CustomerMobileNo_billing.Text;
@@ -1460,7 +1559,11 @@ namespace kite
 
 
             string mycon = "server=localhost;user id=root;database=kite_bd";
-            string query = "INSERT INTO `customer`(`Customer Name`, `Customer Address`, `Customer Mobile`, `Customer Email`) VALUES ('" + Var_Customer_Name + "','" + Var_Customer_Address + "','" + Var_Customer_Mobile + "','" + Var_Customer_Email + "')";
+
+            try
+            {
+
+           string query = "INSERT INTO `customer`(`Customer Name`, `Customer Address`, `Customer Mobile`, `Customer Email`) VALUES ('" + Var_Customer_Name + "','" + Var_Customer_Address + "','" + Var_Customer_Mobile + "','" + Var_Customer_Email + "')";
 
             MySqlConnection con = new MySqlConnection(mycon);
             MySqlCommand com = new MySqlCommand(query, con);
@@ -1470,29 +1573,12 @@ namespace kite
             reader = com.ExecuteReader();
 
             con.Close();
-        }
-        private void CustomertextboxcleanClick(object sender, RoutedEventArgs e)
-        {
-            txtb_CustomerEmail_billing.Clear();
-            txtb_CustomerMobileNo_billing.Clear();
-            txtb_CustomerAddress_billing.Clear();
-            txtb_CustomerName_billing.Clear();
-        }
-        private void productstextboxCleanClick(object sender, RoutedEventArgs e)
-        {
-            txtb_box_Quantity_billing.Text = "";
-            cmb_box_Price_billing.Text = "";
-            cmb_box_ProductsCategory_billing.Text = "";
-            cmb_box_ModelNo_billing.Text = "";
-            cmb_ProductsName_billing.Text = "";
-            combobox_Quantity_billing.Text = "";
 
-        }
-
-
-        private void BillingADDClick(object sender, RoutedEventArgs e)
-        {
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
             int Q1 = Convert.ToInt32(Quantity2);
 
@@ -1502,27 +1588,22 @@ namespace kite
             count2 = Convert.ToInt32(Quantity1);
 
             re_Quantity = (Q1 - count2);
-          
-
-
 
             try
             {
-                string mycon = "server=localhost;user id=root;database=kite_bd";
+  
+                string query2 = "UPDATE `product` SET `Quantity`= @reQ WHERE `Model No`= @Number";
 
-
-                string query = "UPDATE `product` SET `Quantity`= @reQ WHERE `Model No`= @Number";
-
-                MySqlConnection con = new MySqlConnection(mycon);
-                MySqlCommand cmd = new MySqlCommand(query, con);
-                con.Open();
+                MySqlConnection con2 = new MySqlConnection(mycon);
+                MySqlCommand cmd = new MySqlCommand(query2, con2);
+                con2.Open();
                 cmd.Parameters.Add(new MySqlParameter("@reQ", Convert.ToInt16(re_Quantity)));
                 cmd.Parameters.Add(new MySqlParameter("@Number", selected_ModelNo));
                 //close data reader
                 cmd.ExecuteNonQuery();
 
 
-                con.Close();
+                con2.Close();
 
             }
             catch (Exception ex)
@@ -1570,6 +1651,19 @@ namespace kite
         private void BillingCleanClick(object sender, RoutedEventArgs e)
         {
             Receipt_RichTextBox.Document.Blocks.Clear();
+
+            txtb_CustomerEmail_billing.Clear();
+            txtb_CustomerMobileNo_billing.Clear();
+            txtb_CustomerAddress_billing.Clear();
+            txtb_CustomerName_billing.Clear();
+
+            txtb_box_Quantity_billing.Text = "";
+            cmb_box_Price_billing.Text = "";
+            cmb_box_ProductsCategory_billing.Text = "";
+            cmb_box_ModelNo_billing.Text = "";
+            cmb_ProductsName_billing.Text = "";
+            combobox_Quantity_billing.Text = "";
+
         }
 
         private void BillingPrintClick(object sender, RoutedEventArgs e)

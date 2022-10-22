@@ -1632,47 +1632,20 @@
                     <Label Content="Quantity" Height="25" Width="120" Margin="0,130,0,0" Foreground="White" Background="{x:Null}" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
 
                     </Label>
-                    <TextBox x:Name="txtb_box_Quantity_billing"  Height="25" Width="140"  Margin="120,130,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="14" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
+                    <TextBox x:Name="txtb_box_Quantity_billing"  Height="25" Width="140"  Margin="120,128,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="14" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
                       
                     </TextBox>
-                    <ComboBox x:Name="combobox_Quantity_billing" DropDownClosed="ComboBox_DropDownClosed_Q_billing"  DisplayMemberPath="Quantity" ItemsSource="{Binding}" Height="25" Width="60"  Margin="260,130,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="14" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
+                    <ComboBox x:Name="combobox_Quantity_billing" DropDownClosed="ComboBox_DropDownClosed_Q_billing"  DisplayMemberPath="Quantity" ItemsSource="{Binding}" Cursor="Hand" Height="24" Width="60"  Margin="260,128,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="14" FontFamily="Century Gothic" BorderBrush="{x:Null}" Background="White" >
 
                     </ComboBox>
-
-                    <!--productsClean   Button-->
-
-                    <Button x:Name="productstextboxClean"
-                 Height="15"
-                            
-                Width="30" 
-                Background="Transparent" 
-                Foreground="White"  
-                 HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                 Margin="300,157,0,0"
-                BorderThickness="0" 
-                BorderBrush="Transparent" 
+                    <!--- offer-->
+                    <!-- Label=> offer: & combobox-->
+                    <Label Content="Offer Package" ToolTip="Complete the order by simply selecting the offer package name" Foreground="#15d6ff" Height="27" Width="120" Margin="0,155,0,0" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="14"  FontFamily="Century Gothic"  FontWeight="Normal" >
                 
-                 Style="{StaticResource SomeButtonStyle}" Click="productstextboxCleanClick" 
-                >
-                        <Button.Content>
-                            <Border CornerRadius="5"  
-                 Height="15"
-                Width="30" 
-                Margin="0"
-                Background="Red" 
-                BorderBrush="Transparent" 
-                 BorderThickness="0" >
-                                <TextBlock   Text="x" 
-                                VerticalAlignment="Center"
-                    FontFamily="Century Gothic" 
-                    FontSize="17" 
-                    FontWeight="Medium"
-                   TextAlignment="Center"/>
+                    </Label>
+                    <ComboBox x:Name="cmb_Offer_billing" DropDownClosed="ComboBox_DropDownClosed_Offer_billing"  DisplayMemberPath="Offer package" ItemsSource="{Binding}" Height="25" Width="200"  Margin="120,155,0,0" Foreground="#15d6ff" HorizontalAlignment="Left"  VerticalAlignment="Top"  FontSize="14" FontFamily="Century Gothic" BorderBrush="{x:Null}" />
 
-                            </Border>
-                        </Button.Content>
-                    </Button>
+
 
                     <!---Customer info -->
                     <!-- Label=>Customer Name:::: & Textbox-->
