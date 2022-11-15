@@ -41,8 +41,7 @@ namespace kite
 
         private void exitbtnClick(object sender, RoutedEventArgs e)
         {
-            CentralWindow open = new CentralWindow();
-            open.Show();
+            
             this.Close();
         }
         //-------------------Visibility mode change--------------

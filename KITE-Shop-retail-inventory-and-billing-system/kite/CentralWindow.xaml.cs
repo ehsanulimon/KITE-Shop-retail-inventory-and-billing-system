@@ -1733,7 +1733,7 @@ namespace kite
         }
 
 
-        //######################################################ACCount ###############
+        //###################################################### Account ###############
 
         private void Account_MLBD(object sender, MouseButtonEventArgs e)
         {
@@ -1928,7 +1928,7 @@ namespace kite
 
         private void AccountPrintpreviewClick(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void AccountPrintClick(object sender, RoutedEventArgs e)

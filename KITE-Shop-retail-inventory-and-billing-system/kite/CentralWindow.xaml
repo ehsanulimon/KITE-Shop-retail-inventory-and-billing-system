@@ -1672,71 +1672,7 @@
                     <TextBox x:Name="txtb_CustomerEmail_billing" Height="25" Width="230"  Margin="90,270,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"  FontSize="16" FontFamily="Century Gothic" BorderBrush="{x:Null}" />
                     <!--CustomerClean   Button-->
 
-                    <Button x:Name="CustomertextboxClean"
-                 Height="15"
-                            
-                Width="30" 
-                Background="Transparent" 
-                Foreground="White"  
-                 HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                 Margin="300,297,0,0"
-                BorderThickness="0" 
-                BorderBrush="Transparent" 
-                
-                 Style="{StaticResource SomeButtonStyle}" Click="CustomertextboxcleanClick" 
-                >
-                        <Button.Content>
-                            <Border CornerRadius="5"  
-                 Height="15"
-                Width="30" 
-                Margin="0"
-                Background="Red" 
-                BorderBrush="Transparent" 
-                 BorderThickness="0" >
-                                <TextBlock   Text="x" 
-                                VerticalAlignment="Center"
-                    FontFamily="Century Gothic" 
-                    FontSize="17" 
-                    FontWeight="Medium"
-                   TextAlignment="Center"/>
-
-                            </Border>
-                        </Button.Content>
-                    </Button>
-               <!--add bt customer info-->
-                    <Button x:Name="CustomertextboxAdd"
-                 Height="15"
-                            
-                Width="30" 
-                Background="Transparent" 
-                Foreground="White"  
-                 HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                 Margin="250,297,0,0"
-                BorderThickness="0" 
-                BorderBrush="Transparent" 
-                
-                 Style="{StaticResource SomeButtonStyle}" Click="CustomertextboxAddClick" 
-                >
-                        <Button.Content>
-                            <Border CornerRadius="5"  
-                 Height="15"
-                Width="30" 
-                Margin="0"
-                Background="#15d6ff" 
-                BorderBrush="Transparent" 
-                 BorderThickness="0" >
-                                <TextBlock   Text="+" 
-                                VerticalAlignment="Center"
-                    FontFamily="Century Gothic" 
-                    FontSize="17" 
-                    FontWeight="Medium"
-                   TextAlignment="Center"/>
-
-                            </Border>
-                        </Button.Content>
-                    </Button>
+               
                     <!---service section -->
 
                     <!-- Label=>Discount package: & ComboBox-->
@@ -2087,10 +2023,10 @@
                  Height="30"
                 Width="90" 
                 Margin="0"
-                Background="#15d6ff" 
+                Background="#ff9425" 
                 BorderBrush="Transparent" 
                  BorderThickness="4,4,4,4" >
-                                <TextBlock   Text="Preview" 
+                                <TextBlock   Text="Clear" 
                                 VerticalAlignment="Center"
                     FontFamily="Century Gothic" 
                     FontSize="14" 
